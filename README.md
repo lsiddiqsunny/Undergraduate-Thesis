@@ -27,4 +27,4 @@ Our work for this project till now :
 3. Prepared miner for mining java code : [Miner](GitMiner/README.md)
 4. Collected data : [Mined data](https://drive.google.com/drive/folders/1SyAFe6xUG84n4uQ1ChQG_REgEhU_0mhJ?usp=sharing)
 5. Worked on java parser : [Java parser](Java_parser\src\Main.java)
-6. Collect paper on TreeLSTM : [Paper](TreeLSTM/README.md)
+6. Collect paper on TreeLSTM : [Paper](Tree_LSTM/README.md)
