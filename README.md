@@ -26,5 +26,5 @@ Our work for this project till now :
 2. Collect source code from the orginal paper writer : [Code base for PSR ALGO](Code_base_for_PSR_ALGO/Fixer.java)
 3. Prepared miner for mining java code : [Miner](GitMiner/README.md)
 4. Collected data : [Mined data](https://drive.google.com/drive/folders/1SyAFe6xUG84n4uQ1ChQG_REgEhU_0mhJ?usp=sharing)
-5. Worked on java parser : [Java parser](Java_parser\src\Main.java)
-6. Collect paper on TreeLSTM : [Paper](Tree_LSTM/README.md)
+5. Work on java parser : [Java parser](Java_parser\src\Main.java)
+6. Collected paper and notes on TreeLSTM : [Paper](Tree_LSTM/README.md)
