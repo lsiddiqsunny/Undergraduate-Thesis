@@ -1,6 +1,6 @@
-# SQL vulnaribility detection and recovery
+# SQL vulnaribility detection and refactoring
 
-We are going to detect SQL vulnaribility by Machine learning and recover them by replacing prepared statement.
+We are going to detect SQL vulnaribility by Machine learning and refactoring them by replacing prepared statement.
 
 ## Motivation
 
