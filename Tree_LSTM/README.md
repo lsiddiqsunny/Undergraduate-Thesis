@@ -60,4 +60,14 @@ Collected paper on tree LSTM and notes on them.
 
    **My notes**
 
+   Will be add
+
+7. CODIT: Code Editing with Tree-Based NeuralMachine Translation
+
+   **Abstract**
+
+   ```The way developers edit day-to-day code tends to berepetitive,  often  using  existing  code  elements.  Many  researchershave tried to automate repetitive code changes by learning fromspecific  change  templates  which  are  applied  to  limited  scope.The  advancement  of  Neural  Machine  Translation  (NMT)  andthe  availability  of  vast  open-source  evolutionary  data  opens  upthe  possibility  of  automatically  learning  those  templates  fromthe  wild.  However,  unlike  natural  languages,  for  which  NMTtechniques  were  originally  devised,  source  code  and  its  changeshave   certain   properties.   For   instance,   compared   to   naturallanguage,  source  code  vocabulary  can  be  significantly  larger.Further, good changes in code do not break its syntactic structure.Thus,  deploying  state-of-the-art  NMT  models  without  adaptingthe methods to the source code domain yields sub-optimal results.To  this  end,  we  propose  a  novel  Tree  based  NMT  system  tomodel source code changes and learn code change patterns fromthe wild. We realize our model with a change suggestion engine:CODITand  train  the  model  with  more  than  30k  real-worldchanges  and  evaluate  it  on  6k  patches.  Our  evaluation  showsthe  effectiveness  of  CODITin  learning  and  suggesting  patches.CODITalso  shows  promise  generating  bug  fix  patches.```
+
+   **My notes**
+
    Will be added soon.
