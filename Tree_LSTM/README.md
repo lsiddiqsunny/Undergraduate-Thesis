@@ -28,47 +28,11 @@ Collected paper on tree LSTM and notes on them.
 
    As in standard LSTM units, each Tree-LSTM unit (indexed by *j*) contains input and output gates i<sub>j</sub> and o<sub>j</sub> , a memory cell c<sub>j</sub> and hidden state h<sub>j</sub> . The difference between the standard LSTM unit and Tree-LSTM units is that gating vectors and memory cell updates are dependent on the states of possibly many child units. Additionally, instead of a single forget gate, the Tree- LSTM unit contains one forget gate f<sub>jk</sub> for each child k. This allows the Tree-LSTM unit to selectively incorporate information from each child. For example, a Tree-LSTM model can learn to emphasize semantic heads in a semantic relatedness task, or it can learn to preserve the representation of sentiment-rich children for sentiment classification.
 
-2. Automatic Source Code Summarization with Extended Tree-LSTM
+    As with the standard LSTM, each Tree-LSTM unit takes an input vector *x<sub>j</sub>*. In our applications, each *x<sub>j</sub>* is a vector representation of a **word in a sentence**. The input word at each node depends on the tree structure used for the network. For instance, in a Tree-LSTM over a dependency tree, each node in the tree takes the vector corresponding to the head word as input, whereas in a Tree-LSTM over a constituency tree, the leaf nodes take the corresponding word vectors as input.
 
-   **Abstract**
+    They evaluate their Tree-LSTM architectures on two tasks: (1) *sentiment classification of sentences sampled from movie reviews* and (2) *predicting the semantic relatedness of sentence pairs.*
 
-   ```Neural  machine  translation  models  are  used  to  automatically  generate  a  document  from  given  source  codesince this can be regarded as a machine translation task.  Source code summarization is one of the components forautomatic document generation, which generates a summary in natural language from given source code.  Thissuggests that techniques used in neural machine translation, such as Long Short-Term Memory (LSTM), can beused for source code summarization.  However, there is a considerable difference between source code and naturallanguage:  Source code is essentiallystructured, having loops and conditional branching, etc.  Therefore, there issome obstacle to apply known machine translation models to source code.Abstract syntax trees (ASTs) capture these structural properties and play an important role in recent machinelearning studies on source code.  Tree-LSTM is proposed as a generalization of LSTMs for tree-structured data.However, there is a critical issue when applying it to ASTs:  It cannot handle a tree that contains nodes havingan  arbitrary  number  of  children  and  their  order  simultaneously,  which  ASTs  generally  have  such  nodes.   Toaddress this issue, we propose an extension of Tree-LSTM, which we callMulti-way Tree-LSTMand apply it forsource code summarization.  As a result of computational experiments, our proposal achieved better results whencompared with several state-of-the-art techniques.```
-
-   **My notes**
-
-   Will be added soon.
-
-3. Improving Tree-LSTM with Tree Attention
-
-   **Abstract**
-
-   ```In Natural Language Processing (NLP), we often need to extract information from tree topology.Sentence structure can be represented via a dependency tree or a constituency tree structure. For this reason, a variant of LSTMs, named Tree-LSTM, was proposed to work on tree topology. In this paper, we design a generalized attention framework for both dependence and constituency trees by encoding variants of decomposable attention inside a Tree-LSTM cell. We evaluated our models on a semantic relatedness task and achieved notable results compared to Tree-LSTM based methods with no attention as well as other neural and non-neural methods and good results compared to Tree-LSTM based methods with attention.```
-
-   **My notes**
-
-   Will be added soon.
-
-4. Improving Tree-LSTM with Tree Attention
-
-   **Abstract**
-
-   ```Optimizing compilers, as well as other translator systems, often work by rewriting expressions ac-cording to equivalence preserving rules.  Given an input expression and its optimized form, findingthe sequence of rules that were applied is a non-trivial task.  Most of the time, the tools provideno proof, of any kind, of the equivalence between the original expression and its optimized form.In this work, we propose to reconstruct proofs of equivalence of simple mathematical expressions,after the fact, by finding paths of equivalence preserving transformations between expressions.  Wepropose to find those sequences of transformations using a search algorithm,  guided by a neuralnetwork heuristic. Using a Tree-LSTM recursive neural network, we learn a distributed representa-tion of expressions where the Manhattan distance between vectors approximately corresponds to therewrite distance between expressions. We then show how the neural network can be efficiently usedto search for transformation paths, leading to substantial gain in speed compared to an uninformedexhaustive search.  In one of our experiments, our neural-network guided search algorithm is ableto solve more instances with a 2 seconds timeout per instance than breadth-first search does with a5 minutes timeout per instance.```
-
-   **My notes**
-
-   Will be added soon.
-
-5. Structure Tree-LSTM: Structure-aware Attentional Document Encoders
-
-   **Abstract**
-
-   ```We propose a method to create document representations that reflect their internal structure. We modify Tree-LSTMs to hierarchically merge basic elements like words and sentences into blocks of increasing complexity. Our Structure Tree-LSTM implements a hierarchical attention mechanism over individual components and combinations thereof. We thus emphasize the usefulness of Tree-LSTMs for texts larger than a sentence. We show that structure-aware encoders can be used to improve the performance of document classification. We demonstrate that our method is resilient to changes to the basic building blocks, as it performs well with both sentence and word embeddings. The Structure Tree-LSTM outperforms all the baselines on two datasets when structural clues like sections are available, but also in the presence of mere paragraphs. On a third dataset from the medical domain, our model achieves competitive performance with the state of the art. This result shows the Structure Tree-LSTM can leverage dependency relations other than text structure, such as a set of reports on the same patient.```
-
-   **My notes**
-
-   Will be added soon.
-
-6. Tree-to-tree Neural Networks for Program Translation
+2. Tree-to-tree Neural Networks for Program Translation
 
    **Abstract**
 
@@ -78,11 +42,51 @@ Collected paper on tree LSTM and notes on them.
 
    Will be add
 
-7. CODIT: Code Editing with Tree-Based NeuralMachine Translation
+3. CODIT: Code Editing with Tree-Based NeuralMachine Translation
 
    **Abstract**
 
    ```The way developers edit day-to-day code tends to berepetitive,  often  using  existing  code  elements.  Many  researchershave tried to automate repetitive code changes by learning fromspecific  change  templates  which  are  applied  to  limited  scope.The  advancement  of  Neural  Machine  Translation  (NMT)  andthe  availability  of  vast  open-source  evolutionary  data  opens  upthe  possibility  of  automatically  learning  those  templates  fromthe  wild.  However,  unlike  natural  languages,  for  which  NMTtechniques  were  originally  devised,  source  code  and  its  changeshave   certain   properties.   For   instance,   compared   to   naturallanguage,  source  code  vocabulary  can  be  significantly  larger.Further, good changes in code do not break its syntactic structure.Thus,  deploying  state-of-the-art  NMT  models  without  adaptingthe methods to the source code domain yields sub-optimal results.To  this  end,  we  propose  a  novel  Tree  based  NMT  system  tomodel source code changes and learn code change patterns fromthe wild. We realize our model with a change suggestion engine:CODITand  train  the  model  with  more  than  30k  real-worldchanges  and  evaluate  it  on  6k  patches.  Our  evaluation  showsthe  effectiveness  of  CODITin  learning  and  suggesting  patches.CODITalso  shows  promise  generating  bug  fix  patches.```
+
+   **My notes**
+
+   Will be added soon.
+
+4. Automatic Source Code Summarization with Extended Tree-LSTM
+
+   **Abstract**
+
+   ```Neural  machine  translation  models  are  used  to  automatically  generate  a  document  from  given  source  codesince this can be regarded as a machine translation task.  Source code summarization is one of the components forautomatic document generation, which generates a summary in natural language from given source code.  Thissuggests that techniques used in neural machine translation, such as Long Short-Term Memory (LSTM), can beused for source code summarization.  However, there is a considerable difference between source code and naturallanguage:  Source code is essentiallystructured, having loops and conditional branching, etc.  Therefore, there issome obstacle to apply known machine translation models to source code.Abstract syntax trees (ASTs) capture these structural properties and play an important role in recent machinelearning studies on source code.  Tree-LSTM is proposed as a generalization of LSTMs for tree-structured data.However, there is a critical issue when applying it to ASTs:  It cannot handle a tree that contains nodes havingan  arbitrary  number  of  children  and  their  order  simultaneously,  which  ASTs  generally  have  such  nodes.   Toaddress this issue, we propose an extension of Tree-LSTM, which we callMulti-way Tree-LSTMand apply it forsource code summarization.  As a result of computational experiments, our proposal achieved better results whencompared with several state-of-the-art techniques.```
+
+   **My notes**
+
+   Will be added soon.
+
+5. Improving Tree-LSTM with Tree Attention
+
+   **Abstract**
+
+   ```In Natural Language Processing (NLP), we often need to extract information from tree topology.Sentence structure can be represented via a dependency tree or a constituency tree structure. For this reason, a variant of LSTMs, named Tree-LSTM, was proposed to work on tree topology. In this paper, we design a generalized attention framework for both dependence and constituency trees by encoding variants of decomposable attention inside a Tree-LSTM cell. We evaluated our models on a semantic relatedness task and achieved notable results compared to Tree-LSTM based methods with no attention as well as other neural and non-neural methods and good results compared to Tree-LSTM based methods with attention.```
+
+   **My notes**
+
+   Will be added soon.
+
+6. Improving Tree-LSTM with Tree Attention
+
+   **Abstract**
+
+   ```Optimizing compilers, as well as other translator systems, often work by rewriting expressions ac-cording to equivalence preserving rules.  Given an input expression and its optimized form, findingthe sequence of rules that were applied is a non-trivial task.  Most of the time, the tools provideno proof, of any kind, of the equivalence between the original expression and its optimized form.In this work, we propose to reconstruct proofs of equivalence of simple mathematical expressions,after the fact, by finding paths of equivalence preserving transformations between expressions.  Wepropose to find those sequences of transformations using a search algorithm,  guided by a neuralnetwork heuristic. Using a Tree-LSTM recursive neural network, we learn a distributed representa-tion of expressions where the Manhattan distance between vectors approximately corresponds to therewrite distance between expressions. We then show how the neural network can be efficiently usedto search for transformation paths, leading to substantial gain in speed compared to an uninformedexhaustive search.  In one of our experiments, our neural-network guided search algorithm is ableto solve more instances with a 2 seconds timeout per instance than breadth-first search does with a5 minutes timeout per instance.```
+
+   **My notes**
+
+   Will be added soon.
+
+7. Structure Tree-LSTM: Structure-aware Attentional Document Encoders
+
+   **Abstract**
+
+   ```We propose a method to create document representations that reflect their internal structure. We modify Tree-LSTMs to hierarchically merge basic elements like words and sentences into blocks of increasing complexity. Our Structure Tree-LSTM implements a hierarchical attention mechanism over individual components and combinations thereof. We thus emphasize the usefulness of Tree-LSTMs for texts larger than a sentence. We show that structure-aware encoders can be used to improve the performance of document classification. We demonstrate that our method is resilient to changes to the basic building blocks, as it performs well with both sentence and word embeddings. The Structure Tree-LSTM outperforms all the baselines on two datasets when structural clues like sections are available, but also in the presence of mere paragraphs. On a third dataset from the medical domain, our model achieves competitive performance with the state of the art. This result shows the Structure Tree-LSTM can leverage dependency relations other than text structure, such as a set of reports on the same patient.```
 
    **My notes**
 
