@@ -2,15 +2,31 @@
 
 Collected paper on tree LSTM and notes on them.
 
-1. Improved Semantic Representations FromTree-Structured Long Short-Term Memory Networks
+1. **Improved Semantic Representations FromTree-Structured Long Short-Term Memory Networks**
 
-   **Abstract**
+   *Abstract*
+
+   ---
 
    ```Because  of  their  superior  ability  to  pre-serve   sequence   information   over   time,Long  Short-Term  Memory  (LSTM)  net-works,   a  type  of  recurrent  neural  net-work with a more complex computationalunit, have obtained strong results on a va-riety  of  sequence  modeling  tasks.Theonly underlying LSTM structure that hasbeen  explored  so  far  is  a  linear  chain.However,  natural  language  exhibits  syn-tactic properties that would naturally com-bine words to phrases.  We introduce theTree-LSTM, a generalization of LSTMs totree-structured network topologies.  Tree-LSTMs  outperform  all  existing  systemsand strong LSTM baselines on two tasks:predicting the semantic relatedness of twosentences  (SemEval  2014,  Task  1)  andsentiment  classification  (Stanford  Senti-ment Treebank)```
 
-   **My notes**
+   *My notes*
 
-   Will be added soon.
+    ---
+
+   Most models for distributed representations of phrases and sentences—that is, models where realvalued vectors are used to represent meaning—fall into one of three classes: **bag-of-words models**,**sequence models**, and **tree-structured models.**
+
+   In this paper, they introduce a generalization of the standard LSTM architecture to **tree-structured network topologies** and show its superiority for representing sentence meaning over a sequential LSTM.
+
+   The **standard LSTM** can then be considered a **special case** of the **Tree-LSTM** where each internal node has exactly **one child**.
+
+   Recurrent neural networks (RNNs) are able to process input sequences of arbitrary length via the recursive application of a transition function on a *hidden state vector h<sub>t</sub>*. At each time step t, the hidden state *h<sub>t</sub>* is a function of the input vector *x<sub>t</sub>* that the network receives at time t and its previous hidden state *h<sub>t</sub>-1.*
+
+   Unfortunately, a problem with RNNs with transition functions of this form is that during training,components of the gradient vector can grow or decay exponentially over long sequences. This problem with exploding or vanishing gradients makes it difficult for the RNN model to learn long-distance correlations in a sequence.
+
+   The LSTM architecture addresses this problem of learning long-term dependencies by introducing a memory cell that is able to preserve state over long periods of time.
+
+   As in standard LSTM units, each Tree-LSTM unit (indexed by *j*) contains input and output gates i<sub>j</sub> and o<sub>j</sub> , a memory cell c<sub>j</sub> and hidden state h<sub>j</sub> . The difference between the standard LSTM unit and Tree-LSTM units is that gating vectors and memory cell updates are dependent on the states of possibly many child units. Additionally, instead of a single forget gate, the Tree- LSTM unit contains one forget gate f<sub>jk</sub> for each child k. This allows the Tree-LSTM unit to selectively incorporate information from each child. For example, a Tree-LSTM model can learn to emphasize semantic heads in a semantic relatedness task, or it can learn to preserve the representation of sentiment-rich children for sentiment classification.
 
 2. Automatic Source Code Summarization with Extended Tree-LSTM
 
