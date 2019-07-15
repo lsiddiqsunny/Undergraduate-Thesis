@@ -1,0 +1,1032 @@
+{
+  "type": {
+    "type": "VoidType"
+  },
+  "body": {
+    "type": "BlockStmt",
+    "statements": [
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "INT"
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "parseInt"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "Integer"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MethodCallExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "getParameter"
+                    },
+                    "scope": {
+                      "type": "NameExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "request"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "StringLiteralExpr",
+                        "value": "empid"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "empid"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "String"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "getParameter"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "request"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "StringLiteralExpr",
+                    "value": "cap"
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "truckType"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "INT"
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "parseInt"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "Integer"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MethodCallExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "getParameter"
+                    },
+                    "scope": {
+                      "type": "NameExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "request"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "StringLiteralExpr",
+                        "value": "priority"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "prority"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "INT"
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "parseInt"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "Integer"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MethodCallExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "getParameter"
+                    },
+                    "scope": {
+                      "type": "NameExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "request"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "StringLiteralExpr",
+                        "value": "volume"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "Volume"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "INT"
+              },
+              "initializer": {
+                "type": "IntegerLiteralExpr",
+                "value": "0"
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "cap"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "Connection"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "getconnection"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "Connect"
+                  }
+                }
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "con"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "PreparedStatement"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "prepareStatement"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "con"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "StringLiteralExpr",
+                    "value": "select capacity from truckparam where typeofgood\u003d?  "
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "ps1"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setString"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps1"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "1"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "truckType"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "ResultSet"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "executeQuery"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "ps1"
+                  }
+                }
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "rs1"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "WhileStmt",
+        "body": {
+          "type": "BlockStmt",
+          "statements": [
+            {
+              "type": "ExpressionStmt",
+              "expression": {
+                "type": "AssignExpr",
+                "operator": "ASSIGN",
+                "target": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "cap"
+                  }
+                },
+                "value": {
+                  "type": "MethodCallExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "getInt"
+                  },
+                  "scope": {
+                    "type": "NameExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "rs1"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "StringLiteralExpr",
+                      "value": "capacity"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "condition": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "next"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "rs1"
+            }
+          }
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "DOUBLE"
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "parseDouble"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "Double"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MethodCallExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "getParameter"
+                    },
+                    "scope": {
+                      "type": "NameExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "request"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "StringLiteralExpr",
+                        "value": "lat"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "lat"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "DOUBLE"
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "parseDouble"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "Double"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MethodCallExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "getParameter"
+                    },
+                    "scope": {
+                      "type": "NameExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "request"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "StringLiteralExpr",
+                        "value": "long"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "lon"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "String"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "capitalize"
+                },
+                "scope": {
+                  "type": "FieldAccessExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "StringUtils"
+                  },
+                  "scope": {
+                    "type": "FieldAccessExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "lang3"
+                    },
+                    "scope": {
+                      "type": "FieldAccessExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "commons"
+                      },
+                      "scope": {
+                        "type": "FieldAccessExpr",
+                        "name": {
+                          "type": "SimpleName",
+                          "identifier": "apache"
+                        },
+                        "scope": {
+                          "type": "NameExpr",
+                          "name": {
+                            "type": "SimpleName",
+                            "identifier": "org"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MethodCallExpr",
+                    "name": {
+                      "type": "SimpleName",
+                      "identifier": "getParameter"
+                    },
+                    "scope": {
+                      "type": "NameExpr",
+                      "name": {
+                        "type": "SimpleName",
+                        "identifier": "request"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "StringLiteralExpr",
+                        "value": "location"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "location"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "PreparedStatement"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "prepareStatement"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "con"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "StringLiteralExpr",
+                    "value": "INSERT INTO `mckc`.`autoparam` (`typeofgood`,`capacity`, `Origin`, `lat`, `long`,`Pirority`,`Volume Rating`) VALUES  (?,?,?,?,?,?,?) "
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "ps"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setString"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "1"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "truckType"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setInt"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "2"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "cap"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setString"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "3"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "location"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setDouble"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "4"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "lat"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setDouble"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "5"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "lon"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setInt"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "6"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "prority"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "setInt"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          },
+          "arguments": [
+            {
+              "type": "IntegerLiteralExpr",
+              "value": "7"
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "Volume"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "executeUpdate"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ps"
+            }
+          }
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "VariableDeclarationExpr",
+          "variables": [
+            {
+              "type": {
+                "type": "ClassOrInterfaceType",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "RequestDispatcher"
+                }
+              },
+              "initializer": {
+                "type": "MethodCallExpr",
+                "name": {
+                  "type": "SimpleName",
+                  "identifier": "getRequestDispatcher"
+                },
+                "scope": {
+                  "type": "NameExpr",
+                  "name": {
+                    "type": "SimpleName",
+                    "identifier": "request"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "StringLiteralExpr",
+                    "value": "adminAuto.jsp"
+                  }
+                ]
+              },
+              "name": {
+                "type": "SimpleName",
+                "identifier": "ReqDis"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "ExpressionStmt",
+        "expression": {
+          "type": "MethodCallExpr",
+          "name": {
+            "type": "SimpleName",
+            "identifier": "forward"
+          },
+          "scope": {
+            "type": "NameExpr",
+            "name": {
+              "type": "SimpleName",
+              "identifier": "ReqDis"
+            }
+          },
+          "arguments": [
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "request"
+              }
+            },
+            {
+              "type": "NameExpr",
+              "name": {
+                "type": "SimpleName",
+                "identifier": "response"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "name": {
+    "type": "SimpleName",
+    "identifier": "AddLocations"
+  },
+  "parameters": [
+    {
+      "type": {
+        "type": "ClassOrInterfaceType",
+        "name": {
+          "type": "SimpleName",
+          "identifier": "HttpSession"
+        }
+      },
+      "isVarArgs": "false",
+      "name": {
+        "type": "SimpleName",
+        "identifier": "session"
+      }
+    },
+    {
+      "type": {
+        "type": "ClassOrInterfaceType",
+        "name": {
+          "type": "SimpleName",
+          "identifier": "HttpServletRequest"
+        }
+      },
+      "isVarArgs": "false",
+      "name": {
+        "type": "SimpleName",
+        "identifier": "request"
+      }
+    },
+    {
+      "type": {
+        "type": "ClassOrInterfaceType",
+        "name": {
+          "type": "SimpleName",
+          "identifier": "HttpServletResponse"
+        }
+      },
+      "isVarArgs": "false",
+      "name": {
+        "type": "SimpleName",
+        "identifier": "response"
+      }
+    }
+  ],
+  "thrownExceptions": [
+    {
+      "type": "ClassOrInterfaceType",
+      "name": {
+        "type": "SimpleName",
+        "identifier": "SQLException"
+      }
+    },
+    {
+      "type": "ClassOrInterfaceType",
+      "name": {
+        "type": "SimpleName",
+        "identifier": "ServletException"
+      }
+    },
+    {
+      "type": "ClassOrInterfaceType",
+      "name": {
+        "type": "SimpleName",
+        "identifier": "IOException"
+      }
+    }
+  ]
+}
