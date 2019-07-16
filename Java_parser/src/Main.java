@@ -72,8 +72,8 @@ public class Main {
     public static void listMethodDeclaration(File projectDir) throws FileNotFoundException, UnsupportedEncodingException {
         JavaParser.getStaticConfiguration().setAttributeComments(false);
 
-        PrintWriter writer = new PrintWriter("testout.json", "UTF-8");
-        new Director((level, path, file) -> path.endsWith(".txt"), (level, path, file) -> {
+        PrintWriter writer = new PrintWriter("outfrom2852019.json", "UTF-8");
+        new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
 
             System.out.println(path);
             //System.out.println(Strings.repeat("=", path.length()));
@@ -85,11 +85,12 @@ public class Main {
                       //  System.out.println(n + "\n");
                         YamlPrinter printer = new YamlPrinter(true);
                         JsonPrinter jprinter=new  JsonPrinter(true);
+                        writer.println(toPrettyFormat(jprinter.output(n))+"\n\n######\n\n");
 
                         // System.out.println(printer.output(n));
 
-                        writer.println(toPrettyFormat(jprinter.output(n)));
-                       String data=jprinter.output(n);
+                      //  writer.println(toPrettyFormat(jprinter.output(n))+"\n#######\n");
+                     //  String data=jprinter.output(n);
 //
                       //  System.out.println(data);
                    //   System.out.println(toPrettyFormat(data));
@@ -107,15 +108,40 @@ public class Main {
         }).explore(projectDir);
         writer.close();
     }
+    public static void Parse() throws IOException {
+
+        InputStream is = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outfrom2852019.json");
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+        String line = buf.readLine();
+        StringBuilder sb = new StringBuilder();
+        while(line != null){ sb.append(line).append("\n"); line = buf.readLine(); }
+        String fileAsString = sb.toString();
+
+        String [] data=fileAsString.split("######");
+
+        int i=0;
+        String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
+        String ext=".json";
+        for(String s: data){
+            PrintWriter writer = new PrintWriter(dir+Integer.toString(i+1)+ext, "UTF-8");
+            writer.println(s);
+            writer.close();
+            i++;
+        }
 
 
-    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+
+
+    }
+
+
+    public static void main(String[] args) throws IOException {
       //  CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH));
       ///  System.out.println(cu);
 
 
     // Now comes the inspection code:
-        YamlPrinter printer = new YamlPrinter(true);
+     //   YamlPrinter printer = new YamlPrinter(true);
        // System.out.println(printer.output(cu));
 
        // List<Comment> comments = cu.getAllContainedComments();
@@ -126,7 +152,8 @@ public class Main {
             //System.out.println(iterator.next().toString());
         //}
 
-        File projectDir = new File("D:\\Thesis\\Undergraduate-Thesis\\Java_parser");
-        listMethodDeclaration(projectDir);
+       // File projectDir = new File("D:\\Thesis\\Mined\\output from  28-5-2019");
+     //   listMethodDeclaration(projectDir);
+        Parse();
     }
 }
