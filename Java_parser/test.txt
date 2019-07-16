@@ -1,31 +1,84 @@
-class dummy{
-private void AddLocations(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-    int empid = Integer.parseInt(request.getParameter("empid"));
-    String truckType = request.getParameter("cap");
-    int prority = Integer.parseInt(request.getParameter("priority"));
-    int Volume = Integer.parseInt(request.getParameter("volume"));
-    int cap = 0;
-    Connection con = Connect.getconnection();
-    PreparedStatement ps1 = con.prepareStatement("select capacity from truckparam where typeofgood=?  ");
-    ps1.setString(1, truckType);
-    ResultSet rs1 = ps1.executeQuery();
-    while (rs1.next()) {
-        cap = rs1.getInt("capacity");
-    }
-    double lat = Double.parseDouble(request.getParameter("lat"));
-    double lon = Double.parseDouble(request.getParameter("long"));
-    // String Good=request.getParameter("type");
-    String location = org.apache.commons.lang3.StringUtils.capitalize(request.getParameter("location"));
-    PreparedStatement ps = con.prepareStatement("INSERT INTO `mckc`.`autoparam` (`typeofgood`,`capacity`, `Origin`, `lat`, `long`,`Pirority`,`Volume Rating`) VALUES  (?,?,?,?,?,?,?) ");
-    ps.setString(1, truckType);
-    ps.setInt(2, cap);
-    ps.setString(3, location);
-    ps.setDouble(4, lat);
-    ps.setDouble(5, lon);
-    ps.setInt(6, prority);
-    ps.setInt(7, Volume);
-    ps.executeUpdate();
-    RequestDispatcher ReqDis = request.getRequestDispatcher("adminAuto.jsp");
-    ReqDis.forward(request, response);
-}
+package login;
+
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Map;
+
+import util.WebSession;
+
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+
+public class AdminLoginAction extends ActionSupport
+{
+	private String adminLoginUsername;
+	private String adminLoginPassword;
+	private Connection connection;
+	private WebSession ws;
+	private PreparedStatement checkDuplicate;
+	private Map m;
+
+	private Connection getConnection() throws SQLException {
+		java.sql.Connection con;
+		con = ConnectionFactory.getInstance().getConnection();
+		return con;
+	}
+	public String execute()
+			throws SQLException, ClassNotFoundException
+			{
+adminLoginUsername = getadminLoginUsername();
+adminLoginPassword = getadminLoginPassword();
+connection = getConnection();
+		checkDuplicate = connection.prepareStatement("SELECT username, password FROM admin WHERE username=? AND password= ?");
+		checkDuplicate.setString(1, adminLoginUsername);
+		checkDuplicate.setString(2, adminLoginPassword);
+		ResultSet results = checkDuplicate.executeQuery();
+		System.out.println("#result" + results);
+		if (results.next()) {
+			System.out.println("hey gals");
+			//ws.put("user", adminLoginUsername);
+			Map session = ActionContext.getContext().getSession();
+	//		session.put("logined","true");
+	//		session.put("admin", adminLoginUsername);
+
+			return "success";
+		}else{
+
+		return "success";
+		}
+
+
+
+
+			}
+	  public void setSession(Map m)
+	    {
+	    	this.m=m;
+	    }
+	public void setadminLoginUsername(String adminLoginUsername) {
+		this.adminLoginUsername = adminLoginUsername;
+	}
+
+	public String getadminLoginUsername() {
+		return this.adminLoginUsername;
+	}
+
+	public void setadminLoginPassword(String adminLoginPassword) {
+		this.adminLoginPassword = adminLoginPassword;
+	}
+
+	public String getadminLoginPassword() {
+		return this.adminLoginPassword;
+	}
+//	public String logout() {
+//		WebSession.remove("current");
+//		return "success";
+	//}
 }
