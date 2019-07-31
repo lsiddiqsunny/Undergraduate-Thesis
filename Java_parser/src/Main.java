@@ -1,9 +1,11 @@
 
 
 import com.github.javaparser.JavaParser;
+import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.MethodCallExpr;
+import com.github.javaparser.ast.expr.StringLiteralExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.printer.JsonPrinter;
 import com.github.javaparser.printer.YamlPrinter;
@@ -72,8 +74,8 @@ public class Main {
     public static void listMethodDeclaration(File projectDir) throws FileNotFoundException, UnsupportedEncodingException {
         JavaParser.getStaticConfiguration().setAttributeComments(false);
 
-        PrintWriter writer1 = new PrintWriter("outjsonfrom2652019.json", "UTF-8");
-        PrintWriter writer2 = new PrintWriter("outjavafrom2652019.java", "UTF-8");
+        PrintWriter writer1 = new PrintWriter("outjsonfrom2852019.json", "UTF-8");
+        PrintWriter writer2 = new PrintWriter("outjavafrom2852019.java", "UTF-8");
         new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
 
             System.out.println(path);
@@ -86,8 +88,9 @@ public class Main {
                       //  System.out.println(n + "\n");
                         YamlPrinter printer = new YamlPrinter(true);
                         JsonPrinter jprinter=new  JsonPrinter(true);
+
                         writer1.println(toPrettyFormat(jprinter.output(n))+"\n\n######\n\n");
-                        writer2.println(n.toString()+"\n\n######\n\n");
+                        writer2.println("class Dummy{\n"+n.toString()+"\n}\n######\n\n");
                         // System.out.println(printer.output(n));
 
                       //  writer.println(toPrettyFormat(jprinter.output(n))+"\n#######\n");
@@ -112,7 +115,7 @@ public class Main {
     }
     public static void Parse() throws IOException {
 
-        InputStream is = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjsonfrom2652019.json");
+        InputStream is = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjsonfrom2852019.json");
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
         String line = buf.readLine();
         StringBuilder sb = new StringBuilder();
@@ -122,7 +125,7 @@ public class Main {
         String [] data=fileAsString.split("######");
 
 
-        InputStream is1 = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjavafrom2652019.java");
+        InputStream is1 = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjavafrom2852019.java");
         BufferedReader buf1 = new BufferedReader(new InputStreamReader(is1));
         String line1 = buf1.readLine();
         StringBuilder sb1 = new StringBuilder();
@@ -170,9 +173,49 @@ public class Main {
     }
 
 
+
+    public static void listString(File projectDir,String dir) throws FileNotFoundException, UnsupportedEncodingException {
+        JavaParser.getStaticConfiguration().setAttributeComments(false);
+
+        PrintWriter writer = new PrintWriter(dir+"//string.txt", "UTF-8");
+
+        new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
+
+            System.out.println(path);
+            //System.out.println(Strings.repeat("=", path.length()));
+            try {
+                new VoidVisitorAdapter<Object>() {
+                    @Override
+                    public void visit(StringLiteralExpr n, Object arg) {
+                        super.visit(n, arg);
+                        //  System.out.println(n + "\n");
+
+                        writer.println(n.toString()+"\n\n");
+                        // System.out.println(printer.output(n));
+
+                        //  writer.println(toPrettyFormat(jprinter.output(n))+"\n#######\n");
+                        //  String data=jprinter.output(n);
+//
+                        //  System.out.println(data);
+                        //   System.out.println(toPrettyFormat(data));
+
+
+
+                    }
+                }.visit(JavaParser.parse(file), null);
+                System.out.println(); // empty line
+            } catch (RuntimeException e) {
+                new RuntimeException(e);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }).explore(projectDir);
+        writer.close();
+    }
+
     public static void main(String[] args) throws IOException {
-      //  CompilationUnit cu = StaticJavaParser.parse(new File(FILE_PATH));
-      ///  System.out.println(cu);
+   //    CompilationUnit cu = JavaParser.parse(new File(FILE_PATH));
+   //    System.out.println(cu);
 
 
     // Now comes the inspection code:
@@ -187,8 +230,14 @@ public class Main {
             //System.out.println(iterator.next().toString());
         //}
 
-     //   File projectDir = new File("D:\\Thesis\\Mined\\output from  28-5-2019");
-     //   listMethodDeclaration(projectDir);
-        Parse();
+     //  File projectDir = new File("D:\\Thesis\\Mined\\output from  28-5-2019");
+      //  listMethodDeclaration(projectDir);
+      //  Parse();
+     //   listString(projectDir);
+        String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
+        for(int i=1;i<=7412;i++){
+            listString(new File(dir+Integer.toString(i)),dir+Integer.toString(i));
+        }
+
     }
 }
