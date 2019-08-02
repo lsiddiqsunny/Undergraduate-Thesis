@@ -20,45 +20,7 @@ import java.io.*;
 
 public class Main {
 
-    private static final String FILE_PATH = "D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\src\\test.java";
-
-    public static void listClasses(File projectDir) {
-        new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
-            System.out.println(path);
-            try {
-                new VoidVisitorAdapter<Object>() {
-                    @Override
-                    public void visit(ClassOrInterfaceDeclaration n, Object arg) {
-                        super.visit(n, arg);
-                        System.out.println(" * " + n.getName());
-                    }
-                }.visit(JavaParser.parse(file), null);
-                System.out.println(); // empty line
-            } catch (IOException e) {
-                new RuntimeException(e);
-            }
-        }).explore(projectDir);
-    }
-
-
-    public static void listMethodCalls(File projectDir) {
-       new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
-
-            System.out.println(path);
-            try {
-                new VoidVisitorAdapter<Object>() {
-                    @Override
-                    public void visit(MethodCallExpr n, Object arg) {
-                        super.visit(n, arg);
-                        System.out.println(" [L " + n.getName() + "] " + n);
-                    }
-                }.visit(JavaParser.parse(file), null);
-                System.out.println(); // empty line
-            } catch (IOException e) {
-                new RuntimeException(e);
-            }
-        }).explore(projectDir);
-    }
+/// use to format json type file
     public static String toPrettyFormat(String jsonString)
     {
         JsonParser parser = new JsonParser();
@@ -70,37 +32,25 @@ public class Main {
         return prettyJson;
     }
 
-
+/// use to list all method in a directory
     public static void listMethodDeclaration(File projectDir) throws FileNotFoundException, UnsupportedEncodingException {
         JavaParser.getStaticConfiguration().setAttributeComments(false);
 
-        PrintWriter writer1 = new PrintWriter("outjsonfrom2852019.json", "UTF-8");
-        PrintWriter writer2 = new PrintWriter("outjavafrom2852019.java", "UTF-8");
+        PrintWriter writer1 = new PrintWriter("outjson.json", "UTF-8");//get all json from the specific directory
+        PrintWriter writer2 = new PrintWriter("outjava.java", "UTF-8");// get all java function from the specific directory
         new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
 
-            System.out.println(path);
-            //System.out.println(Strings.repeat("=", path.length()));
+            System.out.println(path);//print the path
             try {
                 new VoidVisitorAdapter<Object>() {
                     @Override
                     public void visit(MethodDeclaration n, Object arg) {
                         super.visit(n, arg);
-                      //  System.out.println(n + "\n");
                         YamlPrinter printer = new YamlPrinter(true);
                         JsonPrinter jprinter=new  JsonPrinter(true);
 
-                        writer1.println(toPrettyFormat(jprinter.output(n))+"\n\n######\n\n");
-                        writer2.println("class Dummy{\n"+n.toString()+"\n}\n######\n\n");
-                        // System.out.println(printer.output(n));
-
-                      //  writer.println(toPrettyFormat(jprinter.output(n))+"\n#######\n");
-                     //  String data=jprinter.output(n);
-//
-                      //  System.out.println(data);
-                   //   System.out.println(toPrettyFormat(data));
-
-
-
+                        writer1.println(toPrettyFormat(jprinter.output(n))+"\n\n######\n\n");///dump json in the output json
+                        writer2.println("class Dummy{\n"+n.toString()+"\n}\n######\n\n");/// add dummy class to revisit the function
                     }
                 }.visit(JavaParser.parse(file), null);
                 System.out.println(); // empty line
@@ -113,9 +63,11 @@ public class Main {
         writer1.close();
         writer2.close();
     }
+
+///use to parse two output file separated by #####
     public static void Parse() throws IOException {
 
-        InputStream is = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjsonfrom2852019.json");
+        InputStream is = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjson.json");
         BufferedReader buf = new BufferedReader(new InputStreamReader(is));
         String line = buf.readLine();
         StringBuilder sb = new StringBuilder();
@@ -125,7 +77,7 @@ public class Main {
         String [] data=fileAsString.split("######");
 
 
-        InputStream is1 = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjavafrom2852019.java");
+        InputStream is1 = new FileInputStream("D:\\Thesis\\Undergraduate-Thesis\\Java_parser\\outjava.java");
         BufferedReader buf1 = new BufferedReader(new InputStreamReader(is1));
         String line1 = buf1.readLine();
         StringBuilder sb1 = new StringBuilder();
@@ -135,7 +87,7 @@ public class Main {
         String [] data1=fileAsString1.split("######");
 
         int i=0;
-        String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
+        String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";///change with respect to data folder
         String ext=".json";
 
         for(String s: data){
@@ -173,7 +125,7 @@ public class Main {
     }
 
 
-
+//use to get string from a java function
     public static void listString(File projectDir,String dir) throws FileNotFoundException, UnsupportedEncodingException {
         JavaParser.getStaticConfiguration().setAttributeComments(false);
 
@@ -182,25 +134,13 @@ public class Main {
         new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
 
             System.out.println(path);
-            //System.out.println(Strings.repeat("=", path.length()));
             try {
                 new VoidVisitorAdapter<Object>() {
                     @Override
                     public void visit(StringLiteralExpr n, Object arg) {
                         super.visit(n, arg);
-                        //  System.out.println(n + "\n");
 
                         writer.println(n.toString()+"\n\n");
-                        // System.out.println(printer.output(n));
-
-                        //  writer.println(toPrettyFormat(jprinter.output(n))+"\n#######\n");
-                        //  String data=jprinter.output(n);
-//
-                        //  System.out.println(data);
-                        //   System.out.println(toPrettyFormat(data));
-
-
-
                     }
                 }.visit(JavaParser.parse(file), null);
                 System.out.println(); // empty line
@@ -214,28 +154,14 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-   //    CompilationUnit cu = JavaParser.parse(new File(FILE_PATH));
-   //    System.out.println(cu);
+   
 
-
-    // Now comes the inspection code:
-     //   YamlPrinter printer = new YamlPrinter(true);
-       // System.out.println(printer.output(cu));
-
-       // List<Comment> comments = cu.getAllContainedComments();
-        //System.out.println("******\n"+cu.toString()+"\n******");
-
-       // Iterator iterator = comments.iterator();
-        //while(iterator.hasNext()) {
-            //System.out.println(iterator.next().toString());
-        //}
-
-     //  File projectDir = new File("D:\\Thesis\\Mined\\output from  28-5-2019");
-      //  listMethodDeclaration(projectDir);
-      //  Parse();
-     //   listString(projectDir);
-        String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
-        for(int i=1;i<=7412;i++){
+       File projectDir = new File("D:\\Thesis\\Mined\\output from  28-5-2019");
+       listMethodDeclaration(projectDir);
+       Parse();
+        listString(projectDir);
+       String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
+       for(int i=1;i<=7412;i++){// depends on number of file
             listString(new File(dir+Integer.toString(i)),dir+Integer.toString(i));
         }
 
