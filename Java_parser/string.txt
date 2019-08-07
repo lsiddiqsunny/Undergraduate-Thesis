@@ -1,0 +1,37 @@
+rs1 . getInt ( "capacity" ) 
+empid = Integer.parseInt(request.getParameter("empid")) 
+
+ReqDis = request.getRequestDispatcher("error.jsp") 
+
+ReqDis = request.getRequestDispatcher("Adminerror.jsp") 
+
+session = request.getSession() 
+
+empid = Integer.parseInt(request.getParameter("empid")) 
+
+truckType = request.getParameter("cap") 
+
+prority = Integer.parseInt(request.getParameter("priority")) 
+
+Volume = Integer.parseInt(request.getParameter("volume")) 
+
+cap = 0 
+
+con = Connect.getconnection() 
+
+ps1 = con.prepareStatement("select capacity from truckparam where typeofgood=?  ") 
+
+rs1 = ps1.executeQuery() 
+
+lat = Double.parseDouble(request.getParameter("lat")) 
+
+lon = Double.parseDouble(request.getParameter("long")) 
+
+location = org.apache.commons.lang3.StringUtils.capitalize(request.getParameter("location")) 
+
+ps = con.prepareStatement("INSERT INTO `mckc`.`autoparam` (`typeofgood`,`capacity`, `Origin`, `lat`, `long`,`Pirority`,`Volume Rating`) VALUES  (?,?,?,?,?,?,?) ") 
+
+ReqDis = request.getRequestDispatcher("adminAuto.jsp") 
+
+matcher = Pattern.compile("\\d+").matcher(str) 
+
