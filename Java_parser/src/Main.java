@@ -1,22 +1,23 @@
 
 
 import com.github.javaparser.JavaParser;
+import com.github.javaparser.TokenRange;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.expr.AssignExpr;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.StringLiteralExpr;
+import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.printer.JsonPrinter;
 import com.github.javaparser.printer.YamlPrinter;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
+import com.google.gson.*;
 
 
 import java.io.*;
+import java.util.*;
 
 public class Main {
 
@@ -46,9 +47,7 @@ public class Main {
                     @Override
                     public void visit(MethodDeclaration n, Object arg) {
                         super.visit(n, arg);
-                        YamlPrinter printer = new YamlPrinter(true);
                         JsonPrinter jprinter=new  JsonPrinter(true);
-
                         writer1.println(toPrettyFormat(jprinter.output(n))+"\n\n######\n\n");///dump json in the output json
                         writer2.println("class Dummy{\n"+n.toString()+"\n}\n######\n\n");/// add dummy class to revisit the function
                     }
@@ -87,7 +86,7 @@ public class Main {
         String [] data1=fileAsString1.split("######");
 
         int i=0;
-        String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";///change with respect to data folder
+        String dir="D:\\Thesis\\Mined\\Input_From_Test_Run\\Test_";///change with respect to data folder
         String ext=".json";
 
         for(String s: data){
@@ -107,7 +106,7 @@ public class Main {
         }
 
         i=0;
-        String dir1="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
+        String dir1="D:\\Thesis\\Mined\\Input_From_Test_Run\\Test_";
         String ext1=".java";
 
         for(String s: data1){
@@ -153,17 +152,80 @@ public class Main {
         writer.close();
     }
 
+    public static void parseString(File projectDir) throws FileNotFoundException, UnsupportedEncodingException {
+        JavaParser.getStaticConfiguration().setAttributeComments(false);
+
+        PrintWriter writer = new PrintWriter(projectDir+"//String.txt", "UTF-8");
+
+        new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
+
+            System.out.println(path);
+            try {
+                new VoidVisitorAdapter<Object>() {
+                    @Override
+                    public void visit(AssignExpr n, Object arg) {
+                        super.visit(n, arg);
+
+                        n.getValue().getTokenRange().get().forEach(t -> writer.print(t.getText()+" "));
+                        writer.println();
+
+
+                    }
+                }.visit(JavaParser.parse(file), null);
+               // System.out.println(); // empty line
+            } catch (RuntimeException e) {
+                new RuntimeException(e);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }).explore(projectDir);
+
+
+        new Director((level, path, file) -> path.endsWith("test.java"), (level, path, file) -> {
+
+            System.out.println(path);
+            try {
+                new VoidVisitorAdapter<Object>() {
+                    @Override
+                    public void visit(VariableDeclarationExpr n, Object arg) {
+                        super.visit(n, arg);
+
+
+                        for(Node x: n.getChildNodes()){
+
+                           // writer.println(x+" ");
+
+                            x.getTokenRange().get().forEach(t -> writer.print(t.getText()+" "));
+                        }
+                        writer.println();
+                    }
+                }.visit(JavaParser.parse(file), null);
+              //  System.out.println(); // empty line
+            } catch (RuntimeException e) {
+                new RuntimeException(e);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }).explore(projectDir);
+        writer.close();
+    }
+
     public static void main(String[] args) throws IOException {
    
 
-       File projectDir = new File("D:\\Thesis\\Mined\\output from  28-5-2019");
+       File projectDir = new File("D:\\Thesis\\Mined\\Input for test run");
        listMethodDeclaration(projectDir);
        Parse();
-        listString(projectDir);
-       String dir="D:\\Thesis\\Mined\\Output_from_28_5_2019\\28_5_2019_";
-       for(int i=1;i<=7412;i++){// depends on number of file
-            listString(new File(dir+Integer.toString(i)),dir+Integer.toString(i));
+//      JsonParsing();
+      String dir="D:\\Thesis\\Mined\\Input_From_Test_Run\\Test_";
+       for(int i=1;i<=8014;i++){// depends on number of file
+           parseString(new File(dir+Integer.toString(i)));
         }
+      //File stringDir=new File("D:\\Thesis\\Undergraduate-Thesis\\Java_parser");
+     // parseString(stringDir);
+      //  listMethodDeclaration(stringDir);
+
+
 
     }
 }
