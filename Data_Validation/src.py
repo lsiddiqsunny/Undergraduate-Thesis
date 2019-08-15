@@ -25,7 +25,7 @@ def extract_values(obj, key):
 Myset = {}
 Myset = set()
 
-for i in range(8013):
+for i in range(21665):
 
     filename='D:\\Thesis\\Mined\\Input_From_Test_Run\\Test_'+str(i+1)+'\\ast.json'
     print(filename+"\n")

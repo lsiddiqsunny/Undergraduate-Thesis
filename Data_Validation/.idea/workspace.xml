@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f0c2435-c9d2-474f-b3fc-1b0b7942e22b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Data_Validation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java_parser/string.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java_parser/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keywords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src.py" beforeDir="false" afterPath="$PROJECT_DIR$/src.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_parser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/out/production/Java Parser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_parser/outjava.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/outjava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java_parser/outjson.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/outjson.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_parser/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_parser/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tree_LSTM/Tree-to-tree Neural Networks for Program Translation (2018).pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,20 +23,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state relative-caret-position="350">
+              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/keywords.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-778" />
           </provider>
         </entry>
       </file>
@@ -146,24 +138,20 @@
       <option name="presentableId" value="Default" />
       <updated>1565161434329</updated>
       <workItem from="1565161481550" duration="1670000" />
+      <workItem from="1565294826666" duration="537000" />
+      <workItem from="1565542264031" duration="84000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1670000" />
+    <option name="totallyTimeSpent" value="2291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
@@ -171,18 +159,24 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Data_Validation$src.coverage" NAME="src Coverage Results" MODIFIED="1565163039689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Data_Validation$src.coverage" NAME="src Coverage Results" MODIFIED="1565542315670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/encodings/cp1252.py">
@@ -207,14 +201,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keywords.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-778" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state relative-caret-position="350">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
         </state>
       </provider>
     </entry>

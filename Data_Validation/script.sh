@@ -22,7 +22,7 @@ while read -r file; do
 	
   done
 echo $a"/""$b">>output2.txt # get the folder name
-I final folderFS=' '
+IFS=' '
 done < "output.txt"
 
 sort output2.txt | uniq >output.txt
