@@ -2,6 +2,7 @@
 
 import com.github.javaparser.JavaParser;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.MethodDeclaration;
@@ -10,6 +11,8 @@ import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.printer.JsonPrinter;
 =======
+=======
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 import com.github.javaparser.TokenRange;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
@@ -22,12 +25,19 @@ import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.printer.JsonPrinter;
 import com.github.javaparser.printer.YamlPrinter;
+<<<<<<< HEAD
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
+=======
 >>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 import com.google.gson.*;
 
 
 import java.io.*;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import java.util.*;
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 =======
 import java.util.*;
 >>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
@@ -46,7 +56,11 @@ public class Main {
         return prettyJson;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     static int i=0;
+=======
+
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 =======
 
 >>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
@@ -55,9 +69,15 @@ public class Main {
         JavaParser.getStaticConfiguration().setAttributeComments(false);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         String dir="D:\\Thesis\\Mined\\Input_From_Test_Run\\Test_";///change with respect to data folder
         new Director((level, path, file) -> path.endsWith(".java"), (int level, String path, File file) -> {
+=======
+        PrintWriter writer1 = new PrintWriter("outjson.json", "UTF-8");//get all json from the specific directory
+        PrintWriter writer2 = new PrintWriter("outjava.java", "UTF-8");// get all java function from the specific directory
+        new Director((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 =======
         PrintWriter writer1 = new PrintWriter("outjson.json", "UTF-8");//get all json from the specific directory
         PrintWriter writer2 = new PrintWriter("outjava.java", "UTF-8");// get all java function from the specific directory
@@ -71,6 +91,7 @@ public class Main {
                     public void visit(MethodDeclaration n, Object arg) {
                         super.visit(n, arg);
                         JsonPrinter jprinter=new  JsonPrinter(true);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                         File directory = new File(dir+Integer.toString(i+1));
@@ -109,6 +130,8 @@ public class Main {
 
 
 =======
+=======
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
                         writer1.println(toPrettyFormat(jprinter.output(n))+"\n\n######\n\n");///dump json in the output json
                         writer2.println("class Dummy{\n"+n.toString()+"\n}\n######\n\n");/// add dummy class to revisit the function
                     }
@@ -201,6 +224,9 @@ public class Main {
                         super.visit(n, arg);
 
                         writer.println(n.toString()+"\n\n");
+<<<<<<< HEAD
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
+=======
 >>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
                     }
                 }.visit(JavaParser.parse(file), null);
@@ -212,10 +238,16 @@ public class Main {
             }
         }).explore(projectDir);
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 
 
 
+=======
+        writer.close();
+    }
+
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 =======
         writer.close();
     }
@@ -283,6 +315,7 @@ public class Main {
    
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //   File projectDir = new File("D:\\Thesis\\Mined\\Input for test run");
       // listMethodDeclaration(projectDir);
       String dir="D:\\Thesis\\Mined\\Input_From_Test_Run\\Test_";
@@ -291,6 +324,8 @@ public class Main {
         }
 
 =======
+=======
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
        File projectDir = new File("D:\\Thesis\\Mined\\Input for test run");
        listMethodDeclaration(projectDir);
        Parse();
@@ -302,6 +337,9 @@ public class Main {
       //File stringDir=new File("D:\\Thesis\\Undergraduate-Thesis\\Java_parser");
      // parseString(stringDir);
       //  listMethodDeclaration(stringDir);
+<<<<<<< HEAD
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
+=======
 >>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 
 
