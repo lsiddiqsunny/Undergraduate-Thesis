@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<<
 touch output.txt #make a output file containing the result of the following query
 grep -EiRl "\"select.*from.*where|\"Insert.*into|\"update.*set|\"delete.*from.*where" ./ >output.txt # search sql query
@@ -36,6 +37,8 @@ done < "output.txt"
 rm output.txt
 
 =======
+=======
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 touch output.txt #make a output file containing the result of the following query
 grep -EiRl "\"select.*from.*where|\"Insert.*into|\"update.*set|\"delete.*from.*where" ./ >output.txt # search sql query
 
@@ -71,5 +74,8 @@ while read -r file; do
   cp -r "$file" "/media/lsiddiqsunny/New Volume/Thesis/Mined/Final_Output_From_28_5_2019" # move the folder to the final folder   
 done < "output.txt"
 rm output.txt
+<<<<<<< HEAD
 
 >>>>>>>
+=======
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8

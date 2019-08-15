@@ -26,7 +26,11 @@ Myset = {}
 Myset = set()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 for i in range(21665):
+=======
+for i in range(8013):
+>>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
 =======
 for i in range(8013):
 >>>>>>> 6bc91c01667b80d78e1998ceef4516381f6f35f8
