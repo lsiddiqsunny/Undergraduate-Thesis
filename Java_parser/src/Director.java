@@ -1,8 +1,10 @@
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class Director {
     public interface FileHandler {
-        void handle(int level, String path, File file);
+        void handle(int level, String path, File file) throws FileNotFoundException, UnsupportedEncodingException;
     }
 
     public interface Filter {
@@ -17,11 +19,11 @@ public class Director {
         this.fileHandler = fileHandler;
     }
 
-    public void explore(File root) {
+    public void explore(File root) throws FileNotFoundException, UnsupportedEncodingException {
         explore(0, "", root);
     }
 
-    private void explore(int level, String path, File file) {
+    private void explore(int level, String path, File file) throws FileNotFoundException, UnsupportedEncodingException {
         if (file.isDirectory()) {
             for (File child : file.listFiles()) {
                 explore(level + 1, path + "/" + child.getName(), child);

@@ -146,3 +146,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+Data_Validation\venv
+Data_Validation\Datssetvalidation\venv
