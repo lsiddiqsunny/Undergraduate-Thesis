@@ -1,0 +1,274 @@
+{
+  "before_code": "con.createStatement().executeUpdate((((((\"UPDATE marca \" + \"SET Nombre \u003d \") + Data.String2Sql(_sNombre, true, false)) + \", Id_Imagen \u003d \") + _iId_Imagen) + \" WHERE Id \u003d \") + _iId)\n",
+  "after_code": "java.lang.String st \u003d \"UPDATE marca \" + \"SET Nombre \u003d ?, Id_Imagen \u003d ? WHERE Id \u003d ?\"\nPreparedStatement ps \u003d con.prepareStatement(st)\nps.setObject(1, Data.String2Sql(_sNombre, true, false))\nps.setObject(2, _iId_Imagen)\nps.setObject(3, _iId)\nps.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "createStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "\"UPDATE marca \"",
+                                    "type": "Literal",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "\"SET Nombre \u003d \"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "String2Sql",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "Data",
+                                    "type": "TypeAccess",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "_sNombre",
+                                    "type": "FieldRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "true",
+                                    "type": "Literal",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "false",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\", Id_Imagen \u003d \"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "_iId_Imagen",
+                        "type": "FieldRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\" WHERE Id \u003d \"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "_iId",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "st",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"UPDATE marca \"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "\"SET Nombre \u003d ?, Id_Imagen \u003d ? WHERE Id \u003d ?\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "st",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "String2Sql",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "Data",
+                "type": "TypeAccess",
+                "children": []
+              },
+              {
+                "label": "_sNombre",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "true",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "false",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "_iId_Imagen",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "_iId",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

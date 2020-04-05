@@ -1,0 +1,480 @@
+{
+  "before_code": "((((((((((((((\"Insert into customer_login (customer_username, customer_password, customer_age, customer_since_from, customer_purchase_id, customer_address, customer_pincode)\" + \"values (\") + register.getUsername()) + \",\") + register.getPassword()) + \",\") + register.getAge()) + \",\") + register.getSinceFrom()) + \",\") + register.getPurchaseId()) + \",\") + register.getAddress()) + \",\") + register.getPincode()) + \")\"\nStatement\nconn.createStatement(r)\ninsertCustome\n",
+  "after_code": "\"Insert into customer_login (customer_username, customer_password, customer_age, customer_since_from, customer_purchase_id, customer_address, customer_pincode)\" + \"values (?,?,?,?,?,?,?)\"\nPreparedStatement\nconn.prepareStatement(insertCustomer)\nprepareRegister.setObject(1, register.getUsername())\nprepareRegister.setObject(2, register.getPassword())\nprepareRegister.setObject(3, register.getAge())\nprepareRegister.setObject(4, register.getSinceFrom())\nprepareRegister.setObject(5, register.getPurchaseId())\nprepareRegister.setObject(6, register.getAddress())\nprepareRegister.setObject(7, register.getPincode())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "PLUS",
+                                                                "type": "BinaryOperator",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "\"Insert into customer_login (customer_username, customer_password, customer_age, customer_since_from, customer_purchase_id, customer_address, customer_pincode)\"",
+                                                                    "type": "Literal",
+                                                                    "children": []
+                                                                  },
+                                                                  {
+                                                                    "label": "\"values (\"",
+                                                                    "type": "Literal",
+                                                                    "children": []
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "label": "getUsername",
+                                                                "type": "Invocation",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "register",
+                                                                    "type": "VariableRead",
+                                                                    "children": []
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "\",\"",
+                                                            "type": "Literal",
+                                                            "children": []
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "getPassword",
+                                                        "type": "Invocation",
+                                                        "children": [
+                                                          {
+                                                            "label": "register",
+                                                            "type": "VariableRead",
+                                                            "children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "\",\"",
+                                                    "type": "Literal",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "getAge",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "register",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "\",\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "getSinceFrom",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "register",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\",\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "getPurchaseId",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "register",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getAddress",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "register",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getPincode",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "register",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "r",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "insertCustome",
+        "type": "FieldRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"Insert into customer_login (customer_username, customer_password, customer_age, customer_since_from, customer_purchase_id, customer_address, customer_pincode)\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "\"values (?,?,?,?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "insertCustomer",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getUsername",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getAge",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getSinceFrom",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPurchaseId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getAddress",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareRegister",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "7",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPincode",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "register",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

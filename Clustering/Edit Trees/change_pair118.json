@@ -1,0 +1,411 @@
+{
+  "before_code": "(((((((((((((\"insert into \" + TBL_NAME) + \" (\") + FIELD_DATA) + \",\") + FIELD_TIPO) + \",\") + FIELD_TBL) + \") values(\") + new Timestamp(java.lang.System.currentTimeMillis())) + \",\") + modifica.getTipo()) + \",\") + modifica.getTabella()) + \")\"\nconn.createStatement()\nquery\n",
+  "after_code": "(((((((\"insert into \" + TBL_NAME) + \" (\") + FIELD_DATA) + \",\") + FIELD_TIPO) + \",\") + FIELD_TBL) + \") values(?,?,?)\"\nconn.prepareStatement(query)\nst.setTimestamp(1, new Timestamp(java.lang.System.currentTimeMillis()))\nst.setObject(2, modifica.getTipo())\nst.setObject(3, modifica.getTabella())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "\"insert into \"",
+                                                                "type": "Literal",
+                                                                "children": []
+                                                              },
+                                                              {
+                                                                "label": "TBL_NAME",
+                                                                "type": "FieldRead",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "\" (\"",
+                                                            "type": "Literal",
+                                                            "children": []
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "FIELD_DATA",
+                                                        "type": "FieldRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "\",\"",
+                                                    "type": "Literal",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "FIELD_TIPO",
+                                                "type": "FieldRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "\",\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "FIELD_TBL",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\") values(\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "Timestamp(long)",
+                                "type": "ConstructorCall",
+                                "children": [
+                                  {
+                                    "label": "currentTimeMillis",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "java.lang.System",
+                                        "type": "TypeAccess",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getTipo",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "modifica",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getTabella",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "modifica",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "\"insert into \"",
+                                        "type": "Literal",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "TBL_NAME",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\" (\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "FIELD_DATA",
+                                "type": "FieldRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "FIELD_TIPO",
+                        "type": "FieldRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "FIELD_TBL",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\") values(?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "query",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "Timestamp(long)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "currentTimeMillis",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "java.lang.System",
+                    "type": "TypeAccess",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getTipo",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "modifica",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getTabella",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "modifica",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "before_code": "(((((\"UPDATE users \" + \"SET password \u003d \") + passwordBean.getPassword1()) + \", change_user_name \u003d javauser, change_date \u003d \") + GenericUtilities.getCurrentTimeStamp()) + \"WHERE id \u003d \") + userId\nStatement\nCONN.createStatement()\npstat.executeUpdate(sql)\n",
+  "after_code": "\"UPDATE users \" + (\"SET password \u003d ?, change_user_name \u003d javauser, change_date \u003d ?\" + \"WHERE id \u003d ?\")\nPreparedStatement\nCONN.prepareStatement(sql)\npstat.setObject(1, passwordBean.getPassword1())\npstat.setTimestamp(2, GenericUtilities.getCurrentTimeStamp())\npstat.setObject(3, userId)\npstat.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "\"UPDATE users \"",
+                                "type": "Literal",
+                                "children": []
+                              },
+                              {
+                                "label": "\"SET password \u003d \"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getPassword1",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "passwordBean",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\", change_user_name \u003d javauser, change_date \u003d \"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getCurrentTimeStamp",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "GenericUtilities",
+                        "type": "TypeAccess",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\"WHERE id \u003d \"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "userId",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "CONN",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"UPDATE users \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SET password \u003d ?, change_user_name \u003d javauser, change_date \u003d ?\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "\"WHERE id \u003d ?\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "CONN",
+            "type": "TypeAccess",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword1",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "passwordBean",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCurrentTimeStamp",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "GenericUtilities",
+                "type": "TypeAccess",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "userId",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

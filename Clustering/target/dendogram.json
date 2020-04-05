@@ -1,0 +1,3376 @@
+{
+  "before_pattern": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "hole_0",
+        "type": "?",
+        "children": []
+      }
+    ]
+  },
+  "after_pattern": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "hole_1",
+        "type": "?",
+        "children": []
+      }
+    ]
+  },
+  "pattern_id": "8,6,9,3,2,11,1,14,12,10,15,13,5,4,7",
+  "children": [
+    {
+      "before_pattern": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": [
+          {
+            "label": "hole_0",
+            "type": "?",
+            "children": []
+          }
+        ]
+      },
+      "after_pattern": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": [
+          {
+            "label": "hole_0",
+            "type": "?",
+            "children": []
+          }
+        ]
+      },
+      "pattern_id": "8,6,9,3,2,11,1,14,12,10,15,13,5,4",
+      "children": [
+        {
+          "before_pattern": {
+            "label": "edit_root",
+            "type": "edit_unit",
+            "children": [
+              {
+                "label": "hole_0",
+                "type": "?",
+                "children": []
+              }
+            ]
+          },
+          "after_pattern": {
+            "label": "edit_root",
+            "type": "edit_unit",
+            "children": [
+              {
+                "label": "hole_1",
+                "type": "?",
+                "children": []
+              }
+            ]
+          },
+          "pattern_id": "8,6,9,3,2",
+          "children": [
+            {
+              "before_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_0",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "after_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_1",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "pattern_id": "8,6",
+              "children": [
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "shell",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "Shell",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getShell",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "getActiveWorkbenchWindow",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "workbench",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "wizard",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "BatchImportTraceWizard",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "BatchImportTraceWizard()",
+                            "type": "ConstructorCall",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "init",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "wizard",
+                            "type": "VariableRead",
+                            "children": []
+                          },
+                          {
+                            "label": "getWorkbench",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "PlatformUI",
+                                "type": "TypeAccess",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "java.lang.Object()",
+                            "type": "ConstructorCall",
+                            "children": [
+                              {
+                                "label": "traceFolder",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "dialog",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "WizardDialog",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "java.lang.Object()",
+                            "type": "ConstructorCall",
+                            "children": [
+                              {
+                                "label": "shell",
+                                "type": "VariableRead",
+                                "children": []
+                              },
+                              {
+                                "label": "wizard",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "open",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "dialog",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "refresh",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "traceFolder",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "NE",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "workbench",
+                                "type": "VariableRead",
+                                "children": []
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "activeWorkbenchWindow",
+                                "type": "LocalVariable",
+                                "children": [
+                                  {
+                                    "label": "IWorkbenchWindow",
+                                    "type": "VARIABLE_TYPE",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "",
+                                    "type": "Modifiers_LocalVariable",
+                                    "children": [
+                                      {
+                                        "label": "final",
+                                        "type": "Modifier",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getActiveWorkbenchWindow",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "workbench",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "NE",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "activeWorkbenchWindow",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "shell",
+                                        "type": "LocalVariable",
+                                        "children": [
+                                          {
+                                            "label": "Shell",
+                                            "type": "VARIABLE_TYPE",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "getShell",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "activeWorkbenchWindow",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "wizard",
+                                        "type": "LocalVariable",
+                                        "children": [
+                                          {
+                                            "label": "BatchImportTraceWizard",
+                                            "type": "VARIABLE_TYPE",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "BatchImportTraceWizard()",
+                                            "type": "ConstructorCall",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "init",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "wizard",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "getWorkbench",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "PlatformUI",
+                                                "type": "TypeAccess",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "java.lang.Object()",
+                                            "type": "ConstructorCall",
+                                            "children": [
+                                              {
+                                                "label": "traceFolder",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "dialog",
+                                        "type": "LocalVariable",
+                                        "children": [
+                                          {
+                                            "label": "WizardDialog",
+                                            "type": "VARIABLE_TYPE",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "java.lang.Object()",
+                                            "type": "ConstructorCall",
+                                            "children": [
+                                              {
+                                                "label": "shell",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "wizard",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "open",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "dialog",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "refresh",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "traceFolder",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pattern_id": "8",
+                  "children": []
+                },
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "fTrace",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "TmfTraceElement",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getFirstElement",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "aSelection",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "traceElement",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "TmfTraceElement",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "",
+                            "type": "Modifiers_LocalVariable",
+                            "children": [
+                              {
+                                "label": "final",
+                                "type": "Modifier",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getElementUnderTraceFolder",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "fTrace",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "equals",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "getEditorInput",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "editorReference",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "tmpInput",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "getEditor",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "editorReference",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "true",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "bringToTop",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "aPage",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "getEditor",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "editorReference",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "false",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "traceElement",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "TmfTraceElement",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getFirstElement",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "aSelection",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\u003d",
+                        "type": "Assignment",
+                        "children": [
+                          {
+                            "label": "traceElement",
+                            "type": "VariableWrite",
+                            "children": []
+                          },
+                          {
+                            "label": "getElementUnderTraceFolder",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "traceElement",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "equals",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "getEditorInput",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "editorReference",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "tmpInput",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "\u003d",
+                                "type": "Assignment",
+                                "children": [
+                                  {
+                                    "label": "localEditor",
+                                    "type": "VariableWrite",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "getEditor",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "editorReference",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "true",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "NE",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "localEditor",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "bringToTop",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "aPage",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "localEditor",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pattern_id": "6",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "before_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_0",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "after_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_1",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "pattern_id": "9,3,2",
+              "children": [
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "key",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "java.lang.String",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getName",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "",
+                                "type": "ArrayRead",
+                                "children": [
+                                  {
+                                    "label": "vars",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "i",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "value",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "java.lang.String",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getValue",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "",
+                                "type": "ArrayRead",
+                                "children": [
+                                  {
+                                    "label": "vars",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "i",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "NE",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "key",
+                            "type": "VariableRead",
+                            "children": []
+                          },
+                          {
+                            "label": "null",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "key",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "AND",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "NE",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "",
+                                "type": "ArrayRead",
+                                "children": [
+                                  {
+                                    "label": "vars",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "i",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "NE",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "getName",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "",
+                                    "type": "ArrayRead",
+                                    "children": [
+                                      {
+                                        "label": "vars",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "i",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "value",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "java.lang.String",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getValue",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "",
+                                "type": "ArrayRead",
+                                "children": [
+                                  {
+                                    "label": "vars",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "i",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getName",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "",
+                            "type": "ArrayRead",
+                            "children": [
+                              {
+                                "label": "vars",
+                                "type": "VariableRead",
+                                "children": []
+                              },
+                              {
+                                "label": "i",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pattern_id": "9",
+                  "children": []
+                },
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "hole_0",
+                        "type": "FieldRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "viewportPosition",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "Position",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "java.lang.Object()",
+                            "type": "ConstructorCall",
+                            "children": [
+                              {
+                                "label": "position",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "viewportLayer",
+                        "type": "LocalVariable",
+                        "children": [
+                          {
+                            "label": "ViewportLayer",
+                            "type": "VARIABLE_TYPE",
+                            "children": []
+                          },
+                          {
+                            "label": "getViewportLayer",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "A",
+                                "type": "TypeAccess",
+                                "children": []
+                              },
+                              {
+                                "label": "viewportPosition",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "EQ",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "viewportLayer",
+                                "type": "VariableRead",
+                                "children": []
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "",
+                                "type": "Throw",
+                                "children": [
+                                  {
+                                    "label": "java.lang.IllegalArgumentException(java.lang.String)",
+                                    "type": "ConstructorCall",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "\"No viewport layer found at position \"",
+                                            "type": "Literal",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "position",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "hole_1",
+                        "type": "LocalVariable",
+                        "children": []
+                      },
+                      {
+                        "label": "hole_2",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "pattern_id": "3,2",
+                  "children": [
+                    {
+                      "before_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "row",
+                            "type": "FieldRead",
+                            "children": [
+                              {
+                                "label": "position",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "after_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "viewportPosition",
+                            "type": "LocalVariable",
+                            "children": [
+                              {
+                                "label": "Position",
+                                "type": "VARIABLE_TYPE",
+                                "children": []
+                              },
+                              {
+                                "label": "java.lang.Object()",
+                                "type": "ConstructorCall",
+                                "children": [
+                                  {
+                                    "label": "position",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "viewportLayer",
+                            "type": "LocalVariable",
+                            "children": [
+                              {
+                                "label": "ViewportLayer",
+                                "type": "VARIABLE_TYPE",
+                                "children": []
+                              },
+                              {
+                                "label": "getViewportLayer",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "A",
+                                    "type": "TypeAccess",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "viewportPosition",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "if",
+                            "type": "If",
+                            "children": [
+                              {
+                                "label": "EQ",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "viewportLayer",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "null",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "THEN",
+                                "type": "then",
+                                "children": [
+                                  {
+                                    "label": "",
+                                    "type": "Throw",
+                                    "children": [
+                                      {
+                                        "label": "java.lang.IllegalArgumentException(java.lang.String)",
+                                        "type": "ConstructorCall",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "\"No viewport layer found at position \"",
+                                                "type": "Literal",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "position",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "scrollableRow",
+                            "type": "LocalVariable",
+                            "children": [
+                              {
+                                "label": "int",
+                                "type": "VARIABLE_TYPE",
+                                "children": []
+                              },
+                              {
+                                "label": "localToUnderlyingRowPosition",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "viewportLayer",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "row",
+                                    "type": "FieldRead",
+                                    "children": [
+                                      {
+                                        "label": "viewportPosition",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "scrollableRow",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      "pattern_id": "3",
+                      "children": []
+                    },
+                    {
+                      "before_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "column",
+                            "type": "FieldRead",
+                            "children": [
+                              {
+                                "label": "position",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "after_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "viewportPosition",
+                            "type": "LocalVariable",
+                            "children": [
+                              {
+                                "label": "Position",
+                                "type": "VARIABLE_TYPE",
+                                "children": []
+                              },
+                              {
+                                "label": "java.lang.Object()",
+                                "type": "ConstructorCall",
+                                "children": [
+                                  {
+                                    "label": "position",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "viewportLayer",
+                            "type": "LocalVariable",
+                            "children": [
+                              {
+                                "label": "ViewportLayer",
+                                "type": "VARIABLE_TYPE",
+                                "children": []
+                              },
+                              {
+                                "label": "getViewportLayer",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "A",
+                                    "type": "TypeAccess",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "viewportPosition",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "if",
+                            "type": "If",
+                            "children": [
+                              {
+                                "label": "EQ",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "viewportLayer",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "null",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "THEN",
+                                "type": "then",
+                                "children": [
+                                  {
+                                    "label": "",
+                                    "type": "Throw",
+                                    "children": [
+                                      {
+                                        "label": "java.lang.IllegalArgumentException(java.lang.String)",
+                                        "type": "ConstructorCall",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "\"No viewport layer found at position \"",
+                                                "type": "Literal",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "position",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "scrollableColumn",
+                            "type": "LocalVariable",
+                            "children": [
+                              {
+                                "label": "int",
+                                "type": "VARIABLE_TYPE",
+                                "children": []
+                              },
+                              {
+                                "label": "localToUnderlyingColumnPosition",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "viewportLayer",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "column",
+                                    "type": "FieldRead",
+                                    "children": [
+                                      {
+                                        "label": "viewportPosition",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "scrollableColumn",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      "pattern_id": "2",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "before_pattern": {
+            "label": "edit_root",
+            "type": "edit_unit",
+            "children": [
+              {
+                "label": "hole_0",
+                "type": "?",
+                "children": []
+              }
+            ]
+          },
+          "after_pattern": {
+            "label": "edit_root",
+            "type": "edit_unit",
+            "children": [
+              {
+                "label": "hole_0",
+                "type": "?",
+                "children": []
+              }
+            ]
+          },
+          "pattern_id": "11,1,14,12,10,15,13,5,4",
+          "children": [
+            {
+              "before_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_0",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "after_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "if",
+                    "type": "If",
+                    "children": [
+                      {
+                        "label": "hole_1",
+                        "type": "?",
+                        "children": []
+                      },
+                      {
+                        "label": "THEN",
+                        "type": "then",
+                        "children": [
+                          {
+                            "label": "hole_0",
+                            "type": "?",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "pattern_id": "11,1,14,12,10,15,13",
+              "children": [
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "hole_0",
+                        "type": "?",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "NE",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "hole_1",
+                                "type": "?",
+                                "children": []
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "hole_0",
+                                "type": "?",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pattern_id": "11,1,14,12,10",
+                  "children": [
+                    {
+                      "before_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "hole_0",
+                            "type": "?",
+                            "children": []
+                          },
+                          {
+                            "label": "hole_1",
+                            "type": "?",
+                            "children": []
+                          }
+                        ]
+                      },
+                      "after_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "if",
+                            "type": "If",
+                            "children": [
+                              {
+                                "label": "NE",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "hole_2",
+                                    "type": "FieldRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "null",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "THEN",
+                                "type": "then",
+                                "children": [
+                                  {
+                                    "label": "hole_0",
+                                    "type": "?",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "hole_1",
+                                    "type": "?",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "pattern_id": "11,1",
+                      "children": [
+                        {
+                          "before_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "clearModelToManager",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "renderer",
+                                    "type": "FieldRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "mainMenu",
+                                    "type": "FieldRead",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "menuManager",
+                                    "type": "FieldRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\u003d",
+                                "type": "Assignment",
+                                "children": [
+                                  {
+                                    "label": "mainMenu",
+                                    "type": "FieldWrite",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "null",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "after_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "NE",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "mainMenu",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "clearModelToManager",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "renderer",
+                                            "type": "FieldRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "mainMenu",
+                                            "type": "FieldRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "menuManager",
+                                            "type": "FieldRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\u003d",
+                                        "type": "Assignment",
+                                        "children": [
+                                          {
+                                            "label": "mainMenu",
+                                            "type": "FieldWrite",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "null",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "pattern_id": "11",
+                          "children": []
+                        },
+                        {
+                          "before_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "pageControl",
+                                "type": "LocalVariable",
+                                "children": [
+                                  {
+                                    "label": "Control",
+                                    "type": "VARIABLE_TYPE",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "getControl",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "activeRec.contentOutlinePage",
+                                        "type": "TypeAccess",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "AND",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "NE",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "pageControl",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "null",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "NOT",
+                                        "type": "UnaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "isDisposed",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "pageControl",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "pageSite",
+                                        "type": "LocalVariable",
+                                        "children": [
+                                          {
+                                            "label": "PageSite",
+                                            "type": "VARIABLE_TYPE",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "getPageSite",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "activeRec",
+                                                "type": "FieldRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "showPage",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "sashEditorPageBook",
+                                            "type": "FieldRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "pageControl",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "setActivePageSite",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "getSite",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "A",
+                                                "type": "TypeAccess",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "pageSite",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "after_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "NE",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "activeRec",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "pageControl",
+                                        "type": "LocalVariable",
+                                        "children": [
+                                          {
+                                            "label": "Control",
+                                            "type": "VARIABLE_TYPE",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "getControl",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "activeRec.contentOutlinePage",
+                                                "type": "TypeAccess",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "if",
+                                        "type": "If",
+                                        "children": [
+                                          {
+                                            "label": "AND",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "NE",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "pageControl",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "null",
+                                                    "type": "Literal",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "NOT",
+                                                "type": "UnaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "isDisposed",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "pageControl",
+                                                        "type": "VariableRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "THEN",
+                                            "type": "then",
+                                            "children": [
+                                              {
+                                                "label": "pageSite",
+                                                "type": "LocalVariable",
+                                                "children": [
+                                                  {
+                                                    "label": "PageSite",
+                                                    "type": "VARIABLE_TYPE",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "getPageSite",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "activeRec",
+                                                        "type": "FieldRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "showPage",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "sashEditorPageBook",
+                                                    "type": "FieldRead",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "pageControl",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "setActivePageSite",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "getSite",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "A",
+                                                        "type": "TypeAccess",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "pageSite",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "pattern_id": "1",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "before_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "hole_0",
+                            "type": "?",
+                            "children": []
+                          }
+                        ]
+                      },
+                      "after_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "if",
+                            "type": "If",
+                            "children": [
+                              {
+                                "label": "NE",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "hole_1",
+                                    "type": "?",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "null",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "THEN",
+                                "type": "then",
+                                "children": [
+                                  {
+                                    "label": "hole_0",
+                                    "type": "?",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "pattern_id": "14,12,10",
+                      "children": [
+                        {
+                          "before_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "",
+                                "type": "For",
+                                "children": [
+                                  {
+                                    "label": "x",
+                                    "type": "LocalVariable",
+                                    "children": [
+                                      {
+                                        "label": "int",
+                                        "type": "VARIABLE_TYPE",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "0",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "LT",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "x",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "length",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "s",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "PREINC",
+                                    "type": "UnaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "x",
+                                        "type": "VariableWrite",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "write",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "A",
+                                        "type": "TypeAccess",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "charAt",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "s",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "x",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "after_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "NE",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "s",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "",
+                                        "type": "For",
+                                        "children": [
+                                          {
+                                            "label": "x",
+                                            "type": "LocalVariable",
+                                            "children": [
+                                              {
+                                                "label": "int",
+                                                "type": "VARIABLE_TYPE",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "0",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "LT",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "x",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "length",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "s",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "PREINC",
+                                            "type": "UnaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "x",
+                                                "type": "VariableWrite",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "write",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "A",
+                                                "type": "TypeAccess",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "charAt",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "s",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "x",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "pattern_id": "14",
+                          "children": []
+                        },
+                        {
+                          "before_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "hole_0",
+                                "type": "Invocation",
+                                "children": []
+                              }
+                            ]
+                          },
+                          "after_pattern": {
+                            "label": "edit_root",
+                            "type": "edit_unit",
+                            "children": [
+                              {
+                                "label": "if",
+                                "type": "If",
+                                "children": [
+                                  {
+                                    "label": "NE",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "hole_1",
+                                        "type": "?",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "THEN",
+                                    "type": "then",
+                                    "children": [
+                                      {
+                                        "label": "hole_0",
+                                        "type": "Invocation",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "pattern_id": "12,10",
+                          "children": [
+                            {
+                              "before_pattern": {
+                                "label": "edit_root",
+                                "type": "edit_unit",
+                                "children": [
+                                  {
+                                    "label": "update",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "getSwtTreeViewer",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "A",
+                                            "type": "TypeAccess",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "node",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "null",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "after_pattern": {
+                                "label": "edit_root",
+                                "type": "edit_unit",
+                                "children": [
+                                  {
+                                    "label": "if",
+                                    "type": "If",
+                                    "children": [
+                                      {
+                                        "label": "NE",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "getSwtTreeViewer",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "A",
+                                                "type": "TypeAccess",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "null",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "THEN",
+                                        "type": "then",
+                                        "children": [
+                                          {
+                                            "label": "update",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "getSwtTreeViewer",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "A",
+                                                    "type": "TypeAccess",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "node",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "null",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "pattern_id": "12",
+                              "children": []
+                            },
+                            {
+                              "before_pattern": {
+                                "label": "edit_root",
+                                "type": "edit_unit",
+                                "children": [
+                                  {
+                                    "label": "refresh",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "targetSelector",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "after_pattern": {
+                                "label": "edit_root",
+                                "type": "edit_unit",
+                                "children": [
+                                  {
+                                    "label": "if",
+                                    "type": "If",
+                                    "children": [
+                                      {
+                                        "label": "NE",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "targetSelector",
+                                            "type": "FieldRead",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "null",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "THEN",
+                                        "type": "then",
+                                        "children": [
+                                          {
+                                            "label": "refresh",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "targetSelector",
+                                                "type": "FieldRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "pattern_id": "10",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "hole_0",
+                        "type": "Invocation",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "hole_1",
+                            "type": "Invocation",
+                            "children": []
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "hole_0",
+                                "type": "Invocation",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pattern_id": "15,13",
+                  "children": [
+                    {
+                      "before_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "setAlpha",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "shell",
+                                "type": "VariableRead",
+                                "children": []
+                              },
+                              {
+                                "label": "255",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "after_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "if",
+                            "type": "If",
+                            "children": [
+                              {
+                                "label": "isValidShell",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "A",
+                                    "type": "TypeAccess",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "shell",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "THEN",
+                                "type": "then",
+                                "children": [
+                                  {
+                                    "label": "setAlpha",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "shell",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "255",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "pattern_id": "15",
+                      "children": []
+                    },
+                    {
+                      "before_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "append",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "A",
+                                "type": "TypeAccess",
+                                "children": []
+                              },
+                              {
+                                "label": "footerMl",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "after_pattern": {
+                        "label": "edit_root",
+                        "type": "edit_unit",
+                        "children": [
+                          {
+                            "label": "if",
+                            "type": "If",
+                            "children": [
+                              {
+                                "label": "isValid",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "Strings",
+                                    "type": "TypeAccess",
+                                    "children": []
+                                  },
+                                  {
+                                    "label": "footerMl",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "THEN",
+                                "type": "then",
+                                "children": [
+                                  {
+                                    "label": "append",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "A",
+                                        "type": "TypeAccess",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "footerMl",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "pattern_id": "13",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "before_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_0",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "after_pattern": {
+                "label": "edit_root",
+                "type": "edit_unit",
+                "children": [
+                  {
+                    "label": "hole_1",
+                    "type": "?",
+                    "children": []
+                  }
+                ]
+              },
+              "pattern_id": "5,4",
+              "children": [
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "printStackTrace",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "e",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "return",
+                        "type": "Return",
+                        "children": [
+                          {
+                            "label": "getProposals",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "fPythonProvider",
+                                "type": "FieldRead",
+                                "children": []
+                              },
+                              {
+                                "label": "context",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "null",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "error",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "Logger",
+                            "type": "TypeAccess",
+                            "children": []
+                          },
+                          {
+                            "label": "Activator.PLUGIN_ID",
+                            "type": "TypeAccess",
+                            "children": []
+                          },
+                          {
+                            "label": "\"Cannot instantiate completion provider in Python world.\"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "e",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "if",
+                        "type": "If",
+                        "children": [
+                          {
+                            "label": "NE",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "fPythonProvider",
+                                "type": "FieldRead",
+                                "children": []
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "THEN",
+                            "type": "then",
+                            "children": [
+                              {
+                                "label": "return",
+                                "type": "Return",
+                                "children": [
+                                  {
+                                    "label": "getProposals",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "fPythonProvider",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "context",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "ArrayList\u003c\u003e()",
+                        "type": "ConstructorCall",
+                        "children": []
+                      }
+                    ]
+                  },
+                  "pattern_id": "5",
+                  "children": []
+                },
+                {
+                  "before_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": []
+                  },
+                  "after_pattern": {
+                    "label": "edit_root",
+                    "type": "edit_unit",
+                    "children": [
+                      {
+                        "label": "isNotNull",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "Assert",
+                            "type": "TypeAccess",
+                            "children": []
+                          },
+                          {
+                            "label": "descriptor",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pattern_id": "4",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "before_pattern": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": [
+          {
+            "label": "activePage",
+            "type": "LocalVariable",
+            "children": [
+              {
+                "label": "IWorkbenchPage",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              },
+              {
+                "label": "getActivePage",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "getActiveWorkbenchWindow",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "getWorkbench",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "PlatformUI",
+                            "type": "TypeAccess",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "activeEditor",
+            "type": "LocalVariable",
+            "children": [
+              {
+                "label": "IEditorPart",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              },
+              {
+                "label": "getActiveEditor",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "activePage",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "if",
+            "type": "If",
+            "children": [
+              {
+                "label": "AND",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "NE",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "activeEditor",
+                        "type": "VariableRead",
+                        "children": []
+                      },
+                      {
+                        "label": "null",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "equals",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "getActivePart",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "activePage",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "activeEditor",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "THEN",
+                "type": "then",
+                "children": [
+                  {
+                    "label": "\u003d",
+                    "type": "Assignment",
+                    "children": [
+                      {
+                        "label": "context",
+                        "type": "VariableWrite",
+                        "children": []
+                      },
+                      {
+                        "label": "getAdapter",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "getEditorInput",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "activeEditor",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "class",
+                            "type": "FieldRead",
+                            "children": [
+                              {
+                                "label": "IInteractionContext",
+                                "type": "TypeAccess",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after_pattern": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": [
+          {
+            "label": "activeWorkbenchWindow",
+            "type": "LocalVariable",
+            "children": [
+              {
+                "label": "IWorkbenchWindow",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              },
+              {
+                "label": "getActiveWorkbenchWindow",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "getWorkbench",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "PlatformUI",
+                        "type": "TypeAccess",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "if",
+            "type": "If",
+            "children": [
+              {
+                "label": "NOT",
+                "type": "UnaryOperator",
+                "children": [
+                  {
+                    "label": "OR",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "EQ",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "activeWorkbenchWindow",
+                            "type": "VariableRead",
+                            "children": []
+                          },
+                          {
+                            "label": "null",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "EQ",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "getActivePage",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "activeWorkbenchWindow",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "null",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "THEN",
+                "type": "then",
+                "children": [
+                  {
+                    "label": "activePage",
+                    "type": "LocalVariable",
+                    "children": [
+                      {
+                        "label": "IWorkbenchPage",
+                        "type": "VARIABLE_TYPE",
+                        "children": []
+                      },
+                      {
+                        "label": "getActivePage",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "activeWorkbenchWindow",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "activeEditor",
+                    "type": "LocalVariable",
+                    "children": [
+                      {
+                        "label": "IEditorPart",
+                        "type": "VARIABLE_TYPE",
+                        "children": []
+                      },
+                      {
+                        "label": "getActiveEditor",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "activePage",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "if",
+                    "type": "If",
+                    "children": [
+                      {
+                        "label": "AND",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "NE",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "activeEditor",
+                                "type": "VariableRead",
+                                "children": []
+                              },
+                              {
+                                "label": "null",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "equals",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "getActivePart",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "activePage",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "activeEditor",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "THEN",
+                        "type": "then",
+                        "children": [
+                          {
+                            "label": "\u003d",
+                            "type": "Assignment",
+                            "children": [
+                              {
+                                "label": "context",
+                                "type": "VariableWrite",
+                                "children": []
+                              },
+                              {
+                                "label": "getAdapter",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "getEditorInput",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "activeEditor",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "class",
+                                    "type": "FieldRead",
+                                    "children": [
+                                      {
+                                        "label": "IInteractionContext",
+                                        "type": "TypeAccess",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pattern_id": "7",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "before_code": "\"SELECT customer_purchase_ID FROM customer_login WHERE customer_username \u003d \" + customer.getUsername()\nStatement\nconn.createStatement()\npurchaseId1\n\"SELECT customer_purchase_ID FROM customer_login WHERE customer_password \u003d \" + customer.getPassword()\nStatement\nconn.createStatement()\npurchaseId2\n",
+  "after_code": "\"SELECT customer_purchase_ID FROM customer_login WHERE customer_username \u003d ?\"\nPreparedStatement\nconn.prepareStatement(purchaseId1)\nprepareUsername.setObject(1, customer.getUsername())\n\"SELECT customer_purchase_ID FROM customer_login WHERE customer_password \u003d ?\"\nPreparedStatement\nconn.prepareStatement(purchaseId2)\npreparePassword.setObject(1, customer.getPassword())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT customer_purchase_ID FROM customer_login WHERE customer_username \u003d \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getUsername",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "customer",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "purchaseId1",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT customer_purchase_ID FROM customer_login WHERE customer_password \u003d \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "customer",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "purchaseId2",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"SELECT customer_purchase_ID FROM customer_login WHERE customer_username \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "purchaseId1",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "prepareUsername",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getUsername",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "customer",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\"SELECT customer_purchase_ID FROM customer_login WHERE customer_password \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "purchaseId2",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "preparePassword",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "customer",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

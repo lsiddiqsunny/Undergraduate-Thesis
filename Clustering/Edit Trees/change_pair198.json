@@ -1,0 +1,256 @@
+{
+  "before_code": "((((\"UPDATE COUNTRY SET COUNTRY\u003d\" + country.getCountry()) + \", LAST_UPDATE\u003d\") + country.getCountry()) + \"WHERE COUNTRY_ID\u003d\") + new java.sql.Timestamp(new Date().getTime())\nStatement\nconnection.createStatement()\np.execute(SQL)\n",
+  "after_code": "\"UPDATE COUNTRY SET COUNTRY\u003d?, LAST_UPDATE\u003d? WHERE COUNTRY_ID\u003d?\"\nPreparedStatement\nconnection.prepareStatement(SQL)\np.setObject(1, country.getCountry())\np.setTimestamp(2, new java.sql.Timestamp(new Date().getTime()))\np.setObject(3, country.getCountry_id())\np.execute()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "\"UPDATE COUNTRY SET COUNTRY\u003d\"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "getCountry",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "country",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\", LAST_UPDATE\u003d\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getCountry",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "country",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\"WHERE COUNTRY_ID\u003d\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "java.util.Date(java.lang.String)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "getTime",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "Date()",
+                    "type": "ConstructorCall",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "SQL",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"UPDATE COUNTRY SET COUNTRY\u003d?, LAST_UPDATE\u003d? WHERE COUNTRY_ID\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "SQL",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCountry",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "country",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "java.util.Date(java.lang.String)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "getTime",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "Date()",
+                    "type": "ConstructorCall",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCountry_id",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "country",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

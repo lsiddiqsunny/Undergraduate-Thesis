@@ -1,0 +1,545 @@
+{
+  "before_code": "((((((((((((((\"UPDATE ingresso SET local\u003d\" + meia.getLocal()) + \", datahora\u003d\") + new java.sql.Date(meia.getDataHora().getTime())) + \", lugar\u003d\") + meia.getLugar()) + \", quantidade\u003d\") + meia.getQuantidade()) + \", idcategoria\u003d\") + meia.getCategoria().getId()) + \", idtipoingresso\u003d\") + meia.getTipoIngresso().getId()) + \", valor\u003d\") + meia.getValor()) + \" WHERE id\u003d\") + meia.getId()\nStatement\ncon.createStatement()\nsql\n",
+  "after_code": "\"UPDATE ingresso SET local\u003d?, datahora\u003d?, lugar\u003d?, quantidade\u003d?, idcategoria\u003d?, idtipoingresso\u003d?, valor\u003d? WHERE id\u003d?\"\nPreparedStatement\ncon.prepareStatement(sql)\nps.setObject(1, meia.getLocal())\nps.setDate(2, new java.sql.Date(meia.getDataHora().getTime()))\nps.setObject(3, meia.getLugar())\nps.setObject(4, meia.getQuantidade())\nps.setObject(5, meia.getCategoria().getId())\nps.setObject(6, meia.getTipoIngresso().getId())\nps.setObject(7, meia.getValor())\nps.setObject(8, meia.getId())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "PLUS",
+                                                                "type": "BinaryOperator",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "\"UPDATE ingresso SET local\u003d\"",
+                                                                    "type": "Literal",
+                                                                    "children": []
+                                                                  },
+                                                                  {
+                                                                    "label": "getLocal",
+                                                                    "type": "Invocation",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "meia",
+                                                                        "type": "VariableRead",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "label": "\", datahora\u003d\"",
+                                                                "type": "Literal",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "java.util.Date(java.lang.String)",
+                                                            "type": "ConstructorCall",
+                                                            "children": [
+                                                              {
+                                                                "label": "getTime",
+                                                                "type": "Invocation",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "getDataHora",
+                                                                    "type": "Invocation",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "meia",
+                                                                        "type": "VariableRead",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "\", lugar\u003d\"",
+                                                        "type": "Literal",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "getLugar",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "meia",
+                                                        "type": "VariableRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\", quantidade\u003d\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "getQuantidade",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "meia",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\", idcategoria\u003d\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getId",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "getCategoria",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "meia",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\", idtipoingresso\u003d\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getId",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "getTipoIngresso",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "meia",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\", valor\u003d\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getValor",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "meia",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\" WHERE id\u003d\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "meia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"UPDATE ingresso SET local\u003d?, datahora\u003d?, lugar\u003d?, quantidade\u003d?, idcategoria\u003d?, idtipoingresso\u003d?, valor\u003d? WHERE id\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getLocal",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "meia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setDate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "java.util.Date(java.lang.String)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "getTime",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "getDataHora",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "meia",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getLugar",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "meia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getQuantidade",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "meia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "getCategoria",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "meia",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "getTipoIngresso",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "meia",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "7",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getValor",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "meia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "8",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "meia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

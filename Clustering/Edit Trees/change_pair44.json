@@ -1,0 +1,119 @@
+{
+  "before_code": "Statement\n(\"SELECT death FROM stats WHERE player \u003d \u0027\" + p.getUniqueId().toString()) + \"\u0027\"\n",
+  "after_code": "PreparedStatement\njava.lang.String query \u003d \"SELECT death FROM stats WHERE player \u003d \u0027?\u0027\"\nquery\nstate.setObject(1, p.getUniqueId().toString())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SELECT death FROM stats WHERE player \u003d \u0027\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "toString",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "getUniqueId",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "p",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\"\u0027\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "query",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"SELECT death FROM stats WHERE player \u003d \u0027?\u0027\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "state",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "toString",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "getUniqueId",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "p",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+Initializing concrete edits.
+15 concrete edits initialized.
+
+last:1
+Best Neighbor:11
+last:11
+Best Neighbor:1
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]},{"label":"hole_1","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_2","type":"FieldRead","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]},{"label":"hole_1","type":"?","children":[]}]}]}]}
+11,1
+2
+3
+1
+
+last:2
+Best Neighbor:3
+last:3
+Best Neighbor:2
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"FieldRead","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"viewportPosition","type":"LocalVariable","children":[{"label":"Position","type":"VARIABLE_TYPE","children":[]},{"label":"java.lang.Object()","type":"ConstructorCall","children":[{"label":"position","type":"VariableRead","children":[]}]}]},{"label":"viewportLayer","type":"LocalVariable","children":[{"label":"ViewportLayer","type":"VARIABLE_TYPE","children":[]},{"label":"getViewportLayer","type":"Invocation","children":[{"label":"A","type":"TypeAccess","children":[]},{"label":"viewportPosition","type":"VariableRead","children":[]}]}]},{"label":"if","type":"If","children":[{"label":"EQ","type":"BinaryOperator","children":[{"label":"viewportLayer","type":"VariableRead","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"","type":"Throw","children":[{"label":"java.lang.IllegalArgumentException(java.lang.String)","type":"ConstructorCall","children":[{"label":"PLUS","type":"BinaryOperator","children":[{"label":"\"No viewport layer found at position \"","type":"Literal","children":[]},{"label":"position","type":"VariableRead","children":[]}]}]}]}]}]},{"label":"hole_1","type":"LocalVariable","children":[]},{"label":"hole_2","type":"VariableRead","children":[]}]}
+3,2
+2
+3
+3
+
+last:4
+Best Neighbor:10
+last:10
+Best Neighbor:12
+last:12
+Best Neighbor:10
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"Invocation","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_1","type":"?","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"Invocation","children":[]}]}]}]}
+12,10
+2
+2
+1
+
+last:4
+Best Neighbor:13
+last:13
+Best Neighbor:15
+last:15
+Best Neighbor:13
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"Invocation","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"hole_1","type":"Invocation","children":[]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"Invocation","children":[]}]}]}]}
+15,13
+2
+2
+1
+
+last:4
+Best Neighbor:12,10
+last:12,10
+Best Neighbor:14
+last:14
+Best Neighbor:12,10
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_1","type":"?","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]}]}]}]}
+14,12,10
+3
+2
+1
+
+last:4
+Best Neighbor:15,13
+last:15,13
+Best Neighbor:14,12,10
+last:14,12,10
+Best Neighbor:11,1
+last:11,1
+Best Neighbor:14,12,10
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_1","type":"?","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]}]}]}]}
+11,1,14,12,10
+4
+2
+1
+
+last:15,13
+Best Neighbor:11,1,14,12,10
+last:11,1,14,12,10
+Best Neighbor:15,13
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"hole_1","type":"?","children":[]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]}]}]}]}
+11,1,14,12,10,15,13
+5
+2
+1
+
+last:4
+Best Neighbor:5
+last:5
+Best Neighbor:4
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+5,4
+2
+2
+2
+
+last:6
+Best Neighbor:5,4
+last:5,4
+Best Neighbor:11,1,14,12,10,15,13
+last:11,1,14,12,10,15,13
+Best Neighbor:5,4
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+11,1,14,12,10,15,13,5,4
+6
+1
+1
+
+last:6
+Best Neighbor:3,2
+last:3,2
+Best Neighbor:9
+last:9
+Best Neighbor:3,2
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+9,3,2
+3
+2
+2
+
+last:6
+Best Neighbor:8
+last:8
+Best Neighbor:6
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+8,6
+2
+2
+2
+
+last:7
+Best Neighbor:9,3,2
+last:9,3,2
+Best Neighbor:8,6
+last:8,6
+Best Neighbor:9,3,2
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+8,6,9,3,2
+4
+0
+0
+
+last:7
+Best Neighbor:11,1,14,12,10,15,13,5,4
+last:11,1,14,12,10,15,13,5,4
+Best Neighbor:8,6,9,3,2
+last:8,6,9,3,2
+Best Neighbor:11,1,14,12,10,15,13,5,4
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+8,6,9,3,2,11,1,14,12,10,15,13,5,4
+7
+1
+1
+
+last:7
+Best Neighbor:8,6,9,3,2,11,1,14,12,10,15,13,5,4
+last:8,6,9,3,2,11,1,14,12,10,15,13,5,4
+Best Neighbor:7
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+8,6,9,3,2,11,1,14,12,10,15,13,5,4,7
+8
+2
+2
+
+
+Process finished with exit code 0

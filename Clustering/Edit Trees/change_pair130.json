@@ -1,0 +1,277 @@
+{
+  "before_code": "(((((\"UPDATE service_order \" + \"SET expiration_date \u003d \") + new java.sql.Date(new java.util.Date().getTime())) + \", change_user_name \u003d javauser, change_date \u003d \") + GenericUtilities.getCurrentTimeStamp()) + \"WHERE id \u003d \") + serviceId\nStatement\nCONN.createStatement()\npstat.executeUpdate(sql)\n",
+  "after_code": "\"UPDATE service_order \" + (\"SET expiration_date \u003d ?, change_user_name \u003d javauser, change_date \u003d ?\" + \"WHERE id \u003d ?\")\nPreparedStatement\nCONN.prepareStatement(sql)\npstat.setDate(1, new java.sql.Date(new java.util.Date().getTime()))\npstat.setTimestamp(2, GenericUtilities.getCurrentTimeStamp())\npstat.setObject(3, serviceId)\npstat.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "\"UPDATE service_order \"",
+                                "type": "Literal",
+                                "children": []
+                              },
+                              {
+                                "label": "\"SET expiration_date \u003d \"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "java.sql.Date(long)",
+                            "type": "ConstructorCall",
+                            "children": [
+                              {
+                                "label": "getTime",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "java.util.Date()",
+                                    "type": "ConstructorCall",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\", change_user_name \u003d javauser, change_date \u003d \"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getCurrentTimeStamp",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "GenericUtilities",
+                        "type": "TypeAccess",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\"WHERE id \u003d \"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "serviceId",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "CONN",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"UPDATE service_order \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SET expiration_date \u003d ?, change_user_name \u003d javauser, change_date \u003d ?\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "\"WHERE id \u003d ?\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "CONN",
+            "type": "TypeAccess",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setDate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "java.sql.Date(long)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "getTime",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "java.util.Date()",
+                    "type": "ConstructorCall",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCurrentTimeStamp",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "GenericUtilities",
+                "type": "TypeAccess",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "serviceId",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

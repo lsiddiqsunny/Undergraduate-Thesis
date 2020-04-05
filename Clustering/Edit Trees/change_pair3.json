@@ -1,0 +1,630 @@
+{
+  "before_code": "Statement\nconn.createStatement()\np.executeUpdate((((((((((((((((((((\"Insert into Alte_Activitati_CD values(\" + alteActivitati.getId_Cadru_Didactic()) + \",\") + alteActivitati.getPregAdmitere()) + \",\") + alteActivitati.getComisiiAbsolvire()) + \",\") + alteActivitati.getConsultatii()) + \",\") + alteActivitati.getExamene()) + \",\") + alteActivitati.getIndrLucrDisert()) + \",\") + alteActivitati.getIndrLucrLic()) + \",\") + alteActivitati.getIndrProiect()) + \",\") + alteActivitati.getLucrControl()) + \",\") + alteActivitati.getSeminariiCerc()) + \")\")\n",
+  "after_code": "PreparedStatement\nconn.prepareStatement(\"Insert into Alte_Activitati_CD values(?,?,?,?,?,?,?,?,?,?)\")\np.setObject(1, alteActivitati.getId_Cadru_Didactic())\np.setObject(2, alteActivitati.getPregAdmitere())\np.setObject(3, alteActivitati.getComisiiAbsolvire())\np.setObject(4, alteActivitati.getConsultatii())\np.setObject(5, alteActivitati.getExamene())\np.setObject(6, alteActivitati.getIndrLucrDisert())\np.setObject(7, alteActivitati.getIndrLucrLic())\np.setObject(8, alteActivitati.getIndrProiect())\np.setObject(9, alteActivitati.getLucrControl())\np.setObject(10, alteActivitati.getSeminariiCerc())\np.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "PLUS",
+                                                                "type": "BinaryOperator",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "PLUS",
+                                                                    "type": "BinaryOperator",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "PLUS",
+                                                                        "type": "BinaryOperator",
+                                                                        "children": [
+                                                                          {
+                                                                            "label": "PLUS",
+                                                                            "type": "BinaryOperator",
+                                                                            "children": [
+                                                                              {
+                                                                                "label": "PLUS",
+                                                                                "type": "BinaryOperator",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "label": "PLUS",
+                                                                                    "type": "BinaryOperator",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "PLUS",
+                                                                                        "type": "BinaryOperator",
+                                                                                        "children": [
+                                                                                          {
+                                                                                            "label": "\"Insert into Alte_Activitati_CD values(\"",
+                                                                                            "type": "Literal",
+                                                                                            "children": []
+                                                                                          },
+                                                                                          {
+                                                                                            "label": "getId_Cadru_Didactic",
+                                                                                            "type": "Invocation",
+                                                                                            "children": [
+                                                                                              {
+                                                                                                "label": "alteActivitati",
+                                                                                                "type": "VariableRead",
+                                                                                                "children": []
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "label": "\",\"",
+                                                                                        "type": "Literal",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "label": "getPregAdmitere",
+                                                                                    "type": "Invocation",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "alteActivitati",
+                                                                                        "type": "VariableRead",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "label": "\",\"",
+                                                                                "type": "Literal",
+                                                                                "children": []
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "label": "getComisiiAbsolvire",
+                                                                            "type": "Invocation",
+                                                                            "children": [
+                                                                              {
+                                                                                "label": "alteActivitati",
+                                                                                "type": "VariableRead",
+                                                                                "children": []
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "label": "\",\"",
+                                                                        "type": "Literal",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "label": "getConsultatii",
+                                                                    "type": "Invocation",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "alteActivitati",
+                                                                        "type": "VariableRead",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "label": "\",\"",
+                                                                "type": "Literal",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "getExamene",
+                                                            "type": "Invocation",
+                                                            "children": [
+                                                              {
+                                                                "label": "alteActivitati",
+                                                                "type": "VariableRead",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "\",\"",
+                                                        "type": "Literal",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "getIndrLucrDisert",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "alteActivitati",
+                                                        "type": "VariableRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\",\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "getIndrLucrLic",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "alteActivitati",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\",\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getIndrProiect",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "alteActivitati",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\",\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getLucrControl",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "alteActivitati",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\",\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getSeminariiCerc",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "alteActivitati",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\")\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"Insert into Alte_Activitati_CD values(?,?,?,?,?,?,?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId_Cadru_Didactic",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPregAdmitere",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getComisiiAbsolvire",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getConsultatii",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getExamene",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIndrLucrDisert",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "7",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIndrLucrLic",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "8",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIndrProiect",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "9",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getLucrControl",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "10",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getSeminariiCerc",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "alteActivitati",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

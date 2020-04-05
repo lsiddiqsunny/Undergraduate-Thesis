@@ -1,0 +1,124 @@
+{
+  "before_code": "\"SELECT * FROM ModRgl WHERE codeModRgl \u003d \" + code\nStatement\nthis.connect.createStatement()\nsql\n",
+  "after_code": "\"SELECT * FROM ModRgl WHERE codeModRgl \u003d ?\"\nPreparedStatement\nthis.connect.prepareStatement(sql)\nselect.setObject(1, code)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT * FROM ModRgl WHERE codeModRgl \u003d \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "code",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connect",
+            "type": "FieldRead",
+            "children": [
+              {
+                "label": "this",
+                "type": "ThisAccess",
+                "children": [
+                  {
+                    "label": "Dummy",
+                    "type": "TypeAccess",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"SELECT * FROM ModRgl WHERE codeModRgl \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connect",
+            "type": "FieldRead",
+            "children": [
+              {
+                "label": "this",
+                "type": "ThisAccess",
+                "children": [
+                  {
+                    "label": "Dummy",
+                    "type": "TypeAccess",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "select",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "code",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

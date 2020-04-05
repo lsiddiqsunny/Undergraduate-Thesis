@@ -1,0 +1,95 @@
+{
+  "before_code": "\"SELECT COURSENAME,TEACHER,ROOMID,COURSERDATE FROM course  WHERE COURSEID\u003d\" + courseid\nconnection.createStatement(sql)\nsql\n",
+  "after_code": "\"SELECT COURSENAME,TEACHER,ROOMID,COURSERDATE FROM course  WHERE COURSEID\u003d?\"\nconnection.prepareStatement(sql)\nstatement.setObject(1, courseid)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT COURSENAME,TEACHER,ROOMID,COURSERDATE FROM course  WHERE COURSEID\u003d\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "courseid",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"SELECT COURSENAME,TEACHER,ROOMID,COURSERDATE FROM course  WHERE COURSEID\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "courseid",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "before_code": "\"DELETE FROM COUNTRY WHERE COUNTRY_ID \u003d \" + country.getCountry_id()\nStatement\nconnection.createStatement()\nSQL\n",
+  "after_code": "\"DELETE FROM COUNTRY WHERE COUNTRY_ID \u003d ?\"\nPreparedStatement\nconnection.prepareStatement(SQL)\np.setObject(1, country.getCountry_id())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"DELETE FROM COUNTRY WHERE COUNTRY_ID \u003d \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCountry_id",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "country",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SQL",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"DELETE FROM COUNTRY WHERE COUNTRY_ID \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "SQL",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCountry_id",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "country",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

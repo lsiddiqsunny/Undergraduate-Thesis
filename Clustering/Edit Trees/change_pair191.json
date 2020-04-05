@@ -1,0 +1,369 @@
+{
+  "before_code": "Statement\nconn.createStatement()\njava.lang.String persona \u003d (((((((\"insert into practica7.PERSONA values (DEFAULT, \u0027\" + nom) + \"\u0027,\u0027\") + llinatge1) + \"\u0027,\u0027\") + llinatge2) + \"\u0027,\u0027\") + dataNaixement) + \"\u0027)\"\n(\"insert into practica7.SOCI values (LAST_INSERT_ID(), \u0027\" + DNI) + \"\u0027)\"\nafegeixUsuariStmt.executeUpdate(persona)\nsoci\n",
+  "after_code": "java.lang.String persona \u003d \"insert into practica7.PERSONA values (DEFAULT, ?,?,?,?)\"\nPreparedStatement\nconn.prepareStatement(persona)\nafegeixUsuariStmt.setObject(1, nom)\nafegeixUsuariStmt.setObject(2, llinatge1)\nafegeixUsuariStmt.setObject(3, llinatge2)\nafegeixUsuariStmt.setObject(4, dataNaixement)\nafegeixUsuariStmt.executeUpdate()\n\"insert into practica7.SOCI values (LAST_INSERT_ID(),?)\"\nafegeixUsuariStmt \u003d conn.prepareStatement(soci)\nafegeixUsuariStmt.setObject(1, DNI)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "persona",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "\"insert into practica7.PERSONA values (DEFAULT, \u0027\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "nom",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\"\u0027,\u0027\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "llinatge1",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\"\u0027,\u0027\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "llinatge2",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\"\u0027,\u0027\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "dataNaixement",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "\"\u0027)\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"insert into practica7.SOCI values (LAST_INSERT_ID(), \u0027\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "DNI",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\"\u0027)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "persona",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "soci",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "persona",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"insert into practica7.PERSONA values (DEFAULT, ?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "persona",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "nom",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "llinatge1",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "llinatge2",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "dataNaixement",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "\"insert into practica7.SOCI values (LAST_INSERT_ID(),?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableWrite",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "soci",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "DNI",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

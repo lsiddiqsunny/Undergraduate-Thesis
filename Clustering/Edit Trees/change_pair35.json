@@ -1,0 +1,91 @@
+{
+  "before_code": "c.createStatement()\n(\"SELECT * FROM ADMIN WHERE EMAIL LIKE \u0027\" + email) + \"\u0027;\"\n",
+  "after_code": "c.prepareStatement(\"SELECT * FROM ADMIN WHERE EMAIL LIKE ?;\")\nstmt.setObject(1, email)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "c",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SELECT * FROM ADMIN WHERE EMAIL LIKE \u0027\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "email",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\"\u0027;\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "c",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "\"SELECT * FROM ADMIN WHERE EMAIL LIKE ?;\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "email",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

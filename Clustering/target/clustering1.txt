@@ -1,0 +1,175 @@
+Initializing concrete edits.
+15 concrete edits initialized.
+
+last:1
+Best Neighbor:10
+last:10
+Best Neighbor:12
+last:12
+Best Neighbor:10
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"Invocation","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_1","type":"?","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"Invocation","children":[]}]}]}]}
+12,10
+2
+2
+1
+
+last:1
+Best Neighbor:11
+last:11
+Best Neighbor:13
+last:13
+Best Neighbor:15
+last:15
+Best Neighbor:13
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"Invocation","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"hole_1","type":"Invocation","children":[]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"Invocation","children":[]}]}]}]}
+15,13
+2
+2
+1
+
+last:11
+Best Neighbor:12,10
+last:12,10
+Best Neighbor:11
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_1","type":"?","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]}]}]}]}
+12,10,11
+3
+2
+1
+
+last:1
+Best Neighbor:14
+last:14
+Best Neighbor:15,13
+last:15,13
+Best Neighbor:14
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"hole_1","type":"?","children":[]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]}]}]}]}
+15,13,14
+3
+2
+1
+
+last:1
+Best Neighbor:12,10,11
+last:12,10,11
+Best Neighbor:1
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"if","type":"If","children":[{"label":"NE","type":"BinaryOperator","children":[{"label":"hole_1","type":"?","children":[]},{"label":"null","type":"Literal","children":[]}]},{"label":"THEN","type":"then","children":[{"label":"hole_0","type":"?","children":[]}]}]}]}
+12,10,11,1
+4
+2
+1
+
+last:2
+Best Neighbor:4
+last:4
+Best Neighbor:5
+last:5
+Best Neighbor:4
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+5,4
+2
+2
+2
+
+last:2
+Best Neighbor:5,4
+last:5,4
+Best Neighbor:15,13,14
+last:15,13,14
+Best Neighbor:5,4
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+15,13,14,5,4
+4
+1
+1
+
+last:2
+Best Neighbor:9
+last:9
+Best Neighbor:2
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+9,2
+2
+2
+2
+
+last:3
+Best Neighbor:6
+last:6
+Best Neighbor:3
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+6,3
+2
+2
+2
+
+last:7
+Best Neighbor:12,10,11,1
+last:12,10,11,1
+Best Neighbor:15,13,14,5,4
+last:15,13,14,5,4
+Best Neighbor:12,10,11,1
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+15,13,14,5,4,12,10,11,1
+5
+1
+1
+
+last:7
+Best Neighbor:8
+last:8
+Best Neighbor:7
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+8,7
+2
+2
+2
+
+last:9,2
+Best Neighbor:6,3
+last:6,3
+Best Neighbor:9,2
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+6,3,9,2
+3
+0
+0
+
+last:15,13,14,5,4,12,10,11,1
+Best Neighbor:8,7
+last:8,7
+Best Neighbor:6,3,9,2
+last:6,3,9,2
+Best Neighbor:8,7
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_1","type":"?","children":[]}]}
+6,3,9,2,8,7
+4
+0
+0
+
+last:15,13,14,5,4,12,10,11,1
+Best Neighbor:6,3,9,2,8,7
+last:6,3,9,2,8,7
+Best Neighbor:15,13,14,5,4,12,10,11,1
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+{"label":"edit_root","type":"edit_unit","children":[{"label":"hole_0","type":"?","children":[]}]}
+6,3,9,2,8,7,15,13,14,5,4,12,10,11,1
+6
+1
+1
+
+
+Process finished with exit code 0
