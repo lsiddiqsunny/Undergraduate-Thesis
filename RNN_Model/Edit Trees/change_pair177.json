@@ -1,0 +1,146 @@
+{
+  "before_code": "Statement\nconnection.createStatement()\nstmt.execute(\"DELETE FROM Usuarios WHERE id\u003d\" + id)\n",
+  "after_code": "PreparedStatement\nconnection.prepareStatement(\"DELETE FROM Usuarios WHERE id\u003d?\")\nstmt.setLong(1, id)\ntry {\r\n    stmt.execute();\r\n} catch (SQLException e) {\r\n    e.printStackTrace();\r\n}\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"DELETE FROM Usuarios WHERE id\u003d\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "id",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "\"DELETE FROM Usuarios WHERE id\u003d?\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setLong",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Try",
+        "children": [
+          {
+            "label": "execute",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "stmt",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "",
+            "type": "Catch",
+            "children": [
+              {
+                "label": "e",
+                "type": "CatchVariable",
+                "children": [
+                  {
+                    "label": "SQLException",
+                    "type": "VARIABLE_TYPE",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "printStackTrace",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "e",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

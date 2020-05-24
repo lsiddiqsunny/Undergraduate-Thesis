@@ -1,0 +1,135 @@
+{
+  "before_code": "c.createStatement()\njava.lang.String sql \u003d (\"SELECT PHONE FROM CUSTOMER WHERE EMAIL \u003d \u0027\" + Login.sendUsername()) + \"\u0027\"\nsql\n",
+  "after_code": "java.lang.String sql \u003d \"SELECT PHONE FROM CUSTOMER WHERE EMAIL \u003d ?\"\nc.prepareStatement(sql)\nstmt.setObject(1, Login.sendUsername())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "c",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "\"SELECT PHONE FROM CUSTOMER WHERE EMAIL \u003d \u0027\"",
+                    "type": "Literal",
+                    "children": []
+                  },
+                  {
+                    "label": "sendUsername",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "Login",
+                        "type": "TypeAccess",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\"\u0027\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"SELECT PHONE FROM CUSTOMER WHERE EMAIL \u003d ?\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "c",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "sendUsername",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "Login",
+                "type": "TypeAccess",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

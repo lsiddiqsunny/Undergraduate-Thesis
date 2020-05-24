@@ -1,0 +1,188 @@
+{
+  "before_code": "Statement\nconnection.createStatement()\njava.lang.String addCourQuery \u003d (((\"INSERT INTO course(courname,faculty) VALUES (\" + courname) + \",\") + facultyCourTextBox.getText()) + \")\"\naddCourQuery\n",
+  "after_code": "java.lang.String addCourQuery \u003d \"INSERT INTO course(courname,faculty) VALUES (?,?)\"\nPreparedStatement\nconnection.prepareStatement(addCourQuery)\nps.setObject(1, courname)\nps.setObject(2, facultyCourTextBox.getText())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "addCourQuery",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "\"INSERT INTO course(courname,faculty) VALUES (\"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "courname",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\",\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getText",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "facultyCourTextBox",
+                        "type": "FieldRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\")\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "addCourQuery",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "addCourQuery",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"INSERT INTO course(courname,faculty) VALUES (?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "addCourQuery",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "courname",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getText",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "facultyCourTextBox",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

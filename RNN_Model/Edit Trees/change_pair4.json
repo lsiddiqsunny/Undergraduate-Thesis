@@ -1,0 +1,630 @@
+{
+  "before_code": "Statement\nconn.createStatement()\np.executeUpdate((((((((((((((((((((\"Insert into State_de_Functii values(\" + state.getIdCadruDidactic()) + \",\") + state.getIdDisciplina()) + \",\") + state.getIdSectia()) + \",\") + state.getAn()) + \",\") + state.getOreC1()) + \",\") + state.getOreS1()) + \",\") + state.getOreL1()) + \",\") + state.getOreC2()) + \",\") + state.getOreS2()) + \",\") + state.getOreL2()) + \")\")\n",
+  "after_code": "PreparedStatement\nconn.prepareStatement(\"Insert into State_de_Functii values(?,?,?,?,?,?,?,?,?,?)\")\np.setObject(1, state.getIdCadruDidactic())\np.setObject(2, state.getIdDisciplina())\np.setObject(3, state.getIdSectia())\np.setObject(4, state.getAn())\np.setObject(5, state.getOreC1())\np.setObject(6, state.getOreS1())\np.setObject(7, state.getOreL1())\np.setObject(8, state.getOreC2())\np.setObject(9, state.getOreS2())\np.setObject(10, state.getOreL2())\np.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "PLUS",
+                                                                "type": "BinaryOperator",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "PLUS",
+                                                                    "type": "BinaryOperator",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "PLUS",
+                                                                        "type": "BinaryOperator",
+                                                                        "children": [
+                                                                          {
+                                                                            "label": "PLUS",
+                                                                            "type": "BinaryOperator",
+                                                                            "children": [
+                                                                              {
+                                                                                "label": "PLUS",
+                                                                                "type": "BinaryOperator",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "label": "PLUS",
+                                                                                    "type": "BinaryOperator",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "PLUS",
+                                                                                        "type": "BinaryOperator",
+                                                                                        "children": [
+                                                                                          {
+                                                                                            "label": "\"Insert into State_de_Functii values(\"",
+                                                                                            "type": "Literal",
+                                                                                            "children": []
+                                                                                          },
+                                                                                          {
+                                                                                            "label": "getIdCadruDidactic",
+                                                                                            "type": "Invocation",
+                                                                                            "children": [
+                                                                                              {
+                                                                                                "label": "state",
+                                                                                                "type": "VariableRead",
+                                                                                                "children": []
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "label": "\",\"",
+                                                                                        "type": "Literal",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "label": "getIdDisciplina",
+                                                                                    "type": "Invocation",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "state",
+                                                                                        "type": "VariableRead",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "label": "\",\"",
+                                                                                "type": "Literal",
+                                                                                "children": []
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "label": "getIdSectia",
+                                                                            "type": "Invocation",
+                                                                            "children": [
+                                                                              {
+                                                                                "label": "state",
+                                                                                "type": "VariableRead",
+                                                                                "children": []
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "label": "\",\"",
+                                                                        "type": "Literal",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "label": "getAn",
+                                                                    "type": "Invocation",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "state",
+                                                                        "type": "VariableRead",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "label": "\",\"",
+                                                                "type": "Literal",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "getOreC1",
+                                                            "type": "Invocation",
+                                                            "children": [
+                                                              {
+                                                                "label": "state",
+                                                                "type": "VariableRead",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "\",\"",
+                                                        "type": "Literal",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "getOreS1",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "state",
+                                                        "type": "VariableRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\",\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "getOreL1",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "state",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\",\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getOreC2",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "state",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\",\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getOreS2",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "state",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\",\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getOreL2",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "state",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\")\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"Insert into State_de_Functii values(?,?,?,?,?,?,?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIdCadruDidactic",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIdDisciplina",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIdSectia",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getAn",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getOreC1",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getOreS1",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "7",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getOreL1",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "8",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getOreC2",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "9",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getOreS2",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "10",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getOreL2",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "state",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,987 @@
+{
+  "before_code": "Statement\njava.lang.String\njava.lang.String sql \u003d ((((((((((((((((((((((((\"insert into atm_user\" + (\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\" + \"value (\")) + user.getId()) + \",\") + user.getUserName()) + \",\") + user.getIdCardNumber()) + \",\") + user.getGender()) + \",\") + date) + \",\") + user.getAddress()) + \",\") + user.getBalance()) + \",\") + user.getAccount()) + \",\") + user.getPassword()) + \",\") + user.getType()) + \",\") + user.getState()) + \",\") + user.getRemark()) + \")\"\n\"insert into atm_user\"\n(\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\" + \"value (\")\n\"value (\"\nuser.getId()\nuser.getUserName()\nuser.getIdCardNumber()\nuser.getGender()\nuser.getAddress()\nuser.getBalance()\nuser.getAccount()\nuser.getPassword()\nuser.getType()\nuser.getState()\nuser.getRemark()\nstatement \u003d con.createStatement()\nsql\n",
+  "after_code": "PreparedStatement\njava.lang.String\njava.lang.String sql \u003d \"insert into atm_user\" + (\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\" + \"value (?,?,?,?,?,?,?,?,?,?,?,?)\")\n\"insert into atm_user\"\n(\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\" + \"value (?,?,?,?,?,?,?,?,?,?,?,?)\")\n\"value (?,?,?,?,?,?,?,?,?,?,?,?)\"\nstatement \u003d con.prepareStatement(sql)\nstatement.setObject(1, user.getId())\nstatement.setObject(2, user.getUserName())\nstatement.setObject(3, user.getIdCardNumber())\nstatement.setObject(4, user.getGender())\nstatement.setObject(5, date)\nstatement.setObject(6, user.getAddress())\nstatement.setObject(7, user.getBalance())\nstatement.setObject(8, user.getAccount())\nstatement.setObject(9, user.getPassword())\nstatement.setObject(10, user.getType())\nstatement.setObject(11, user.getState())\nstatement.setObject(12, user.getRemark())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "java.lang.String"
+      },
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "PLUS",
+                                                                "type": "BinaryOperator",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "PLUS",
+                                                                    "type": "BinaryOperator",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "PLUS",
+                                                                        "type": "BinaryOperator",
+                                                                        "children": [
+                                                                          {
+                                                                            "label": "PLUS",
+                                                                            "type": "BinaryOperator",
+                                                                            "children": [
+                                                                              {
+                                                                                "label": "PLUS",
+                                                                                "type": "BinaryOperator",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "label": "PLUS",
+                                                                                    "type": "BinaryOperator",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "PLUS",
+                                                                                        "type": "BinaryOperator",
+                                                                                        "children": [
+                                                                                          {
+                                                                                            "label": "PLUS",
+                                                                                            "type": "BinaryOperator",
+                                                                                            "children": [
+                                                                                              {
+                                                                                                "label": "PLUS",
+                                                                                                "type": "BinaryOperator",
+                                                                                                "children": [
+                                                                                                  {
+                                                                                                    "label": "PLUS",
+                                                                                                    "type": "BinaryOperator",
+                                                                                                    "children": [
+                                                                                                      {
+                                                                                                        "label": "PLUS",
+                                                                                                        "type": "BinaryOperator",
+                                                                                                        "children": [
+                                                                                                          {
+                                                                                                            "label": "PLUS",
+                                                                                                            "type": "BinaryOperator",
+                                                                                                            "children": [
+                                                                                                              {
+                                                                                                                "label": "\"insert into atm_user\"",
+                                                                                                                "type": "Literal",
+                                                                                                                "children": []
+                                                                                                              },
+                                                                                                              {
+                                                                                                                "label": "PLUS",
+                                                                                                                "type": "BinaryOperator",
+                                                                                                                "children": [
+                                                                                                                  {
+                                                                                                                    "label": "\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\"",
+                                                                                                                    "type": "Literal",
+                                                                                                                    "children": []
+                                                                                                                  },
+                                                                                                                  {
+                                                                                                                    "label": "\"value (\"",
+                                                                                                                    "type": "Literal",
+                                                                                                                    "children": []
+                                                                                                                  }
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            ]
+                                                                                                          },
+                                                                                                          {
+                                                                                                            "label": "getId",
+                                                                                                            "type": "Invocation",
+                                                                                                            "children": [
+                                                                                                              {
+                                                                                                                "label": "user",
+                                                                                                                "type": "FieldRead",
+                                                                                                                "children": []
+                                                                                                              }
+                                                                                                            ]
+                                                                                                          }
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "label": "\",\"",
+                                                                                                        "type": "Literal",
+                                                                                                        "children": []
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "label": "getUserName",
+                                                                                                    "type": "Invocation",
+                                                                                                    "children": [
+                                                                                                      {
+                                                                                                        "label": "user",
+                                                                                                        "type": "FieldRead",
+                                                                                                        "children": []
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              {
+                                                                                                "label": "\",\"",
+                                                                                                "type": "Literal",
+                                                                                                "children": []
+                                                                                              }
+                                                                                            ]
+                                                                                          },
+                                                                                          {
+                                                                                            "label": "getIdCardNumber",
+                                                                                            "type": "Invocation",
+                                                                                            "children": [
+                                                                                              {
+                                                                                                "label": "user",
+                                                                                                "type": "FieldRead",
+                                                                                                "children": []
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "label": "\",\"",
+                                                                                        "type": "Literal",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "label": "getGender",
+                                                                                    "type": "Invocation",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "user",
+                                                                                        "type": "FieldRead",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "label": "\",\"",
+                                                                                "type": "Literal",
+                                                                                "children": []
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "label": "date",
+                                                                            "type": "VariableRead",
+                                                                            "children": []
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "label": "\",\"",
+                                                                        "type": "Literal",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "label": "getAddress",
+                                                                    "type": "Invocation",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "user",
+                                                                        "type": "FieldRead",
+                                                                        "children": []
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "label": "\",\"",
+                                                                "type": "Literal",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "getBalance",
+                                                            "type": "Invocation",
+                                                            "children": [
+                                                              {
+                                                                "label": "user",
+                                                                "type": "FieldRead",
+                                                                "children": []
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "\",\"",
+                                                        "type": "Literal",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "getAccount",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "user",
+                                                        "type": "FieldRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\",\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "getPassword",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "user",
+                                                "type": "FieldRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\",\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getType",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "user",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\",\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getState",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "user",
+                                "type": "FieldRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\",\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getRemark",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "user",
+                        "type": "FieldRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\")\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\"insert into atm_user\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "\"value (\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "\"value (\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "getId",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getUserName",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getIdCardNumber",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getGender",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getAddress",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getBalance",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getAccount",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getPassword",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getType",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getState",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "getRemark",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "user",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableWrite",
+            "children": []
+          },
+          {
+            "label": "createStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "java.lang.String"
+      },
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"insert into atm_user\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\"",
+                    "type": "Literal",
+                    "children": []
+                  },
+                  {
+                    "label": "\"value (?,?,?,?,?,?,?,?,?,?,?,?)\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\"insert into atm_user\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"(id,userName,idCardNumber,gender,birthday,address,balance,account, password,type,state,remark)\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "\"value (?,?,?,?,?,?,?,?,?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "\"value (?,?,?,?,?,?,?,?,?,?,?,?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableWrite",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "sql",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getUserName",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getIdCardNumber",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getGender",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "date",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getAddress",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "7",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getBalance",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "8",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getAccount",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "9",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "10",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getType",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "11",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getState",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "12",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getRemark",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "user",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

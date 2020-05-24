@@ -1,0 +1,101 @@
+{
+  "before_code": "(\"SELECT COURSEID ,COURSENAME,UUIDS,ROOMID,COURSERDATE FROM course WHERE TEACHER\u003d\" + teachername) + \" AND (ROOMID IS NOT NULL AND ROOMID\u003c\u003e\u0027\u0027) \"\nconnection.createStatement()\nsql\n",
+  "after_code": "\"SELECT COURSEID ,COURSENAME,UUIDS,ROOMID,COURSERDATE FROM course WHERE TEACHER\u003d? AND (ROOMID IS NOT NULL AND ROOMID\u003c\u003e\u0027\u0027) \"\nconnection.prepareStatement(sql)\nstatement.setObject(1, teachername)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SELECT COURSEID ,COURSENAME,UUIDS,ROOMID,COURSERDATE FROM course WHERE TEACHER\u003d\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "teachername",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\" AND (ROOMID IS NOT NULL AND ROOMID\u003c\u003e\u0027\u0027) \"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"SELECT COURSEID ,COURSENAME,UUIDS,ROOMID,COURSERDATE FROM course WHERE TEACHER\u003d? AND (ROOMID IS NOT NULL AND ROOMID\u003c\u003e\u0027\u0027) \"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "statement",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "teachername",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

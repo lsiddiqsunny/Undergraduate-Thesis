@@ -1,0 +1,201 @@
+{
+  "before_code": "((\"update inception_music set imageUrl \u003d \" + m.getImageUrl()) + \" where id \u003d \") + m.getId()\nStatement\nutil.getConnection().createStatement()\nps.executeQuery(sql)\n",
+  "after_code": "\"update inception_music set imageUrl \u003d ? where id \u003d ?\"\nPreparedStatement\nutil.getConnection().prepareStatement(sql)\nps.setObject(1, m.getImageUrl())\nps.setObject(2, m.getId())\nps.execute()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "\"update inception_music set imageUrl \u003d \"",
+                    "type": "Literal",
+                    "children": []
+                  },
+                  {
+                    "label": "getImageUrl",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "m",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\" where id \u003d \"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "m",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "getConnection",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "util",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeQuery",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"update inception_music set imageUrl \u003d ? where id \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "getConnection",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "util",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getImageUrl",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "m",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "m",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

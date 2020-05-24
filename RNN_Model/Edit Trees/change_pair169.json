@@ -1,0 +1,178 @@
+{
+  "before_code": "Statement\n(((\"INSERT INTO CUSTOMER(NAME,MOBILE_NUMBER) VALUES(\" + customerAddRequest.getMobileNumber()) + \",\") + customerAddRequest.getName()) + \")\"\ncon.createStatement()\nquery\n",
+  "after_code": "PreparedStatement\n\"INSERT INTO CUSTOMER(NAME,MOBILE_NUMBER) VALUES(?,?)\"\ncon.prepareStatement(query)\nstmt.setLong(1, customerAddRequest.getMobileNumber())\nstmt.setObject(2, customerAddRequest.getName())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "\"INSERT INTO CUSTOMER(NAME,MOBILE_NUMBER) VALUES(\"",
+                        "type": "Literal",
+                        "children": []
+                      },
+                      {
+                        "label": "getMobileNumber",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "customerAddRequest",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getName",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "customerAddRequest",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "\"INSERT INTO CUSTOMER(NAME,MOBILE_NUMBER) VALUES(?,?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "query",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setLong",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getMobileNumber",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "customerAddRequest",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getName",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "customerAddRequest",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

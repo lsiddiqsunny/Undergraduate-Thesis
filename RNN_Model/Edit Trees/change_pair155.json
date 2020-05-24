@@ -1,0 +1,209 @@
+{
+  "before_code": "java.lang.String\njava.lang.String sql \u003d ((\"update inception_music set lyrics \u003d \" + lrc) + \" where id \u003d \") + id\nStatement\nutil.getConnection().createStatement()\nps.executeQuery(sql)\n",
+  "after_code": "java.lang.String\njava.lang.String sql \u003d \"update inception_music set lyrics \u003d ? where id \u003d ?\"\nPreparedStatement\nutil.getConnection().prepareStatement(sql)\nps.setObject(1, lrc)\nps.setObject(2, id)\nps.execute()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "java.lang.String"
+      },
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "\"update inception_music set lyrics \u003d \"",
+                        "type": "Literal",
+                        "children": []
+                      },
+                      {
+                        "label": "lrc",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\" where id \u003d \"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "id",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "getConnection",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "util",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeQuery",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "java.lang.String"
+      },
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"update inception_music set lyrics \u003d ? where id \u003d ?\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "getConnection",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "util",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "lrc",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

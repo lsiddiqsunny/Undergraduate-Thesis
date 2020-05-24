@@ -1,0 +1,222 @@
+{
+  "before_code": "Statement\n((((\"UPDATE User SET password\u003d\" + forgotObj.getPassword()) + \" where userName\u003d\") + forgotObj.getUserName()) + \" and email\u003d\") + forgotObj.getEmail()\nconnection.createStatement()\nsqlQuery\n",
+  "after_code": "PreparedStatement\n\"UPDATE User SET password\u003d? where userName\u003d? and email\u003d?\"\nconnection.prepareStatement(sqlQuery)\npreStat.setObject(1, forgotObj.getPassword())\npreStat.setObject(2, forgotObj.getUserName())\npreStat.setObject(3, forgotObj.getEmail())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "\"UPDATE User SET password\u003d\"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "getPassword",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "forgotObj",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\" where userName\u003d\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getUserName",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "forgotObj",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\" and email\u003d\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "getEmail",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "forgotObj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sqlQuery",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "\"UPDATE User SET password\u003d? where userName\u003d? and email\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sqlQuery",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "preStat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "forgotObj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "preStat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getUserName",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "forgotObj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "preStat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getEmail",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "forgotObj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

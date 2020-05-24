@@ -1,0 +1,100 @@
+{
+  "before_code": "Statement\n\"SELECT pwd FROM member WHERE e_key\u003d\" + key\nconn.createStatement()\nsql\n",
+  "after_code": "PreparedStatement\n\"SELECT pwd FROM member WHERE e_key\u003d?\"\nconn.prepareStatement(sql)\nps.setObject(1, key)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT pwd FROM member WHERE e_key\u003d\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "key",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "\"SELECT pwd FROM member WHERE e_key\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "key",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

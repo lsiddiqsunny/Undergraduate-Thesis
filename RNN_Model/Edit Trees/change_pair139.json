@@ -1,0 +1,218 @@
+{
+  "before_code": "((((\"select SQL_CALC_FOUND_ROWS * from movie m join categories c on m.category_id \u003d c.category_id where c.name \u003d \" + category) + \" ORDER BY movie_id DESC limit \") + offset) + \",\") + noOfRecords\nStatement\ncon.createStatement()\ns\ncon.createStatement()\n\"SELECT FOUND_ROWS()\"\n",
+  "after_code": "\"select SQL_CALC_FOUND_ROWS * from movie m join categories c on m.category_id \u003d c.category_id where c.name \u003d ? ORDER BY movie_id DESC limit ?,? \"\nPreparedStatement\ncon.prepareStatement(s)\npstm.setObject(1, category)\npstm.setObject(2, offset)\npstm.setObject(3, noOfRecords)\ncon.prepareStatement(\"SELECT FOUND_ROWS()\")\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "\"select SQL_CALC_FOUND_ROWS * from movie m join categories c on m.category_id \u003d c.category_id where c.name \u003d \"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "category",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\" ORDER BY movie_id DESC limit \"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "offset",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "\",\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "noOfRecords",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "s",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "\"SELECT FOUND_ROWS()\"",
+        "type": "Literal",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"select SQL_CALC_FOUND_ROWS * from movie m join categories c on m.category_id \u003d c.category_id where c.name \u003d ? ORDER BY movie_id DESC limit ?,? \"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "s",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstm",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "category",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstm",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "offset",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstm",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "noOfRecords",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"SELECT FOUND_ROWS()\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

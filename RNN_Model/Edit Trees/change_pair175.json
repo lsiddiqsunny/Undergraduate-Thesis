@@ -1,0 +1,310 @@
+{
+  "before_code": "((((((((\"INSERT INTO Usuarios\" + \"(nome,Login,senha,email) values(\") + pessoa.getNome()) + \",\") + pessoa.getLogin()) + \",\") + pessoa.getSenha()) + \",\") + pessoa.getEmail()) + \")\"\ndStatement\nconnection.createStatement()\nsql\n",
+  "after_code": "\"INSERT INTO Usuarios\" + \"(nome,Login,senha,email) values(?,?,?,?)\"\nPreparedStatement\nconnection.prepareStatement(sql)\nstmt.setObject(1, pessoa.getNome())\nstmt.setObject(2, pessoa.getLogin())\nstmt.setObject(3, pessoa.getSenha())\nstmt.setObject(4, pessoa.getEmail())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "\"INSERT INTO Usuarios\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          },
+                                          {
+                                            "label": "\"(nome,Login,senha,email) values(\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "getNome",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "pessoa",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\",\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "getLogin",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "pessoa",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getSenha",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "pessoa",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getEmail",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "pessoa",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "dStatement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"INSERT INTO Usuarios\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "\"(nome,Login,senha,email) values(?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getNome",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pessoa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getLogin",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pessoa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getSenha",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pessoa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getEmail",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pessoa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

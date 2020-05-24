@@ -1,0 +1,167 @@
+{
+  "before_code": "Statement\n((\"Select * from User where userName\u003d\" + login.getUserName()) + \" and password\u003d\") + login.getPassword()\nconnection.createStatement()\nsqlQuery\n",
+  "after_code": "PreparedStatement\n\"Select * from User where userName\u003d? and password\u003d?\"\nconnection.prepareStatement(sqlQuery)\npreStat.setObject(1, login.getUserName())\npreStat.setObject(2, login.getPassword())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "\"Select * from User where userName\u003d\"",
+                    "type": "Literal",
+                    "children": []
+                  },
+                  {
+                    "label": "getUserName",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "login",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\" and password\u003d\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "login",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sqlQuery",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "\"Select * from User where userName\u003d? and password\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sqlQuery",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "preStat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getUserName",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "login",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "preStat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPassword",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "login",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

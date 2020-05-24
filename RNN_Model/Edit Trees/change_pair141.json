@@ -1,0 +1,154 @@
+{
+  "before_code": "(((\"INSERT INTO `movie_feature`(`movie_id`, `pic`) VALUES (\" + movie_id) + \",\") + pic) + \")\"\nStatement\ncon.createStatement()\ns\n",
+  "after_code": "\"INSERT INTO `movie_feature`(`movie_id`, `pic`) VALUES (?,?)\"\nPreparedStatement\ncon.prepareStatement(s)\npstm.setObject(1, movie_id)\npstm.setObject(2, pic)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "\"INSERT INTO `movie_feature`(`movie_id`, `pic`) VALUES (\"",
+                        "type": "Literal",
+                        "children": []
+                      },
+                      {
+                        "label": "movie_id",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "pic",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "s",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"INSERT INTO `movie_feature`(`movie_id`, `pic`) VALUES (?,?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "s",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstm",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "movie_id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstm",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "pic",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "before_code": "sql \u003d (((\"insert into shipping values(\" + id) + \",\u0027\") + n) + \"\u0027)\"\nst\nsql\n",
+  "after_code": "sql \u003d \"insert into shipping values ?, \u0027?\u0027)\"\nPreparedStatement ps \u003d con.prepareStatement(sql)\nps.setObject(1, id)\nps.setObject(2, n)\nps\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "sql",
+            "type": "VariableWrite",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "\"insert into shipping values(\"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "id",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\",\u0027\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "n",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "\"\u0027)\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "st",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "sql",
+            "type": "VariableWrite",
+            "children": []
+          },
+          {
+            "label": "\"insert into shipping values ?, \u0027?\u0027)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "sql",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "n",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  }
+}

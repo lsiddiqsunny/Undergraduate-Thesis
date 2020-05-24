@@ -1,0 +1,134 @@
+{
+  "before_code": "\"update inception_music set CTR \u003d CTR + 1 where id \u003d \" + id\nStatement\nutil.getConnection().createStatement()\nps.execute(sql)\n",
+  "after_code": "\"update inception_music set CTR \u003d CTR + 1 where id \u003d ?\"\nPreparedStatement\nutil.getConnection().prepareStatement(sql)\nps.setObject(1, id)\nps.execute()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"update inception_music set CTR \u003d CTR + 1 where id \u003d \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "getConnection",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "util",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"update inception_music set CTR \u003d CTR + 1 where id \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "getConnection",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "util",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

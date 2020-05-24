@@ -1,0 +1,111 @@
+{
+  "before_code": "(\"SELECT cedula_ge, contrasena FROM Gerentes WHERE cedula_ge \u003d \u0027\" + user) + \"\u0027;\"\nStatement\ncon.createStatement()\nsql\n",
+  "after_code": "\"SELECT cedula_ge, contrasena FROM Gerentes WHERE cedula_ge \u003d?;\"\nPreparedStatement\ncon.prepareStatement(sql)\nsentencia.setObject(1, user)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SELECT cedula_ge, contrasena FROM Gerentes WHERE cedula_ge \u003d \u0027\"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "user",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\"\u0027;\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"SELECT cedula_ge, contrasena FROM Gerentes WHERE cedula_ge \u003d?;\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "sentencia",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "user",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

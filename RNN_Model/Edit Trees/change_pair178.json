@@ -1,0 +1,291 @@
+{
+  "before_code": "((\"SELECT * FROM usuarios where Login\u003d\" + pessoa.getLogin()) + \" and senha\u003d\") + pessoa.getSenha()\nStatement\nconnection.createStatement()\ncatch (SQLException e) {\r\n    e.printStackTrace();\r\n}\nsql\n",
+  "after_code": "\"SELECT * FROM usuarios where Login\u003d? and senha\u003d?\"\nPreparedStatement\nconnection.prepareStatement(sql)\ncatch (SQLException e) {\r\n    e.printStackTrace();\r\n}\ntry {\r\n    stmt.setObject(1, pessoa.getLogin());\r\n} catch (SQLException e) {\r\n    e.printStackTrace();\r\n}\ntry {\r\n    stmt.setObject(2, pessoa.getSenha());\r\n} catch (SQLException e) {\r\n    e.printStackTrace();\r\n}\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "\"SELECT * FROM usuarios where Login\u003d\"",
+                    "type": "Literal",
+                    "children": []
+                  },
+                  {
+                    "label": "getLogin",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "pessoa",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\" and senha\u003d\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "getSenha",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pessoa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Catch",
+        "children": [
+          {
+            "label": "e",
+            "type": "CatchVariable",
+            "children": [
+              {
+                "label": "SQLException",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "printStackTrace",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "e",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"SELECT * FROM usuarios where Login\u003d? and senha\u003d?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Catch",
+        "children": [
+          {
+            "label": "e",
+            "type": "CatchVariable",
+            "children": [
+              {
+                "label": "SQLException",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "printStackTrace",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "e",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Try",
+        "children": [
+          {
+            "label": "setObject",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "stmt",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "1",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "getLogin",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "pessoa",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "",
+            "type": "Catch",
+            "children": [
+              {
+                "label": "e",
+                "type": "CatchVariable",
+                "children": [
+                  {
+                    "label": "SQLException",
+                    "type": "VARIABLE_TYPE",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "printStackTrace",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "e",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Try",
+        "children": [
+          {
+            "label": "setObject",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "stmt",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "2",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "getSenha",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "pessoa",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "",
+            "type": "Catch",
+            "children": [
+              {
+                "label": "e",
+                "type": "CatchVariable",
+                "children": [
+                  {
+                    "label": "SQLException",
+                    "type": "VARIABLE_TYPE",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "printStackTrace",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "e",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

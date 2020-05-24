@@ -1,0 +1,685 @@
+{
+  "before_code": "conn.createStatement()\np.executeUpdate((((((((((\"INSERT INTO Cadre_Didactice  VALUES(\" + cd.getPozitia()) + \",\") + cd.getDenumirePost()) + \",\") + cd.getNume()) + \",\") + cd.getFunctia()) + \",\") + cd.getTitVac()) + \")\")\nconn.createStatement()\nResultSet rs \u003d p.executeQuery(((((((((\"Select Id_Cadru_Didactic from Cadre_Didactice where pozitia\u003d\" + cd.getPozitia()) + \" and den_post\u003d\") + cd.getDenumirePost()) + \" and nume\u003d\") + cd.getN) + \" and functia\u003d\") + cd.getFunctia()) + \" and tit_vac\u003d\") + cd.getTitVac())\n",
+  "after_code": "conn.prepareStatement(\"INSERT INTO Cadre_Didactice  VALUES(?,?,?,?,?)\")\np.setObject(1, cd.getPozitia())\np.setObject(2, cd.getDenumirePost())\np.setObject(3, cd.getNume())\np.setObject(4, cd.getFunctia())\np.setObject(5, cd.getTitVac())\np.executeUpdate()\nconn.prepareStatement(\"Select Id_Cadru_Didactic from Cadre_Didactice where pozitia\u003d? and den_post\u003d? and nume\u003d? and functia\u003d? and tit_vac\u003d?\")\np.setObject(1, cd.getPozitia())\np.setObject(2, cd.getDenumirePost())\np.setObject(3, cd.getNume())\np.setObject(4, cd.getFunctia())\np.setObject(5, cd.getTitVac())\nResultSet rs \u003d p.executeQuery()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "\"INSERT INTO Cadre_Didactice  VALUES(\"",
+                                                    "type": "Literal",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "getPozitia",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "cd",
+                                                        "type": "VariableRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\",\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "getDenumirePost",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "cd",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\",\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getNume",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "cd",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\",\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getFunctia",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "cd",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\",\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getTitVac",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "cd",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\")\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "rs",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "ResultSet",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "executeQuery",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "p",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "\"Select Id_Cadru_Didactic from Cadre_Didactice where pozitia\u003d\"",
+                                                    "type": "Literal",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "label": "getPozitia",
+                                                    "type": "Invocation",
+                                                    "children": [
+                                                      {
+                                                        "label": "cd",
+                                                        "type": "VariableRead",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\" and den_post\u003d\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "getDenumirePost",
+                                            "type": "Invocation",
+                                            "children": [
+                                              {
+                                                "label": "cd",
+                                                "type": "VariableRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\" and nume\u003d\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "getN",
+                                    "type": "FieldRead",
+                                    "children": [
+                                      {
+                                        "label": "cd",
+                                        "type": "VariableRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\" and functia\u003d\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "getFunctia",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "cd",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\" and tit_vac\u003d\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getTitVac",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "cd",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"INSERT INTO Cadre_Didactice  VALUES(?,?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPozitia",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getDenumirePost",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getNume",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getFunctia",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getTitVac",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"Select Id_Cadru_Didactic from Cadre_Didactice where pozitia\u003d? and den_post\u003d? and nume\u003d? and functia\u003d? and tit_vac\u003d?\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getPozitia",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getDenumirePost",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getNume",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getFunctia",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getTitVac",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "cd",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "rs",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "ResultSet",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "executeQuery",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "p",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

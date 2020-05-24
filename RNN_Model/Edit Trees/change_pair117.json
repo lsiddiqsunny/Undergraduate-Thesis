@@ -1,0 +1,90 @@
+{
+  "before_code": "Statement\nconn.createStatement()\n\"SELECT * FROM message WHERE original_msg_id\u003d\" + refID\n",
+  "after_code": "PreparedStatement\nconn.prepareStatement(\"SELECT * FROM message WHERE original_msg_id\u003d?\")\nstmt.setLong(1, refID)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT * FROM message WHERE original_msg_id\u003d\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "refID",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"SELECT * FROM message WHERE original_msg_id\u003d?\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setLong",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "refID",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

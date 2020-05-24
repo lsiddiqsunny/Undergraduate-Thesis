@@ -1,0 +1,180 @@
+{
+  "before_code": "Statement\nconnection.createStatement()\n\"SELECT * FROM Notas where usuario_abriu\u003d\" + id1\ncatch (SQLException e) {\r\n    e.printStackTrace();\r\n}\n",
+  "after_code": "PreparedStatement\nconnection.prepareStatement(\"SELECT * FROM Notas where usuario_abriu\u003d?\")\ntry {\r\n    stmt.setObject(1, idl);\r\n} catch (SQLException e) {\r\n    e.printStackTrace();\r\n}\ncatch (SQLException e) {\r\n    e.printStackTrace();\r\n}\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"SELECT * FROM Notas where usuario_abriu\u003d\"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id1",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Catch",
+        "children": [
+          {
+            "label": "e",
+            "type": "CatchVariable",
+            "children": [
+              {
+                "label": "SQLException",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "printStackTrace",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "e",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "\"SELECT * FROM Notas where usuario_abriu\u003d?\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Try",
+        "children": [
+          {
+            "label": "setObject",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "stmt",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "1",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "idl",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "",
+            "type": "Catch",
+            "children": [
+              {
+                "label": "e",
+                "type": "CatchVariable",
+                "children": [
+                  {
+                    "label": "SQLException",
+                    "type": "VARIABLE_TYPE",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "printStackTrace",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "e",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "type": "Catch",
+        "children": [
+          {
+            "label": "e",
+            "type": "CatchVariable",
+            "children": [
+              {
+                "label": "SQLException",
+                "type": "VARIABLE_TYPE",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "printStackTrace",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "e",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

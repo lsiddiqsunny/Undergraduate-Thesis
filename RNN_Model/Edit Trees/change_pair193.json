@@ -1,0 +1,250 @@
+{
+  "before_code": "(((((\"INSERT INTO COUNTRY VALUES (\" + country.getCountry_id()) + \",\") + country.getCountry()) + \",\") + new java.sql.Timestamp(new Date().getTime())) + \")\"\nStatement\nconnection.createStatement(SQL)\nSQL\n",
+  "after_code": "\"INSERT INTO COUNTRY VALUES (?, ?, ?)\"\nPreparedStatement\nconnection.prepareStatement(SQL)\np.setObject(1, country.getCountry_id())\np.setObject(2, country.getCountry())\np.setTimestamp(3, new java.sql.Timestamp(new Date().getTime()))\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "\"INSERT INTO COUNTRY VALUES (\"",
+                                "type": "Literal",
+                                "children": []
+                              },
+                              {
+                                "label": "getCountry_id",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "country",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getCountry",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "country",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "java.util.Date(java.lang.String)",
+                "type": "ConstructorCall",
+                "children": [
+                  {
+                    "label": "getTime",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "Date()",
+                        "type": "ConstructorCall",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "SQL",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "SQL",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"INSERT INTO COUNTRY VALUES (?, ?, ?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connection",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "SQL",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCountry_id",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "country",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCountry",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "country",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "p",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "java.util.Date(java.lang.String)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "getTime",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "Date()",
+                    "type": "ConstructorCall",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "before_code": "Statement\nconn.createStatement()\n(\"SELECT * FROM message WHERE to_id \u003d \" + mid) + \" ORDER BY sent_date DESC\"\n",
+  "after_code": "PreparedStatement\nconn.prepareStatement(\"SELECT * FROM message WHERE to_id \u003d ? ORDER BY sent_date DESC\")\nstmt.setLong(1, mid)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "\"SELECT * FROM message WHERE to_id \u003d \"",
+                "type": "Literal",
+                "children": []
+              },
+              {
+                "label": "mid",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\" ORDER BY sent_date DESC\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"SELECT * FROM message WHERE to_id \u003d ? ORDER BY sent_date DESC\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setLong",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "stmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "mid",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

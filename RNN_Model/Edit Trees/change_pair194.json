@@ -1,0 +1,498 @@
+{
+  "before_code": "Statement\nStatement afegeixLlibreStmt \u003d conn.createStatement()\nconn.createStatement()\njava.lang.String llibre \u003d (((((((((((\"insert into practica7.LLIBRE values (DEFAULT, \" + ISBN) + \",\u0027\") + titol) + \"\u0027,\u0027\") + portada) + \"\u0027,\") + numPag) + \",\u0027\") + editorial) + \"\u0027,\") + autor) + \")\"\njava.lang.String copia \u003d \"insert into practica7.COPIA values (last_insert_id(), NULL)\"\nllibre\nafegeixLlibreStmt\nafegeixLlibreStmt.executeUpdate(copia)\ncopia\n",
+  "after_code": "java.lang.String llibre \u003d \"insert into practica7.LLIBRE values (DEFAULT, ?,?,?,?,?,?)\"\nPreparedStatement\nPreparedStatement afegeixUsuariStmt \u003d conn.prepareStatement(llibre)\nconn.prepareStatement(llibre)\nafegeixUsuariStmt.setObject(1, ISBN)\nafegeixUsuariStmt.setObject(2, titol)\nafegeixUsuariStmt.setObject(3, portada)\nafegeixUsuariStmt.setObject(4, numPag)\nafegeixUsuariStmt.setObject(5, editorial)\nafegeixUsuariStmt.setObject(6, autor)\nafegeixUsuariStmt\njava.lang.String copia \u003d \"insert into practica7.COPIA values (last_insert_id(), NULL)\"\nafegeixUsuariStmt \u003d conn.prepareStatement(copia)\nafegeixUsuariStmt.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "afegeixLlibreStmt",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "Statement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "createStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "llibre",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "\"insert into practica7.LLIBRE values (DEFAULT, \"",
+                                                            "type": "Literal",
+                                                            "children": []
+                                                          },
+                                                          {
+                                                            "label": "ISBN",
+                                                            "type": "VariableRead",
+                                                            "children": []
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "\",\u0027\"",
+                                                        "type": "Literal",
+                                                        "children": []
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "titol",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "\"\u0027,\u0027\"",
+                                                "type": "Literal",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "portada",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "\"\u0027,\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "numPag",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "\",\u0027\"",
+                                "type": "Literal",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "editorial",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\"\u0027,\"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "autor",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "\")\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "copia",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"insert into practica7.COPIA values (last_insert_id(), NULL)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "llibre",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "afegeixLlibreStmt",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixLlibreStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "copia",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "copia",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "llibre",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"insert into practica7.LLIBRE values (DEFAULT, ?,?,?,?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "afegeixUsuariStmt",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "llibre",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "llibre",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "ISBN",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "titol",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "portada",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "numPag",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "editorial",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "autor",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "afegeixUsuariStmt",
+        "type": "VariableRead",
+        "children": []
+      },
+      {
+        "label": "copia",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "\"insert into practica7.COPIA values (last_insert_id(), NULL)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableWrite",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "VariableRead",
+                "children": []
+              },
+              {
+                "label": "copia",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "afegeixUsuariStmt",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

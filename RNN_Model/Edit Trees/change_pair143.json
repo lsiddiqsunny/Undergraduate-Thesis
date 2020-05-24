@@ -1,0 +1,100 @@
+{
+  "before_code": "\"DELETE FROM `movie_feature` where movie_id \u003d \" + movie_id\nStatement\ncon.createStatement()\ns\n",
+  "after_code": "\"DELETE FROM `movie_feature` where movie_id \u003d ?\"\nPreparedStatement\ncon.prepareStatement(s)\npstm.setObject(1, movie_id)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"DELETE FROM `movie_feature` where movie_id \u003d \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "movie_id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "s",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"DELETE FROM `movie_feature` where movie_id \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "con",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "s",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstm",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "movie_id",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

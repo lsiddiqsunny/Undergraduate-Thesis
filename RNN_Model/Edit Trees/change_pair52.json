@@ -1,0 +1,307 @@
+{
+  "before_code": "Statement\n(((((((((\"insert into \" + TBL_NAME) + \" (\") + FIELD_NOME) + \",\") + FIELD_ID_PIANO) + \") values(\") + mappa.getNome()) + \",\") + mappa.getID_piano()) + \")\"\nconn.createStatement()\nquery\n",
+  "after_code": "PreparedStatement\n\"insert into ? (?,?) values(?,?)\"\nconn.prepareStatement(query)\nst.setObject(1, TBL_NAME)\nst.setObject(2, FIELD_NOME)\nst.setObject(3, FIELD_ID_PIANO)\nst.setObject(4, mappa.getNome())\nst.setObject(5, mappa.getID_piano())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "\"insert into \"",
+                                                "type": "Literal",
+                                                "children": []
+                                              },
+                                              {
+                                                "label": "TBL_NAME",
+                                                "type": "FieldRead",
+                                                "children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "\" (\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "FIELD_NOME",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\",\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "FIELD_ID_PIANO",
+                                "type": "FieldRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\") values(\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getNome",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "mappa",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getID_piano",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "mappa",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "\"insert into ? (?,?) values(?,?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "query",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "TBL_NAME",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "FIELD_NOME",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "FIELD_ID_PIANO",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getNome",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "mappa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getID_piano",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "mappa",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

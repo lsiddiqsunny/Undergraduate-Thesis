@@ -1,0 +1,223 @@
+{
+  "before_code": "Statement\nconn.createStatement()\n(((((\"insert into mensagem(de, para, mensagem) values(\" + msg.getDeEmail()) + \",\") + msg.getParaEmail()) + \",\") + msg.getMensagem()) + \")\"\n",
+  "after_code": "PreparedStatement\nconn.prepareStatement(\"insert into mensagem(de, para, mensagem) values(?,?,?)\")\npstmt.setObject(1, msg.getDeEmail())\npstmt.setObject(2, msg.getParaEmail())\npstmt.setObject(3, msg.getMensagem())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "\"insert into mensagem(de, para, mensagem) values(\"",
+                                "type": "Literal",
+                                "children": []
+                              },
+                              {
+                                "label": "getDeEmail",
+                                "type": "Invocation",
+                                "children": [
+                                  {
+                                    "label": "msg",
+                                    "type": "VariableRead",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getParaEmail",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "msg",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getMensagem",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "msg",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "\"insert into mensagem(de, para, mensagem) values(?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getDeEmail",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "msg",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getParaEmail",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "msg",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getMensagem",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "msg",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

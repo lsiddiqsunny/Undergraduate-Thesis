@@ -1,0 +1,221 @@
+{
+  "before_code": "conn.createStatement()\nint n \u003d pstmt.executeUpdate((((((\"INSERT INTO member (account,passwd,realname) VALUES (\" + account) + \",\") + passwd) + \",\") + realName) + \")\")\n",
+  "after_code": "conn.prepareStatement(\"INSERT INTO member (account,passwd,realname) VALUES (?,?,?)\")\npstmt.setObject(1, account)\npstmt.setObject(2, passwd)\npstmt.setObject(3, realName)\nint n \u003d pstmt.executeUpdate()\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "n",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "int",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "executeUpdate",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pstmt",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "\"INSERT INTO member (account,passwd,realname) VALUES (\"",
+                                        "type": "Literal",
+                                        "children": []
+                                      },
+                                      {
+                                        "label": "account",
+                                        "type": "FieldRead",
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\",\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "passwd",
+                                "type": "FieldRead",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "realName",
+                        "type": "FieldRead",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\")\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "conn",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "\"INSERT INTO member (account,passwd,realname) VALUES (?,?,?)\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "account",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "passwd",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "realName",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "n",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "int",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "executeUpdate",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "pstmt",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

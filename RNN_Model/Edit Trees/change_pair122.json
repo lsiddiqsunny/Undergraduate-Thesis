@@ -1,0 +1,222 @@
+{
+  "before_code": "((((\"UPDATE ModRgl SET codeModRgl \u003d \" + obj.getCodeModRgl()) + \", nomModRgl \u003d \") + obj.getNomModRgl()) + \" WHERE id \u003d \") + obj.getId()\nStatement\nconnect.createStatement()\nsql\n",
+  "after_code": "\"UPDATE ModRgl SET codeModRgl \u003d ?, nomModRgl \u003d ? WHERE id \u003d ?\"\nPreparedStatement\nconnect.prepareStatement(sql)\nupdate.setObject(1, obj.getCodeModRgl())\nupdate.setObject(2, obj.getNomModRgl())\nupdate.setObject(3, obj.getId())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "\"UPDATE ModRgl SET codeModRgl \u003d \"",
+                            "type": "Literal",
+                            "children": []
+                          },
+                          {
+                            "label": "getCodeModRgl",
+                            "type": "Invocation",
+                            "children": [
+                              {
+                                "label": "obj",
+                                "type": "VariableRead",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "\", nomModRgl \u003d \"",
+                        "type": "Literal",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "getNomModRgl",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "obj",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "\" WHERE id \u003d \"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "obj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connect",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"UPDATE ModRgl SET codeModRgl \u003d ?, nomModRgl \u003d ? WHERE id \u003d ?\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connect",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "update",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCodeModRgl",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "obj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "update",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getNomModRgl",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "obj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "update",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "obj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

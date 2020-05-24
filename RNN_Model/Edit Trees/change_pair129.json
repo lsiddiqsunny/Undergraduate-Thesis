@@ -1,0 +1,695 @@
+{
+  "before_code": "((((((((((((((((((\"INSERT INTO service_order \" + ((\"(memberid, service_group, service_type_mow, service_type_edge, service_type_rake, \" + \"instruction, need_by_date, create_user_name, create_date, change_user_name, change_date)\") + \"VALUES (\")) + serviceOrder.getId()) + \",\") + serviceOrder.getServiceGroup()) + \",\") + serviceOrder.getServiceTypeMow()) + \",\") + serviceOrder.getServiceTypeEdge()) + \",\") + serviceOrder.getServiceTypeRake()) + \",\") + serviceOrder.getInstruction()) + \",\") + new java.sql.Date(serviceOrder.getNeedByDate().getTime())) + \",javauser,\") + GenericUtilities.getCurrentTimeStamp()) + \",javauser,\") + GenericUtilities.getCurrentTimeStamp()) + \")\"\nStatement\nCONN.createStatement()\nsql\n",
+  "after_code": "\"INSERT INTO service_order \" + ((\"(memberid, service_group, service_type_mow, service_type_edge, service_type_rake, \" + \"instruction, need_by_date, create_user_name, create_date, change_user_name, change_date)\") + \"VALUES (?,?,?,?,?,?,?,?,?,?,?)\")\nPreparedStatement\nCONN.prepareStatement(sql)\npstat.setObject(1, serviceOrder.getId())\npstat.setObject(2, serviceOrder.getServiceGroup())\npstat.setObject(3, serviceOrder.getServiceTypeMow())\npstat.setObject(4, serviceOrder.getServiceTypeEdge())\npstat.setObject(5, serviceOrder.getServiceTypeRake())\npstat.setObject(6, serviceOrder.getInstruction())\npstat.setDate(7, new java.sql.Date(serviceOrder.getNeedByDate().getTime()))\npstat.setObject(8, \"javauser\")\npstat.setTimestamp(9, GenericUtilities.getCurrentTimeStamp())\npstat.setObject(10, \"javauser\")\npstat.setTimestamp(11, GenericUtilities.getCurrentTimeStamp())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "PLUS",
+                        "type": "BinaryOperator",
+                        "children": [
+                          {
+                            "label": "PLUS",
+                            "type": "BinaryOperator",
+                            "children": [
+                              {
+                                "label": "PLUS",
+                                "type": "BinaryOperator",
+                                "children": [
+                                  {
+                                    "label": "PLUS",
+                                    "type": "BinaryOperator",
+                                    "children": [
+                                      {
+                                        "label": "PLUS",
+                                        "type": "BinaryOperator",
+                                        "children": [
+                                          {
+                                            "label": "PLUS",
+                                            "type": "BinaryOperator",
+                                            "children": [
+                                              {
+                                                "label": "PLUS",
+                                                "type": "BinaryOperator",
+                                                "children": [
+                                                  {
+                                                    "label": "PLUS",
+                                                    "type": "BinaryOperator",
+                                                    "children": [
+                                                      {
+                                                        "label": "PLUS",
+                                                        "type": "BinaryOperator",
+                                                        "children": [
+                                                          {
+                                                            "label": "PLUS",
+                                                            "type": "BinaryOperator",
+                                                            "children": [
+                                                              {
+                                                                "label": "PLUS",
+                                                                "type": "BinaryOperator",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "PLUS",
+                                                                    "type": "BinaryOperator",
+                                                                    "children": [
+                                                                      {
+                                                                        "label": "PLUS",
+                                                                        "type": "BinaryOperator",
+                                                                        "children": [
+                                                                          {
+                                                                            "label": "PLUS",
+                                                                            "type": "BinaryOperator",
+                                                                            "children": [
+                                                                              {
+                                                                                "label": "PLUS",
+                                                                                "type": "BinaryOperator",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "label": "\"INSERT INTO service_order \"",
+                                                                                    "type": "Literal",
+                                                                                    "children": []
+                                                                                  },
+                                                                                  {
+                                                                                    "label": "PLUS",
+                                                                                    "type": "BinaryOperator",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "label": "PLUS",
+                                                                                        "type": "BinaryOperator",
+                                                                                        "children": [
+                                                                                          {
+                                                                                            "label": "\"(memberid, service_group, service_type_mow, service_type_edge, service_type_rake, \"",
+                                                                                            "type": "Literal",
+                                                                                            "children": []
+                                                                                          },
+                                                                                          {
+                                                                                            "label": "\"instruction, need_by_date, create_user_name, create_date, change_user_name, change_date)\"",
+                                                                                            "type": "Literal",
+                                                                                            "children": []
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "label": "\"VALUES (\"",
+                                                                                        "type": "Literal",
+                                                                                        "children": []
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "label": "getId",
+                                                                                "type": "Invocation",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "label": "serviceOrder",
+                                                                                    "type": "VariableRead",
+                                                                                    "children": []
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "label": "\",\"",
+                                                                            "type": "Literal",
+                                                                            "children": []
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "label": "getServiceGroup",
+                                                                        "type": "Invocation",
+                                                                        "children": [
+                                                                          {
+                                                                            "label": "serviceOrder",
+                                                                            "type": "VariableRead",
+                                                                            "children": []
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "label": "\",\"",
+                                                                    "type": "Literal",
+                                                                    "children": []
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "label": "getServiceTypeMow",
+                                                                "type": "Invocation",
+                                                                "children": [
+                                                                  {
+                                                                    "label": "serviceOrder",
+                                                                    "type": "VariableRead",
+                                                                    "children": []
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "label": "\",\"",
+                                                            "type": "Literal",
+                                                            "children": []
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "label": "getServiceTypeEdge",
+                                                        "type": "Invocation",
+                                                        "children": [
+                                                          {
+                                                            "label": "serviceOrder",
+                                                            "type": "VariableRead",
+                                                            "children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "label": "\",\"",
+                                                    "type": "Literal",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "label": "getServiceTypeRake",
+                                                "type": "Invocation",
+                                                "children": [
+                                                  {
+                                                    "label": "serviceOrder",
+                                                    "type": "VariableRead",
+                                                    "children": []
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "label": "\",\"",
+                                            "type": "Literal",
+                                            "children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "label": "getInstruction",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "serviceOrder",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "\",\"",
+                                    "type": "Literal",
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "java.util.Date(java.lang.String)",
+                                "type": "ConstructorCall",
+                                "children": [
+                                  {
+                                    "label": "getTime",
+                                    "type": "Invocation",
+                                    "children": [
+                                      {
+                                        "label": "getNeedByDate",
+                                        "type": "Invocation",
+                                        "children": [
+                                          {
+                                            "label": "serviceOrder",
+                                            "type": "VariableRead",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "\",javauser,\"",
+                            "type": "Literal",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "getCurrentTimeStamp",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "GenericUtilities",
+                            "type": "TypeAccess",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\",javauser,\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getCurrentTimeStamp",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "GenericUtilities",
+                    "type": "TypeAccess",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "CONN",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "\"INSERT INTO service_order \"",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "\"(memberid, service_group, service_type_mow, service_type_edge, service_type_rake, \"",
+                    "type": "Literal",
+                    "children": []
+                  },
+                  {
+                    "label": "\"instruction, need_by_date, create_user_name, create_date, change_user_name, change_date)\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "\"VALUES (?,?,?,?,?,?,?,?,?,?,?)\"",
+                "type": "Literal",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "CONN",
+            "type": "TypeAccess",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "serviceOrder",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getServiceGroup",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "serviceOrder",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getServiceTypeMow",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "serviceOrder",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "4",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getServiceTypeEdge",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "serviceOrder",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "5",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getServiceTypeRake",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "serviceOrder",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "6",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getInstruction",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "serviceOrder",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setDate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "7",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "java.util.Date(java.lang.String)",
+            "type": "ConstructorCall",
+            "children": [
+              {
+                "label": "getTime",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "getNeedByDate",
+                    "type": "Invocation",
+                    "children": [
+                      {
+                        "label": "serviceOrder",
+                        "type": "VariableRead",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "8",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "\"javauser\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "9",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCurrentTimeStamp",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "GenericUtilities",
+                "type": "TypeAccess",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "10",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "\"javauser\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setTimestamp",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstat",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "11",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCurrentTimeStamp",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "GenericUtilities",
+                "type": "TypeAccess",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

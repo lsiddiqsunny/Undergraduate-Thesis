@@ -1,0 +1,178 @@
+{
+  "before_code": "(((\"INSERT INTO ModRgl (codeModRgl, nomModRgl) VALUES (\" + obj.getCodeModRgl()) + \", \") + obj.getNomModRgl()) + \")\"\nStatement\nconnect.createStatement()\nsql\n",
+  "after_code": "\"INSERT INTO ModRgl (codeModRgl, nomModRgl) VALUES (?, ?)\"\nPreparedStatement\nconnect.prepareStatement(sql)\ninsert.setObject(1, obj.getCodeModRgl())\ninsert.setObject(2, obj.getNomModRgl())\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "\"INSERT INTO ModRgl (codeModRgl, nomModRgl) VALUES (\"",
+                        "type": "Literal",
+                        "children": []
+                      },
+                      {
+                        "label": "getCodeModRgl",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "obj",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\", \"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "getNomModRgl",
+                "type": "Invocation",
+                "children": [
+                  {
+                    "label": "obj",
+                    "type": "VariableRead",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "\")\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connect",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "sql",
+        "type": "VariableRead",
+        "children": []
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "\"INSERT INTO ModRgl (codeModRgl, nomModRgl) VALUES (?, ?)\"",
+        "type": "Literal",
+        "children": []
+      },
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connect",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "insert",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getCodeModRgl",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "obj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "insert",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getNomModRgl",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "obj",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

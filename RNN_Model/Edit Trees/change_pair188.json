@@ -1,0 +1,156 @@
+{
+  "before_code": "Statement\nconnexion.createStatement()\n(((\"INSERT INTO VARIETE VALUES (\u0027\" + variete.getLibelle()) + \"\u0027,\") + aoc) + \") ;\"\n",
+  "after_code": "PreparedStatement\nconnexion.prepareStatement(\"INSERT INTO VARIETE VALUES (?,?) ;\")\nrequete.setObject(1, variete.getLibelle())\nrequete.setObject(2, aoc)\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "Statement"
+      },
+      {
+        "label": "createStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connexion",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "PLUS",
+        "type": "BinaryOperator",
+        "children": [
+          {
+            "label": "PLUS",
+            "type": "BinaryOperator",
+            "children": [
+              {
+                "label": "PLUS",
+                "type": "BinaryOperator",
+                "children": [
+                  {
+                    "label": "PLUS",
+                    "type": "BinaryOperator",
+                    "children": [
+                      {
+                        "label": "\"INSERT INTO VARIETE VALUES (\u0027\"",
+                        "type": "Literal",
+                        "children": []
+                      },
+                      {
+                        "label": "getLibelle",
+                        "type": "Invocation",
+                        "children": [
+                          {
+                            "label": "variete",
+                            "type": "VariableRead",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "\"\u0027,\"",
+                    "type": "Literal",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "aoc",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "\") ;\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "type": "root",
+        "children": [],
+        "label": "PreparedStatement"
+      },
+      {
+        "label": "prepareStatement",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "connexion",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "\"INSERT INTO VARIETE VALUES (?,?) ;\"",
+            "type": "Literal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "requete",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getLibelle",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "variete",
+                "type": "VariableRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "requete",
+            "type": "VariableRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "aoc",
+            "type": "VariableRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}
