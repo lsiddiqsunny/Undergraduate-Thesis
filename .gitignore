@@ -163,3 +163,4 @@ cython_debug/
 
 GitMiner\venv\
 .vscode
+RNN_Model/Edit Trees/
