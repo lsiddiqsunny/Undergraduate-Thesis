@@ -1,0 +1,1 @@
+ select * from  TBL_NAME  where  FIELD_ID  = search_id

@@ -1,0 +1,11 @@
+{
+  "Delete": {
+    "Table": [
+      {
+        "tableName": "ingresso",
+        "tableAlias": ""
+      }
+    ],
+    "where clause": "WHERE id\u003d id"
+  }
+}

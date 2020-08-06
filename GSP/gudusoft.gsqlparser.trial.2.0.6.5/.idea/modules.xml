@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/gudusoft.gsqlparser.trial.2.0.6.5.iml" filepath="$PROJECT_DIR$/.idea/gudusoft.gsqlparser.trial.2.0.6.5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/test/test.iml" filepath="$PROJECT_DIR$/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/test/java/test1.iml" filepath="$PROJECT_DIR$/src/test/java/test1.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,1059 @@
+<sqlscript xmlns="http://www.sqlparser.com/xml/sqlschema/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dbvendor="dbvoracle" stmt_count="10" xsi:schemaLocation="http://www.sqlparser.com/xml/sqlschema/1.0 file:/C:/prg/gsp_java_maven/doc/xml/sqlschema.xsd">
+  <statement type="sstupdate">
+    <update_statement>
+      <target_table type="objectname">
+        <named_table_reference>
+          <table_name object_type="table">
+            <full_name>Customers</full_name>
+            <object_name>Customers</object_name>
+          </table_name>
+        </named_table_reference>
+      </target_table>
+      <set_clause expr_type="assignment_t">
+        <assignment_expr>
+          <first_expr expr_type="simple_object_name_t">
+            <column_referenced_expr>
+              <objectName object_type="column">
+                <full_name>ContactName</full_name>
+                <part_name>ContactName</part_name>
+              </objectName>
+            </column_referenced_expr>
+          </first_expr>
+          <second_expr expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Juan'</value>
+              </literal>
+            </constant_expr>
+          </second_expr>
+        </assignment_expr>
+      </set_clause>
+      <where_clause>
+        <condition expr_type="pattern_matching_t">
+          <like_expr>
+            <first_expr expr_type="simple_object_name_t">
+              <column_referenced_expr>
+                <objectName object_type="column">
+                  <full_name>Country</full_name>
+                  <part_name>Country</part_name>
+                </objectName>
+              </column_referenced_expr>
+            </first_expr>
+            <second_expr expr_type="simple_constant_t">
+              <constant_expr>
+                <literal>
+                  <value>'Mexico'</value>
+                </literal>
+              </constant_expr>
+            </second_expr>
+          </like_expr>
+        </condition>
+      </where_clause>
+    </update_statement>
+  </statement>
+  <statement type="sstupdate">
+    <update_statement>
+      <target_table type="objectname">
+        <named_table_reference>
+          <table_name object_type="table">
+            <full_name>Customers</full_name>
+            <object_name>Customers</object_name>
+          </table_name>
+        </named_table_reference>
+      </target_table>
+      <set_clause expr_type="assignment_t">
+        <assignment_expr>
+          <first_expr expr_type="simple_object_name_t">
+            <column_referenced_expr>
+              <objectName object_type="column">
+                <full_name>ContactName</full_name>
+                <part_name>ContactName</part_name>
+              </objectName>
+            </column_referenced_expr>
+          </first_expr>
+          <second_expr expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Juan'</value>
+              </literal>
+            </constant_expr>
+          </second_expr>
+        </assignment_expr>
+      </set_clause>
+    </update_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>*</full_name>
+                    <part_name>*</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="objectname">
+              <named_table_reference>
+                <table_name object_type="table">
+                  <full_name>Customers</full_name>
+                  <object_name>Customers</object_name>
+                </table_name>
+              </named_table_reference>
+            </table_reference>
+          </from_clause>
+          <where_clause>
+            <condition expr_type="logical_not_t">
+              <not_expr>
+                <first_expr expr_type="simple_comparison_t">
+                  <comparison_expr type="=">
+                    <first_expr expr_type="simple_object_name_t">
+                      <column_referenced_expr>
+                        <objectName object_type="column">
+                          <full_name>Country</full_name>
+                          <part_name>Country</part_name>
+                        </objectName>
+                      </column_referenced_expr>
+                    </first_expr>
+                    <second_expr expr_type="simple_constant_t">
+                      <constant_expr>
+                        <literal>
+                          <value>'Germany'</value>
+                        </literal>
+                      </constant_expr>
+                    </second_expr>
+                  </comparison_expr>
+                </first_expr>
+              </not_expr>
+            </condition>
+          </where_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>name</full_name>
+                    <part_name>name</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>salary</full_name>
+                    <part_name>salary</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="objectname">
+              <named_table_reference>
+                <table_name object_type="table">
+                  <full_name>employees</full_name>
+                  <object_name>employees</object_name>
+                </table_name>
+                <alias_clause with_as="false">
+                  <object_name object_type="table_alias">
+                    <full_name>e</full_name>
+                    <object_name>e</object_name>
+                  </object_name>
+                </alias_clause>
+              </named_table_reference>
+            </table_reference>
+            <table_reference type="objectname">
+              <named_table_reference>
+                <table_name object_type="table">
+                  <full_name>manager</full_name>
+                  <object_name>manager</object_name>
+                </table_name>
+                <alias_clause with_as="false">
+                  <object_name object_type="table_alias">
+                    <full_name>m</full_name>
+                    <object_name>m</object_name>
+                  </object_name>
+                </alias_clause>
+              </named_table_reference>
+            </table_reference>
+          </from_clause>
+          <where_clause>
+            <condition expr_type="simple_comparison_t">
+              <comparison_expr type="&gt;">
+                <first_expr expr_type="simple_object_name_t">
+                  <column_referenced_expr>
+                    <objectName object_type="column">
+                      <full_name>e.salary</full_name>
+                      <object_name>e</object_name>
+                      <part_name>salary</part_name>
+                    </objectName>
+                  </column_referenced_expr>
+                </first_expr>
+                <second_expr expr_type="simple_object_name_t">
+                  <column_referenced_expr>
+                    <objectName object_type="column">
+                      <full_name>m.salary</full_name>
+                      <object_name>m</object_name>
+                      <part_name>salary</part_name>
+                    </objectName>
+                  </column_referenced_expr>
+                </second_expr>
+              </comparison_expr>
+            </condition>
+          </where_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>ID</full_name>
+                    <part_name>ID</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>NAME</full_name>
+                    <part_name>NAME</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>AMOUNT</full_name>
+                    <part_name>AMOUNT</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>DATE</full_name>
+                    <part_name>DATE</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="objectname">
+              <named_table_reference>
+                <table_name object_type="table">
+                  <full_name>CUSTOMERS</full_name>
+                  <object_name>CUSTOMERS</object_name>
+                </table_name>
+              </named_table_reference>
+            </table_reference>
+            <table_reference type="objectname">
+              <named_table_reference>
+                <table_name object_type="table">
+                  <full_name>ORDERS</full_name>
+                  <object_name>ORDERS</object_name>
+                </table_name>
+              </named_table_reference>
+            </table_reference>
+          </from_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>B.FirstName</full_name>
+                    <object_name>B</object_name>
+                    <part_name>FirstName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>FirstName1</full_name>
+                  <object_name>FirstName1</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>B.LastName</full_name>
+                    <object_name>B</object_name>
+                    <part_name>LastName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>LastName1</full_name>
+                  <object_name>LastName1</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>A.FirstName</full_name>
+                    <object_name>A</object_name>
+                    <part_name>FirstName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>FirstName2</full_name>
+                  <object_name>FirstName2</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>A.LastName</full_name>
+                    <object_name>A</object_name>
+                    <part_name>LastName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>LastName2</full_name>
+                  <object_name>LastName2</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>B.City</full_name>
+                    <object_name>B</object_name>
+                    <part_name>City</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>B.Country</full_name>
+                    <object_name>B</object_name>
+                    <part_name>Country</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="join">
+              <joined_table type="join">
+                <first_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>Customer</full_name>
+                      <object_name>Customer</object_name>
+                    </table_name>
+                    <alias_clause with_as="false">
+                      <object_name object_type="table_alias">
+                        <full_name>A</full_name>
+                        <object_name>A</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </first_table_reference>
+                <second_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>Customer</full_name>
+                      <object_name>Customer</object_name>
+                    </table_name>
+                    <alias_clause with_as="false">
+                      <object_name object_type="table_alias">
+                        <full_name>B</full_name>
+                        <object_name>B</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </second_table_reference>
+                <join_condition expr_type="logical_and_t">
+                  <binary_expr operator="AND">
+                    <first_expr expr_type="logical_and_t">
+                      <binary_expr operator="AND">
+                        <first_expr expr_type="simple_comparison_t">
+                          <comparison_expr type="&lt;&gt;">
+                            <first_expr expr_type="simple_object_name_t">
+                              <column_referenced_expr>
+                                <objectName object_type="column">
+                                  <full_name>A.Id</full_name>
+                                  <object_name>A</object_name>
+                                  <part_name>Id</part_name>
+                                </objectName>
+                              </column_referenced_expr>
+                            </first_expr>
+                            <second_expr expr_type="simple_object_name_t">
+                              <column_referenced_expr>
+                                <objectName object_type="column">
+                                  <full_name>B.Id</full_name>
+                                  <object_name>B</object_name>
+                                  <part_name>Id</part_name>
+                                </objectName>
+                              </column_referenced_expr>
+                            </second_expr>
+                          </comparison_expr>
+                        </first_expr>
+                        <second_expr expr_type="simple_comparison_t">
+                          <comparison_expr type="=">
+                            <first_expr expr_type="simple_object_name_t">
+                              <column_referenced_expr>
+                                <objectName object_type="column">
+                                  <full_name>A.City</full_name>
+                                  <object_name>A</object_name>
+                                  <part_name>City</part_name>
+                                </objectName>
+                              </column_referenced_expr>
+                            </first_expr>
+                            <second_expr expr_type="simple_object_name_t">
+                              <column_referenced_expr>
+                                <objectName object_type="column">
+                                  <full_name>B.City</full_name>
+                                  <object_name>B</object_name>
+                                  <part_name>City</part_name>
+                                </objectName>
+                              </column_referenced_expr>
+                            </second_expr>
+                          </comparison_expr>
+                        </second_expr>
+                      </binary_expr>
+                    </first_expr>
+                    <second_expr expr_type="simple_comparison_t">
+                      <comparison_expr type="=">
+                        <first_expr expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>A.Country</full_name>
+                              <object_name>A</object_name>
+                              <part_name>Country</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </first_expr>
+                        <second_expr expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>B.Country</full_name>
+                              <object_name>B</object_name>
+                              <part_name>Country</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </second_expr>
+                      </comparison_expr>
+                    </second_expr>
+                  </binary_expr>
+                </join_condition>
+              </joined_table>
+            </table_reference>
+          </from_clause>
+          <order_by_clause>
+            <order_by_item sort_order="none">
+              <sort_key expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>A.Country</full_name>
+                    <object_name>A</object_name>
+                    <part_name>Country</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </sort_key>
+            </order_by_item>
+          </order_by_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>C.FirstName</full_name>
+                    <object_name>C</object_name>
+                    <part_name>FirstName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>C.LastName</full_name>
+                    <object_name>C</object_name>
+                    <part_name>LastName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>C.Country</full_name>
+                    <object_name>C</object_name>
+                    <part_name>Country</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>CustomerCountry</full_name>
+                  <object_name>CustomerCountry</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>S.Country</full_name>
+                    <object_name>S</object_name>
+                    <part_name>Country</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>SupplierCountry</full_name>
+                  <object_name>SupplierCountry</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>S.CompanyName</full_name>
+                    <object_name>S</object_name>
+                    <part_name>CompanyName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="join">
+              <joined_table type="full">
+                <first_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>Customer</full_name>
+                      <object_name>Customer</object_name>
+                    </table_name>
+                    <alias_clause with_as="false">
+                      <object_name object_type="table_alias">
+                        <full_name>C</full_name>
+                        <object_name>C</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </first_table_reference>
+                <second_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>Supplier</full_name>
+                      <object_name>Supplier</object_name>
+                    </table_name>
+                    <alias_clause with_as="false">
+                      <object_name object_type="table_alias">
+                        <full_name>S</full_name>
+                        <object_name>S</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </second_table_reference>
+                <join_condition expr_type="simple_comparison_t">
+                  <comparison_expr type="=">
+                    <first_expr expr_type="simple_object_name_t">
+                      <column_referenced_expr>
+                        <objectName object_type="column">
+                          <full_name>C.Country</full_name>
+                          <object_name>C</object_name>
+                          <part_name>Country</part_name>
+                        </objectName>
+                      </column_referenced_expr>
+                    </first_expr>
+                    <second_expr expr_type="simple_object_name_t">
+                      <column_referenced_expr>
+                        <objectName object_type="column">
+                          <full_name>S.Country</full_name>
+                          <object_name>S</object_name>
+                          <part_name>Country</part_name>
+                        </objectName>
+                      </column_referenced_expr>
+                    </second_expr>
+                  </comparison_expr>
+                </join_condition>
+              </joined_table>
+            </table_reference>
+          </from_clause>
+          <order_by_clause>
+            <order_by_item sort_order="none">
+              <sort_key expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>C.Country</full_name>
+                    <object_name>C</object_name>
+                    <part_name>Country</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </sort_key>
+            </order_by_item>
+            <order_by_item sort_order="none">
+              <sort_key expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>S.Country</full_name>
+                    <object_name>S</object_name>
+                    <part_name>Country</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </sort_key>
+            </order_by_item>
+          </order_by_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>O.OrderNumber</full_name>
+                    <object_name>O</object_name>
+                    <part_name>OrderNumber</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="function_t">
+                <functionCall_expr>
+                  <functionCall aggregateType="none" builtIn="true" type="unknown_t">
+                    <functionName object_type="function">
+                      <full_name>CONVERT</full_name>
+                      <object_name>CONVERT</object_name>
+                    </functionName>
+                    <generic_function>
+                      <functionArgs>
+                        <expression expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>date</full_name>
+                              <part_name>date</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </expression>
+                        <expression expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>O.OrderDate</full_name>
+                              <object_name>O</object_name>
+                              <part_name>OrderDate</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </expression>
+                      </functionArgs>
+                    </generic_function>
+                  </functionCall>
+                </functionCall_expr>
+              </expression>
+              <alias_clause with_as="true">
+                <object_name object_type="column_alias">
+                  <full_name>Date</full_name>
+                  <object_name>Date</object_name>
+                </object_name>
+              </alias_clause>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>P.ProductName</full_name>
+                    <object_name>P</object_name>
+                    <part_name>ProductName</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>I.Quantity</full_name>
+                    <object_name>I</object_name>
+                    <part_name>Quantity</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>I.UnitPrice</full_name>
+                    <object_name>I</object_name>
+                    <part_name>UnitPrice</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="join">
+              <joined_table type="join">
+                <first_table_reference type="join">
+                  <joined_table type="join">
+                    <first_table_reference type="objectname">
+                      <named_table_reference>
+                        <table_name object_type="table">
+                          <full_name>Order</full_name>
+                          <object_name>Order</object_name>
+                        </table_name>
+                        <alias_clause with_as="true">
+                          <object_name object_type="table_alias">
+                            <full_name>O</full_name>
+                            <object_name>O</object_name>
+                          </object_name>
+                        </alias_clause>
+                      </named_table_reference>
+                    </first_table_reference>
+                    <second_table_reference type="objectname">
+                      <named_table_reference>
+                        <table_name object_type="table">
+                          <full_name>OrderItem</full_name>
+                          <object_name>OrderItem</object_name>
+                        </table_name>
+                        <alias_clause with_as="true">
+                          <object_name object_type="table_alias">
+                            <full_name>I</full_name>
+                            <object_name>I</object_name>
+                          </object_name>
+                        </alias_clause>
+                      </named_table_reference>
+                    </second_table_reference>
+                    <join_condition expr_type="simple_comparison_t">
+                      <comparison_expr type="=">
+                        <first_expr expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>O.Id</full_name>
+                              <object_name>O</object_name>
+                              <part_name>Id</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </first_expr>
+                        <second_expr expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>I.OrderId</full_name>
+                              <object_name>I</object_name>
+                              <part_name>OrderId</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </second_expr>
+                      </comparison_expr>
+                    </join_condition>
+                  </joined_table>
+                </first_table_reference>
+                <second_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>Product</full_name>
+                      <object_name>Product</object_name>
+                    </table_name>
+                    <alias_clause with_as="true">
+                      <object_name object_type="table_alias">
+                        <full_name>P</full_name>
+                        <object_name>P</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </second_table_reference>
+                <join_condition expr_type="simple_comparison_t">
+                  <comparison_expr type="=">
+                    <first_expr expr_type="simple_object_name_t">
+                      <column_referenced_expr>
+                        <objectName object_type="column">
+                          <full_name>P.Id</full_name>
+                          <object_name>P</object_name>
+                          <part_name>Id</part_name>
+                        </objectName>
+                      </column_referenced_expr>
+                    </first_expr>
+                    <second_expr expr_type="simple_object_name_t">
+                      <column_referenced_expr>
+                        <objectName object_type="column">
+                          <full_name>I.ProductId</full_name>
+                          <object_name>I</object_name>
+                          <part_name>ProductId</part_name>
+                        </objectName>
+                      </column_referenced_expr>
+                    </second_expr>
+                  </comparison_expr>
+                </join_condition>
+              </joined_table>
+            </table_reference>
+          </from_clause>
+          <order_by_clause>
+            <order_by_item sort_order="none">
+              <sort_key expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>O.OrderNumber</full_name>
+                    <object_name>O</object_name>
+                    <part_name>OrderNumber</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </sort_key>
+            </order_by_item>
+          </order_by_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>e.last_name</full_name>
+                    <object_name>e</object_name>
+                    <part_name>last_name</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>e.department_id</full_name>
+                    <object_name>e</object_name>
+                    <part_name>department_id</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>d.department_name</full_name>
+                    <object_name>d</object_name>
+                    <part_name>department_name</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="join">
+              <joined_table type="leftouter">
+                <first_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>employees</full_name>
+                      <object_name>employees</object_name>
+                    </table_name>
+                    <alias_clause with_as="false">
+                      <object_name object_type="table_alias">
+                        <full_name>e</full_name>
+                        <object_name>e</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </first_table_reference>
+                <second_table_reference type="objectname">
+                  <named_table_reference>
+                    <table_name object_type="table">
+                      <full_name>department</full_name>
+                      <object_name>department</object_name>
+                    </table_name>
+                    <alias_clause with_as="false">
+                      <object_name object_type="table_alias">
+                        <full_name>d</full_name>
+                        <object_name>d</object_name>
+                      </object_name>
+                    </alias_clause>
+                  </named_table_reference>
+                </second_table_reference>
+                <join_condition expr_type="parenthesis_t">
+                  <parenthesis_expr>
+                    <first_expr expr_type="simple_comparison_t">
+                      <comparison_expr type="=">
+                        <first_expr expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>e.department_id</full_name>
+                              <object_name>e</object_name>
+                              <part_name>department_id</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </first_expr>
+                        <second_expr expr_type="simple_object_name_t">
+                          <column_referenced_expr>
+                            <objectName object_type="column">
+                              <full_name>d.department_id</full_name>
+                              <object_name>d</object_name>
+                              <part_name>department_id</part_name>
+                            </objectName>
+                          </column_referenced_expr>
+                        </second_expr>
+                      </comparison_expr>
+                    </first_expr>
+                  </parenthesis_expr>
+                </join_condition>
+              </joined_table>
+            </table_reference>
+          </from_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+  <statement type="sstinsert">
+    <insert_statement insertSource="values">
+      <target_table type="objectname">
+        <named_table_reference>
+          <table_name object_type="table">
+            <full_name>Customers</full_name>
+            <object_name>Customers</object_name>
+          </table_name>
+        </named_table_reference>
+      </target_table>
+      <column_list>
+        <objectName object_type="column">
+          <full_name>CustomerName</full_name>
+          <part_name>CustomerName</part_name>
+        </objectName>
+        <objectName object_type="column">
+          <full_name>ContactName</full_name>
+          <part_name>ContactName</part_name>
+        </objectName>
+        <objectName object_type="column">
+          <full_name>Address</full_name>
+          <part_name>Address</part_name>
+        </objectName>
+        <objectName object_type="column">
+          <full_name>City</full_name>
+          <part_name>City</part_name>
+        </objectName>
+        <objectName object_type="column">
+          <full_name>PostalCode</full_name>
+          <part_name>PostalCode</part_name>
+        </objectName>
+        <objectName object_type="column">
+          <full_name>Country</full_name>
+          <part_name>Country</part_name>
+        </objectName>
+      </column_list>
+      <insert_values>
+        <row_values>
+          <expression expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Cardinal'</value>
+              </literal>
+            </constant_expr>
+          </expression>
+          <expression expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Tom B. Erichsen'</value>
+              </literal>
+            </constant_expr>
+          </expression>
+          <expression expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Skagen 21'</value>
+              </literal>
+            </constant_expr>
+          </expression>
+          <expression expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Stavanger'</value>
+              </literal>
+            </constant_expr>
+          </expression>
+          <expression expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'4006'</value>
+              </literal>
+            </constant_expr>
+          </expression>
+          <expression expr_type="simple_constant_t">
+            <constant_expr>
+              <literal>
+                <value>'Norway'</value>
+              </literal>
+            </constant_expr>
+          </expression>
+        </row_values>
+      </insert_values>
+    </insert_statement>
+  </statement>
+</sqlscript>

@@ -1,0 +1,461 @@
+{
+  "target": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Delete",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "ingresso",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "WHERE id\u003d id",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "Statement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "createStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "executeQuery",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "sql",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "suggestion0": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "deleteCourse",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Delete",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "course",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "WHERE idcourse \u003d ?",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "connection",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "deleteCourse",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "curCour",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "suggestion1": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "deleteInstr",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Delete",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "instructor",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "WHERE idinstructor \u003d ?",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "connection",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "deleteInstr",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "getInstrId",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "curInstr",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "suggestion2": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Delete",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "tblAchievements",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "WHERE id \u003d ?",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "pstmt",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "sql",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "executeUpdate",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "pstmt",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "suggestion3": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Delete",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "ingresso",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "WHERE id\u003d?",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "ps",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "con",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "sql",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "id",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "execute",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "ps",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

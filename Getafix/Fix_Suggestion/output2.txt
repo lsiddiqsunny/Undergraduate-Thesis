@@ -1,0 +1,414 @@
+{
+  "target": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "st",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "Statement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Select",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Column",
+                "type": "QueryColumn",
+                "children": [
+                  {
+                    "label": "*",
+                    "type": "columnName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "TBL_NAME",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "where  FIELD_ID  \u003d search_id",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldWrite",
+            "children": []
+          },
+          {
+            "label": "createStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "rs",
+            "type": "FieldWrite",
+            "children": []
+          },
+          {
+            "label": "executeQuery",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "st",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "query",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "suggestion0": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "st",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Select",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Column",
+                "type": "QueryColumn",
+                "children": [
+                  {
+                    "label": "*",
+                    "type": "columnName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "?",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "where ?\u003d?",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldWrite",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "query",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "TBL_NAME",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "FIELD_ID",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "search_id",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "suggestion1": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "st",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "PreparedStatement",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "query",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Select",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Column",
+                "type": "QueryColumn",
+                "children": [
+                  {
+                    "label": "*",
+                    "type": "columnName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "?",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "where ?\u003d?",
+                "type": "WhereClause",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldWrite",
+            "children": []
+          },
+          {
+            "label": "prepareStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "query",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "1",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "TBL_NAME",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "2",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "FIELD_NOME",
+            "type": "TypeAccess",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "setObject",
+        "type": "Invocation",
+        "children": [
+          {
+            "label": "st",
+            "type": "FieldRead",
+            "children": []
+          },
+          {
+            "label": "3",
+            "type": "Literal",
+            "children": []
+          },
+          {
+            "label": "search_nome",
+            "type": "FieldRead",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

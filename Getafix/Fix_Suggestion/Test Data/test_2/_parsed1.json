@@ -1,0 +1,1 @@
+{"label": "Select", "type": "QueryType", "children": [{"label": "Column", "type": "QueryColumn", "children": [{"label": "*", "type": "columnName", "children": []}]}, {"label": "Table", "type": "QueryTable", "children": [{"label": "TBL_NAME", "type": "tableName", "children": []}]}, {"label": "where  FIELD_ID  = search_id", "type": "WhereClause", "children": []}]}

@@ -1,0 +1,17 @@
+{
+  "Select": {
+    "Column": [
+      {
+        "columnName": "*",
+        "columnAlias": ""
+      }
+    ],
+    "Table": [
+      {
+        "tableName": "TBL_NAME",
+        "tableAlias": ""
+      }
+    ],
+    "where clause": "where  FIELD_ID  \u003d search_id"
+  }
+}

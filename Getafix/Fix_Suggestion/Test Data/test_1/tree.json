@@ -1,0 +1,108 @@
+{
+    "before_code": "java.lang.String sql = (((\"INSERT INTO shipping VALUES (\" + order) + \", \") + ship) + \")\"\nps = conn.createStatement()\ncnt = ps.executeUpdate(sql)\n",
+    "after_code": "",
+    "before_tree": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": [
+            {
+                "label": "sql",
+                "type": "LocalVariable",
+                "children": [
+                    {
+                        "label": "java.lang.String",
+                        "type": "VARIABLE_TYPE",
+                        "children": []
+                    },
+                    {
+                        "label": "Insert",
+                        "type": "QueryType",
+                        "children": [
+                            {
+                                "label": "Table",
+                                "type": "QueryTable",
+                                "children": [
+                                    {
+                                        "label": "shipping",
+                                        "type": "tableName",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Values",
+                                "type": "QueryValues",
+                                "children": [
+                                    {
+                                        "label": "order",
+                                        "type": "insertValue",
+                                        "children": []
+                                    },
+                                    {
+                                        "label": "ship",
+                                        "type": "insertValue",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "=",
+                "type": "Assignment",
+                "children": [
+                    {
+                        "label": "ps",
+                        "type": "FieldWrite",
+                        "children": []
+                    },
+                    {
+                        "label": "createStatement",
+                        "type": "Invocation",
+                        "children": [
+                            {
+                                "label": "conn",
+                                "type": "FieldRead",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "=",
+                "type": "Assignment",
+                "children": [
+                    {
+                        "label": "cnt",
+                        "type": "FieldWrite",
+                        "children": []
+                    },
+                    {
+                        "label": "executeUpdate",
+                        "type": "Invocation",
+                        "children": [
+                            {
+                                "label": "ps",
+                                "type": "FieldRead",
+                                "children": []
+                            },
+                            {
+                                "label": "sql",
+                                "type": "FieldRead",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "after_tree": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": []
+    }
+}

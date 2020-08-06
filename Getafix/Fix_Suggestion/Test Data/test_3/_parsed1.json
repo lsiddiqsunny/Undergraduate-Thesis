@@ -1,0 +1,1 @@
+{"label": "Delete", "type": "QueryType", "children": [{"label": "Table", "type": "QueryTable", "children": [{"label": "ingresso", "type": "tableName", "children": []}]}, {"label": "WHERE id= id", "type": "WhereClause", "children": []}]}

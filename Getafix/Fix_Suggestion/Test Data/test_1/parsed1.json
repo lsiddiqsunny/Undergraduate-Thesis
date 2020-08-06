@@ -1,0 +1,14 @@
+{
+  "Insert": {
+    "Table": [
+      {
+        "tableName": "shipping",
+        "tableAlias": ""
+      }
+    ],
+    "Values": [
+      "order",
+      "ship"
+    ]
+  }
+}

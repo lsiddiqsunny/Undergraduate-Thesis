@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="external_lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/external_lib/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/external_lib/expr4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/external_lib/jarLoader.jar!/" />
+      <root url="jar://$PROJECT_DIR$/external_lib/junrar-0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/external_lib/fastjson-1.2.41.jar!/" />
+      <root url="jar://$PROJECT_DIR$/external_lib/simple-xml-2.6.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

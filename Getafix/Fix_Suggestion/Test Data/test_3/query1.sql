@@ -1,0 +1,1 @@
+ DELETE FROM ingresso WHERE id= id

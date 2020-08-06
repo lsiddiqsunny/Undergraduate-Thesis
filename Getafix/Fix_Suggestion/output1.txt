@@ -1,0 +1,101 @@
+{
+  "target": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "sql",
+        "type": "LocalVariable",
+        "children": [
+          {
+            "label": "java.lang.String",
+            "type": "VARIABLE_TYPE",
+            "children": []
+          },
+          {
+            "label": "Insert",
+            "type": "QueryType",
+            "children": [
+              {
+                "label": "Table",
+                "type": "QueryTable",
+                "children": [
+                  {
+                    "label": "shipping",
+                    "type": "tableName",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "Values",
+                "type": "QueryValues",
+                "children": [
+                  {
+                    "label": "order",
+                    "type": "insertValue",
+                    "children": []
+                  },
+                  {
+                    "label": "ship",
+                    "type": "insertValue",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "ps",
+            "type": "FieldWrite",
+            "children": []
+          },
+          {
+            "label": "createStatement",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "conn",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\u003d",
+        "type": "Assignment",
+        "children": [
+          {
+            "label": "cnt",
+            "type": "FieldWrite",
+            "children": []
+          },
+          {
+            "label": "executeUpdate",
+            "type": "Invocation",
+            "children": [
+              {
+                "label": "ps",
+                "type": "FieldRead",
+                "children": []
+              },
+              {
+                "label": "sql",
+                "type": "FieldRead",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

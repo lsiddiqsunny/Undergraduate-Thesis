@@ -1,0 +1,1 @@
+{"label": "Insert", "type": "QueryType", "children": [{"label": "Table", "type": "QueryTable", "children": [{"label": "shipping", "type": "tableName", "children": []}]}, {"label": "Values", "type": "QueryValues", "children": [{"label": "order", "type": "insertValue", "children": []}, {"label": "ship", "type": "insertValue", "children": []}]}]}

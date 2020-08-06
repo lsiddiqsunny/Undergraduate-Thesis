@@ -1,0 +1,64 @@
+{
+  "update_statement": {
+    "where_clause": {
+      "condition": {
+        "expr_type": "simple_comparison_t",
+        "comparison_expr": {
+          "first_expr": {
+            "expr_type": "simple_object_name_t",
+            "column_referenced_expr": {
+              "objectName": {
+                "full_name": "Country",
+                "object_type": "column",
+                "part_name": "Country"
+              }
+            }
+          },
+          "second_expr": {
+            "constant_expr": {
+              "literal": {
+                "value": "\u0027Mexico\u0027"
+              }
+            },
+            "expr_type": "simple_constant_t"
+          },
+          "type": "\u003c"
+        }
+      }
+    },
+    "target_table": {
+      "type": "objectname",
+      "named_table_reference": {
+        "table_name": {
+          "full_name": "Customers",
+          "object_type": "table",
+          "object_name": "Customers"
+        }
+      }
+    },
+    "set_clause": {
+      "assignment_expr": {
+        "first_expr": {
+          "expr_type": "simple_object_name_t",
+          "column_referenced_expr": {
+            "objectName": {
+              "full_name": "ContactName",
+              "object_type": "column",
+              "part_name": "ContactName"
+            }
+          }
+        },
+        "second_expr": {
+          "constant_expr": {
+            "literal": {
+              "value": "\u0027Juan\u0027"
+            }
+          },
+          "expr_type": "simple_constant_t"
+        }
+      },
+      "expr_type": "assignment_t"
+    }
+  },
+  "type": "sstupdate"
+}

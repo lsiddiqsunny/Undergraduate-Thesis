@@ -1,0 +1,1 @@
+ INSERT INTO shipping VALUES ( order  ,  ship  )

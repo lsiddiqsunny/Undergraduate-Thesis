@@ -1,0 +1,119 @@
+{
+    "before_code": "java.lang.String query = ((((\"select * from \" + TBL_NAME) + \" where \") + FIELD_ID) + \"=\") + search_id\nst = conn.createStatement()\nrs = st.executeQuery(query)\n",
+    "after_code": "",
+    "before_tree": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": [
+            {
+                "label": "st",
+                "type": "LocalVariable",
+                "children": [
+                    {
+                        "label": "Statement",
+                        "type": "VARIABLE_TYPE",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "label": "query",
+                "type": "LocalVariable",
+                "children": [
+                    {
+                        "label": "java.lang.String",
+                        "type": "VARIABLE_TYPE",
+                        "children": []
+                    },
+                    {
+                        "label": "Select",
+                        "type": "QueryType",
+                        "children": [
+                            {
+                                "label": "Column",
+                                "type": "QueryColumn",
+                                "children": [
+                                    {
+                                        "label": "*",
+                                        "type": "columnName",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Table",
+                                "type": "QueryTable",
+                                "children": [
+                                    {
+                                        "label": "TBL_NAME",
+                                        "type": "tableName",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "where  FIELD_ID  = search_id",
+                                "type": "WhereClause",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "=",
+                "type": "Assignment",
+                "children": [
+                    {
+                        "label": "st",
+                        "type": "FieldWrite",
+                        "children": []
+                    },
+                    {
+                        "label": "createStatement",
+                        "type": "Invocation",
+                        "children": [
+                            {
+                                "label": "conn",
+                                "type": "FieldRead",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "=",
+                "type": "Assignment",
+                "children": [
+                    {
+                        "label": "rs",
+                        "type": "FieldWrite",
+                        "children": []
+                    },
+                    {
+                        "label": "executeQuery",
+                        "type": "Invocation",
+                        "children": [
+                            {
+                                "label": "st",
+                                "type": "FieldRead",
+                                "children": []
+                            },
+                            {
+                                "label": "query",
+                                "type": "FieldRead",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "after_tree": {
+        "label": "edit_root",
+        "type": "edit_unit",
+        "children": []
+    }
+}
