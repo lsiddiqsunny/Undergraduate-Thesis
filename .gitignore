@@ -164,3 +164,9 @@ cython_debug/
 GitMiner\venv\
 .vscode
 RNN_Model/Edit Trees/
+
+Getafix/Clustering/output/
+
+Getafix/Clustering/Edit Trees v2/
+
+Getafix/Clustering/Edit Trees/
