@@ -3,6 +3,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,14 +13,9 @@ import java.util.List;
 public class Main {
     public static void main(String args[]) throws Exception {
         List<Integer> intList = new ArrayList<>();
-        for(int i=0;i<=561;i++){
-            intList.add(i);
-        }
-        Collections.shuffle(intList);
 
-
-        String directory = "Edit Trees";
-        int count = 500;
+        String directory = "Train_Edit Trees";
+        int count = 561;
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -33,6 +29,6 @@ public class Main {
         writer.write(data);
         writer.flush();
         writer.close();
-        Fixer.fixer(count,intList);
+        Fixer.fixer(561);
     }
 }

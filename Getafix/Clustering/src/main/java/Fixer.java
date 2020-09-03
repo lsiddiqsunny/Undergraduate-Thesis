@@ -22,21 +22,19 @@ public class Fixer {
 
     static ArrayList<FixerEditPattern> patterns;
 
-    public static void fixer(int start,List<Integer> inList) throws Exception {
-/*
-        File file = new File("test.java");
-        ArrayList<Integer> lineNum = new ArrayList<>();
-        lineNum.add(3);
+    public static void fixer(int finish)  {
 
-        String json = new AstBuilder(file,lineNum).getTargetAst();
-        //System.out.println(toPrettyFormat(json));
-*/
-        //JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
         int count=  0;
-        for(int i=start;i<inList.size();i++) {
+        for(int i=0;i<=finish;i++) {
             String filename = "target\\dendogram.json";
             Gson gson = new Gson();
-            JsonObject jsonObject = gson.fromJson(new FileReader("Edit Trees\\change_pair"+inList.get(i)+ ".json"), JsonObject.class);
+            JsonObject jsonObject = null;
+            try {
+                jsonObject = gson.fromJson(new FileReader("Test_Edit Trees\\before_"+i+ ".json"), JsonObject.class);
+            } catch (FileNotFoundException e) {
+                //System.out.println("File not found");
+                continue;
+            }
             FixerEditPattern target = new FixerEditPattern(jsonObject.getAsJsonObject("before_tree"), jsonObject.getAsJsonObject("after_tree"));
             try {
                 JsonObject root = gson.fromJson(new FileReader(filename), JsonObject.class);
@@ -46,6 +44,10 @@ public class Fixer {
                 obj.add("target", target.beforePattern);
 
                 for (int j = 0; j < patterns.size(); j++) {
+                    PatternMatcher pm = new PatternMatcher();
+
+                    JsonObject unified = pm.antiUnify(target.beforePattern,patterns.get(j).afterPattern);
+                    obj.add("unified" + j, unified);
                     obj.add("suggestion" + j, patterns.get(j).afterPattern);
                 }
 
@@ -86,7 +88,7 @@ public class Fixer {
         }
         if(children.size()==0){
             patterns.add(new FixerEditPattern(obj,0));
-            System.out.println("********  "+obj.get("pattern_id").toString());
+            System.out.println("*** Suggestion:  "+obj.get("pattern_id").toString());
         }
         return new FixerEditPattern(obj,0);
     }

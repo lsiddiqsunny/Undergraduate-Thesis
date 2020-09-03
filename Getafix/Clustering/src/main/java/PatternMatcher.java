@@ -2,6 +2,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,19 +22,28 @@ public class PatternMatcher {
     PatternMatcher()
     {
         gson = new Gson();
-        holeMapping = null;
+        holeMapping = new HashMap<String, String>();
         holeCount = 0;
+        un_resolved_holes = 0;
+        hole_impact = 0;
     }
 
-    public void Init(String dir, int count, List<Integer> inList ) throws Exception {
+    public void Init(String dir, int count, List<Integer> inList ) {
         Gson gson = new Gson();
         clusters = new ArrayList<>();
 
         System.out.println("Initializing concrete edits.");
 
-        for(int i=0; i<count; i++) {
-            String filename = dir + "/change_pair" + (inList.get(i)) + ".json";
-            JsonObject root = gson.fromJson(new FileReader(filename), JsonObject.class);
+        for(int i=0; i<=count; i++) {
+            String filename = dir + "/change_pair" + i + ".json";
+
+            JsonObject root = null;
+            try {
+                root = gson.fromJson(new FileReader(filename), JsonObject.class);
+            } catch (FileNotFoundException e) {
+                System.out.println(i+"th File not found");
+                continue;
+            }
 
             String beforeCode = root.get("before_code").getAsString();
             if(beforeCode.length()==0){
@@ -202,6 +212,9 @@ public class PatternMatcher {
         else {
             String hole = getHole(ob1, ob2);
             unified.addProperty("label", hole);
+
+           // System.out.println("hole: "+hole+"  target: "+ob1.get("label")+" source: "+ob2.get("label"));
+
             if(type1.equals(type2)) unified.addProperty("type",type1);
             else {
                 unified.addProperty("type","?");
@@ -209,6 +222,7 @@ public class PatternMatcher {
             }
         }
         unified.add("children", children);
+        //System.out.println(unified.toString());
         return unified;
     }
 

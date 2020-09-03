@@ -84,7 +84,7 @@ public class Fixer {
 		
 		try {
 			System.out.println("the sourceFile name is: " + sourceFile.getName()); 
-			PrintWriter pw = new PrintWriter(new File("D:\\Thesis\\Undergraduate-Thesis\\Code_base_for_PSR_ALGO\\SQL-IVFA" + sourceFile.getName()));
+			PrintWriter pw = new PrintWriter(new File("output/SQL-IVFA" + sourceFile.getName()));
 			for(int i = 0; i < sourceVector.size(); i++) {
 				pw.write(sourceVector.get(i) + '\n');
 			}
