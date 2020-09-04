@@ -193,3 +193,5 @@ GitMiner/venv
 *.zip
 
 Code_base_for_PSR_ALGO/Test_Edit Trees/
+
+*.exe
