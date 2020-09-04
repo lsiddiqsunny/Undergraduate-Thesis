@@ -179,7 +179,7 @@ Getafix/Clustering/Test/
 
 Getafix/Clustering/Test.zip
 
-Code_base_for_PSR_ALGO/Test_Edit Trees/
+Code_base_for_PSR_ALGO/Test_Edit Trees/-
 
 Code_base_for_PSR_ALGO/output/
 
@@ -191,3 +191,5 @@ Data_Validation/Datssetvalidation/venv/
 GitMiner/env
 GitMiner/venv
 *.zip
+
+Code_base_for_PSR_ALGO/Test_Edit Trees/
