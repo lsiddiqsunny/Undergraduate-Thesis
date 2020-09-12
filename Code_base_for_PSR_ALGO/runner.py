@@ -9,48 +9,58 @@ with open('linenumber.csv', 'w', newline='') as file:
             # f.seek(0, 0)
             # f.write('public '+content)
         linenum = ''
-        with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
-            print(' IN '+file[7:-5]+" : ")
-            lookup = 'select '
-            for num, line in enumerate(myFile, 1):
-                if lookup.lower() in line.lower():
-                    linenum+=str(num)+' '
-                    print ('found at line:', num)
+        lineset = set()
+        # with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
+        #     print(' IN '+file[7:-5]+" : ")
+        #     lookup = 'select '
+        #     for num, line in enumerate(myFile, 1):
+        #         if lookup.lower() in line.lower():
+        #             linenum+=str(num)+' '
+        #             lineset.add(num)
+        #             print ('found at line:', num)
 
-        with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
-            lookup = 'insert '
-            for num, line in enumerate(myFile, 1):
-                if lookup.lower() in line.lower():
-                    linenum+=str(num)+' '
-                    print ('found at line:', num)
-        with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:                   
-            lookup = 'delete '
-            for num, line in enumerate(myFile, 1):
-                if lookup.lower() in line.lower():
-                    linenum+=str(num)+' '
-                    print ('found at line:', num)
-        with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
+        # with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
+        #     lookup = 'insert '
+        #     for num, line in enumerate(myFile, 1):
+        #         if lookup.lower() in line.lower():
+        #             linenum+=str(num)+' '
+        #             lineset.add(num)
+        #             print ('found at line:', num)
+        # with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:                   
+        #     lookup = 'delete '
+        #     for num, line in enumerate(myFile, 1):
+        #         if lookup.lower() in line.lower():
+        #             linenum+=str(num)+' '
+        #             lineset.add(num)
+        #             print ('found at line:', num)
+        # with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
 
-            lookup = 'update '
-            for num, line in enumerate(myFile, 1):
-                if lookup.lower() in line.lower():
-                    linenum+=str(num)+' '
-                    print ('found at line:', num)
+        #     lookup = 'update '
+        #     for num, line in enumerate(myFile, 1):
+        #         if lookup.lower() in line.lower():
+        #             linenum+=str(num)+' '
+        #             lineset.add(num)
+        #             print ('found at line:', num)
 
-        with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
+        # with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
 
-            lookup = 'statement'
-            for num, line in enumerate(myFile, 1):
-                if lookup.lower() in line.lower():
-                    linenum+=str(num)+' '
-                    print ('found at line:', num)
+        #     lookup = 'createStatement'
+        #     for num, line in enumerate(myFile, 1):
+        #         if lookup.lower() in line.lower():
+        #             linenum+=str(num)+' '
+        #             lineset.add(num)
+        #             print ('found at line:', num)
         with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
 
             lookup = 'execute'
             for num, line in enumerate(myFile, 1):
                 if lookup.lower() in line.lower():
                     linenum+=str(num)+' '
+                    lineset.add(num)
                     print ('found at line:', num)
+        linenum = ""
+        for x in lineset:
+            linenum+=str(x)+' '
         os.system('java Fixer '+'"D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_"'+file[7:-5]+'.java '+linenum) 
         writer.writerow([file[7:-5] , linenum])
 
