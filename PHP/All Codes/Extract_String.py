@@ -38,15 +38,17 @@ for x in directoryList:
 base_path = 'D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset\\'
 directories = [x for x in os.walk(base_path)]
 # os.makedirs(base_path+'Temp')
-print(directories)
-for x in directories[0][1]:
-   print(x)
+#print(directories)
+#for x in directories[0][1]:
+#   print(x)
 
 for x in directories[0][1]:
     # os.makedirs(base_path+'Temp\\'+x.split('.')[0])
     
     print(x)
-    with open(base_path+x+'\\before.php') as search:
+    if x=='Temp':
+    	continue
+    with open(base_path+x+'/before.php') as search:
         print(search)
         i = 1
         ends = True
@@ -59,9 +61,9 @@ for x in directories[0][1]:
                 continue
             #line = line.rstrip()
             if (re.search(r'DELETE.*FROM.*WHERE.*|SELECT.*FROM.*WHERE.*|INSERT.*INTO.*|UPDATE.*SET.*', line.lower(), re.IGNORECASE) != None):
-                if not os.path.exists(base_path+'Temp\\'+x):
-                    os.makedirs(base_path+'Temp\\'+x)
-                f = open(base_path+'Temp\\'+x+'\\beforeString'+str(i)+'.txt', "w")
+                if not os.path.exists(base_path+'Temp/'+x):
+                    os.makedirs(base_path+'Temp/'+x)
+                f = open(base_path+'Temp/'+x+'/beforeString'+str(i)+'.txt', "w")
                 f.write(line)
                 i += 1
                 if(line.find(";") == -1):

@@ -7,6 +7,11 @@ import org.json.XML;
 import com.google.gson.*;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class GSP{
 
@@ -27,16 +32,23 @@ public class GSP{
             System.out.println("File not exists:"+directory+fileName);
             return "";
         }
+        Path path = Paths.get(directory+fileName);
+        Charset charset = StandardCharsets.UTF_8;
 
-        EDbVendor dbVendor = EDbVendor.dbvoracle;
+        String content = new String(Files.readAllBytes(path), charset);
+        content = content.replace("[\'", "[\\\'");
+        content = content.replace("\']", "\\\']");
+        Files.write(path, content.getBytes(charset));
+
+        EDbVendor dbVendor = EDbVendor.dbvmysql;
 
         System.out.println("Selected SQL dialect: "+dbVendor.toString());
 
         TGSqlParser sqlParser = new TGSqlParser(dbVendor);
 
         sqlParser.sqlfilename  = directory+fileName;
-        String xmlFile = directory+"XML"+ n + ".xml";
-        String jsonFile = directory+"Parsed"+n+".json";
+        String xmlFile = directory+"beforeXML"+ n + ".xml";
+        String jsonFile = directory+"beforeParsed"+n+".json";
         int ret = sqlParser.parse();
         if (ret == 0){
             String xsdFile = "file:/C:/prg/gsp_java_maven/doc/xml/sqlschema.xsd";
@@ -70,7 +82,7 @@ public class GSP{
         //String parsed = parseQuery("test.sql");
         //System.out.println(parsed);
 
-        String directory = "D:\\Thesis\\All Codes\\After\\Temp2\\";
+        String directory = "D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset\\Temp2\\";
         File directoryPath = new File(directory);
         String[] contents = directoryPath.list();
         System.out.println("List of files and directories in the specified directory:");
@@ -81,7 +93,7 @@ public class GSP{
                 int j=0;
                 System.out.println(file.getName());
                 for(String fileName:fileContents){
-                    if(fileName.contains("Query")){
+                    if(fileName.contains("beforeQuery")){
                         j++;
                         String parsed = parseQuery(directory+contents[i]+"//",fileName, j);
                         //System.out.println(parsed);

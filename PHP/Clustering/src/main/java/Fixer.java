@@ -35,7 +35,7 @@ public class Fixer {
                 System.out.println("File not found");
                 continue;
             }
-            //System.out.println("for "+i+":");
+            //System.out.println("for "+test_list.get(i)+":");
 
             FixerEditPattern target = new FixerEditPattern(jsonObject.getAsJsonObject("before_tree"), jsonObject.getAsJsonObject("after_tree"));
             try {
@@ -48,7 +48,7 @@ public class Fixer {
                 obj.add("target", target.beforePattern);
 
                 for (int j = 0; j < patterns.size(); j++) {
-                    //System.out.println("From suggestion "+j+":");
+                   // System.out.println("From suggestion "+j+":");
 
                     PatternMatcher pm = new PatternMatcher();
                     replaceSuggestions = new ArrayList<>();
@@ -79,7 +79,7 @@ public class Fixer {
                 if(patterns.size()!=0){
                     count++;
                 }
-                File solution = new File("output\\output"+i+".json");
+                File solution = new File("output\\output"+test_list.get(i)+".json");
                 FileWriter fileWriter = new FileWriter(solution);
                 fileWriter.write(toPrettyFormat(obj.toString()));
                 fileWriter.flush();
