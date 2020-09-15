@@ -1,0 +1,391 @@
+{
+  "before_code": "$sql = \"INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')\";\r\nif ($conn->query($sql) === TRUE) {\r\n",
+  "after_code": "// prepare and bind\r\n$sql = $conn->prepare(\"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)\");\r\n$sql->bind_param(\"sss\", $firstname, $lastname, $email);\r\n// set parameters and execute\r\n$firstname = \"John\";\r\n$lastname = \"Doe\";\r\n$email = \"john@example.com\";\r\nif ($sql->execute() === TRUE) {\r\n\r\n$stmt->close();\r\n",
+  "before_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "$sql = \"INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')\";\r\n",
+        "type": "program",
+        "children": [
+          {
+            "label": "$sql = \"INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')\";",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "$sql = \"INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')\";",
+                "type": "assign",
+                "children": [
+                  {
+                    "label": "$sql",
+                    "type": "variable",
+                    "children": []
+                  },
+                  {
+                    "label": "\"INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')\"",
+                    "type": "string",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "if ($conn->query($sql) === TRUE) {\r\n",
+        "type": "program",
+        "children": [
+          {
+            "label": "if ($conn->query($sql) === TRUE) {",
+            "type": "if",
+            "children": [
+              {
+                "label": "$conn->query($sql) === TRUE",
+                "type": "bin",
+                "children": [
+                  {
+                    "label": "($sql)",
+                    "type": "call",
+                    "children": [
+                      {
+                        "label": "->query",
+                        "type": "propertylookup",
+                        "children": [
+                          {
+                            "label": "$conn",
+                            "type": "variable",
+                            "children": []
+                          },
+                          {
+                            "label": "query",
+                            "type": "identifier",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "arguments",
+                        "type": "arguments",
+                        "children": [
+                          {
+                            "label": "$sql",
+                            "type": "variable",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "TRUE",
+                    "type": "boolean",
+                    "children": []
+                  },
+                  {
+                    "label": "===",
+                    "type": "type",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "{",
+                "type": "block",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_tree": {
+    "label": "edit_root",
+    "type": "edit_unit",
+    "children": [
+      {
+        "label": "// prepare and bind\r\n$sql = $conn->prepare(\"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)\");\r\n$sql->bind_param(\"sss\", $firstname, $lastname, $email);\r\n",
+        "type": "program",
+        "children": [
+          {
+            "label": "$sql = $conn->prepare(\"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)\");",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "$sql = $conn->prepare(\"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)\");",
+                "type": "assign",
+                "children": [
+                  {
+                    "label": "$sql",
+                    "type": "variable",
+                    "children": []
+                  },
+                  {
+                    "label": "(\"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)\")",
+                    "type": "call",
+                    "children": [
+                      {
+                        "label": "->prepare",
+                        "type": "propertylookup",
+                        "children": [
+                          {
+                            "label": "$conn",
+                            "type": "variable",
+                            "children": []
+                          },
+                          {
+                            "label": "prepare",
+                            "type": "identifier",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "arguments",
+                        "type": "arguments",
+                        "children": [
+                          {
+                            "label": "\"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)\"",
+                            "type": "string",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "$sql->bind_param(\"sss\", $firstname, $lastname, $email);",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "(\"sss\", $firstname, $lastname, $email);",
+                "type": "call",
+                "children": [
+                  {
+                    "label": "->bind_param",
+                    "type": "propertylookup",
+                    "children": [
+                      {
+                        "label": "$sql",
+                        "type": "variable",
+                        "children": []
+                      },
+                      {
+                        "label": "bind_param",
+                        "type": "identifier",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "arguments",
+                    "type": "arguments",
+                    "children": [
+                      {
+                        "label": "\"sss\"",
+                        "type": "string",
+                        "children": []
+                      },
+                      {
+                        "label": "$firstname",
+                        "type": "variable",
+                        "children": []
+                      },
+                      {
+                        "label": "$lastname",
+                        "type": "variable",
+                        "children": []
+                      },
+                      {
+                        "label": "$email",
+                        "type": "variable",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "// set parameters and execute\r\n$firstname = \"John\";\r\n$lastname = \"Doe\";\r\n$email = \"john@example.com\";\r\n",
+        "type": "program",
+        "children": [
+          {
+            "label": "$firstname = \"John\";",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "$firstname = \"John\";",
+                "type": "assign",
+                "children": [
+                  {
+                    "label": "$firstname",
+                    "type": "variable",
+                    "children": []
+                  },
+                  {
+                    "label": "\"John\"",
+                    "type": "string",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "$lastname = \"Doe\";",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "$lastname = \"Doe\";",
+                "type": "assign",
+                "children": [
+                  {
+                    "label": "$lastname",
+                    "type": "variable",
+                    "children": []
+                  },
+                  {
+                    "label": "\"Doe\"",
+                    "type": "string",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "$email = \"john@example.com\";",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "$email = \"john@example.com\";",
+                "type": "assign",
+                "children": [
+                  {
+                    "label": "$email",
+                    "type": "variable",
+                    "children": []
+                  },
+                  {
+                    "label": "\"john@example.com\"",
+                    "type": "string",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "if ($sql->execute() === TRUE) {\r\n",
+        "type": "program",
+        "children": [
+          {
+            "label": "if ($sql->execute() === TRUE) {",
+            "type": "if",
+            "children": [
+              {
+                "label": "$sql->execute() === TRUE",
+                "type": "bin",
+                "children": [
+                  {
+                    "label": "()",
+                    "type": "call",
+                    "children": [
+                      {
+                        "label": "->execute",
+                        "type": "propertylookup",
+                        "children": [
+                          {
+                            "label": "$sql",
+                            "type": "variable",
+                            "children": []
+                          },
+                          {
+                            "label": "execute",
+                            "type": "identifier",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "label": "arguments",
+                        "type": "arguments",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "TRUE",
+                    "type": "boolean",
+                    "children": []
+                  },
+                  {
+                    "label": "===",
+                    "type": "type",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "{",
+                "type": "block",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "\r\n$stmt->close();\r\n",
+        "type": "program",
+        "children": [
+          {
+            "label": "$stmt->close();",
+            "type": "expressionstatement",
+            "children": [
+              {
+                "label": "();",
+                "type": "call",
+                "children": [
+                  {
+                    "label": "->close",
+                    "type": "propertylookup",
+                    "children": [
+                      {
+                        "label": "$stmt",
+                        "type": "variable",
+                        "children": []
+                      },
+                      {
+                        "label": "close",
+                        "type": "identifier",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "arguments",
+                    "type": "arguments",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

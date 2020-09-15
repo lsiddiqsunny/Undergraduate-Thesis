@@ -1,0 +1,228 @@
+<sqlscript xmlns="http://www.sqlparser.com/xml/sqlschema/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dbvendor="dbvoracle" stmt_count="1" xsi:schemaLocation="http://www.sqlparser.com/xml/sqlschema/1.0 file:/C:/prg/gsp_java_maven/doc/xml/sqlschema.xsd">
+  <statement type="sstselect">
+    <select_statement>
+      <query_expression is_parenthesis="false">
+        <query_specification>
+          <select_list>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>r.Room_Number</full_name>
+                    <object_name>r</object_name>
+                    <part_name>Room_Number</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>r.capacity</full_name>
+                    <object_name>r</object_name>
+                    <part_name>capacity</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+            <result_column>
+              <expression expr_type="simple_object_name_t">
+                <column_referenced_expr>
+                  <objectName object_type="column">
+                    <full_name>r.price</full_name>
+                    <object_name>r</object_name>
+                    <part_name>price</part_name>
+                  </objectName>
+                </column_referenced_expr>
+              </expression>
+            </result_column>
+          </select_list>
+          <from_clause>
+            <table_reference type="objectname">
+              <named_table_reference>
+                <table_name object_type="table">
+                  <full_name>sse.Room</full_name>
+                  <schema_name>sse</schema_name>
+                  <object_name>Room</object_name>
+                </table_name>
+                <alias_clause with_as="true">
+                  <object_name object_type="table_alias">
+                    <full_name>r</full_name>
+                    <object_name>r</object_name>
+                  </object_name>
+                </alias_clause>
+              </named_table_reference>
+            </table_reference>
+          </from_clause>
+          <where_clause>
+            <condition expr_type="in_t">
+              <in_expr not="true">
+                <first_expr expr_type="simple_object_name_t">
+                  <column_referenced_expr>
+                    <objectName object_type="column">
+                      <full_name>r.Room_Number</full_name>
+                      <object_name>r</object_name>
+                      <part_name>Room_Number</part_name>
+                    </objectName>
+                  </column_referenced_expr>
+                </first_expr>
+                <second_expr expr_type="subquery_t">
+                  <subquery_expr>
+                    <query_expression is_parenthesis="true">
+                      <query_specification>
+                        <select_list>
+                          <result_column>
+                            <expression expr_type="simple_object_name_t">
+                              <column_referenced_expr>
+                                <objectName object_type="column">
+                                  <full_name>b.roomNumber</full_name>
+                                  <object_name>b</object_name>
+                                  <part_name>roomNumber</part_name>
+                                </objectName>
+                              </column_referenced_expr>
+                            </expression>
+                          </result_column>
+                        </select_list>
+                        <from_clause>
+                          <table_reference type="join">
+                            <joined_table type="join">
+                              <first_table_reference type="objectname">
+                                <named_table_reference>
+                                  <table_name object_type="table">
+                                    <full_name>sse.Reserved_Rooms</full_name>
+                                    <schema_name>sse</schema_name>
+                                    <object_name>Reserved_Rooms</object_name>
+                                  </table_name>
+                                  <alias_clause with_as="true">
+                                    <object_name object_type="table_alias">
+                                      <full_name>b</full_name>
+                                      <object_name>b</object_name>
+                                    </object_name>
+                                  </alias_clause>
+                                </named_table_reference>
+                              </first_table_reference>
+                              <second_table_reference type="objectname">
+                                <named_table_reference>
+                                  <table_name object_type="table">
+                                    <full_name>sse.Reservations</full_name>
+                                    <schema_name>sse</schema_name>
+                                    <object_name>Reservations</object_name>
+                                  </table_name>
+                                  <alias_clause with_as="true">
+                                    <object_name object_type="table_alias">
+                                      <full_name>a</full_name>
+                                      <object_name>a</object_name>
+                                    </object_name>
+                                  </alias_clause>
+                                </named_table_reference>
+                              </second_table_reference>
+                              <join_condition expr_type="simple_comparison_t">
+                                <comparison_expr type="=">
+                                  <first_expr expr_type="simple_object_name_t">
+                                    <column_referenced_expr>
+                                      <objectName object_type="column">
+                                        <full_name>a.Reservation_Id</full_name>
+                                        <object_name>a</object_name>
+                                        <part_name>Reservation_Id</part_name>
+                                      </objectName>
+                                    </column_referenced_expr>
+                                  </first_expr>
+                                  <second_expr expr_type="simple_object_name_t">
+                                    <column_referenced_expr>
+                                      <objectName object_type="column">
+                                        <full_name>b.reservationID</full_name>
+                                        <object_name>b</object_name>
+                                        <part_name>reservationID</part_name>
+                                      </objectName>
+                                    </column_referenced_expr>
+                                  </second_expr>
+                                </comparison_expr>
+                              </join_condition>
+                            </joined_table>
+                          </table_reference>
+                        </from_clause>
+                        <where_clause>
+                          <condition expr_type="logical_and_t">
+                            <binary_expr operator="AND">
+                              <first_expr expr_type="logical_and_t">
+                                <binary_expr operator="AND">
+                                  <first_expr expr_type="simple_comparison_t">
+                                    <comparison_expr type="&gt;=">
+                                      <first_expr expr_type="simple_object_name_t">
+                                        <column_referenced_expr>
+                                          <objectName object_type="column">
+                                            <full_name>a.start</full_name>
+                                            <object_name>a</object_name>
+                                            <part_name>start</part_name>
+                                          </objectName>
+                                        </column_referenced_expr>
+                                      </first_expr>
+                                      <second_expr expr_type="simple_object_name_t">
+                                        <column_referenced_expr>
+                                          <objectName object_type="column">
+                                            <full_name>?</full_name>
+                                            <part_name>?</part_name>
+                                          </objectName>
+                                        </column_referenced_expr>
+                                      </second_expr>
+                                    </comparison_expr>
+                                  </first_expr>
+                                  <second_expr expr_type="simple_comparison_t">
+                                    <comparison_expr type="&lt;=">
+                                      <first_expr expr_type="simple_object_name_t">
+                                        <column_referenced_expr>
+                                          <objectName object_type="column">
+                                            <full_name>a.end</full_name>
+                                            <object_name>a</object_name>
+                                            <part_name>end</part_name>
+                                          </objectName>
+                                        </column_referenced_expr>
+                                      </first_expr>
+                                      <second_expr expr_type="simple_object_name_t">
+                                        <column_referenced_expr>
+                                          <objectName object_type="column">
+                                            <full_name>?</full_name>
+                                            <part_name>?</part_name>
+                                          </objectName>
+                                        </column_referenced_expr>
+                                      </second_expr>
+                                    </comparison_expr>
+                                  </second_expr>
+                                </binary_expr>
+                              </first_expr>
+                              <second_expr expr_type="simple_comparison_t">
+                                <comparison_expr type="=">
+                                  <first_expr expr_type="simple_object_name_t">
+                                    <column_referenced_expr>
+                                      <objectName object_type="column">
+                                        <full_name>a.status</full_name>
+                                        <object_name>a</object_name>
+                                        <part_name>status</part_name>
+                                      </objectName>
+                                    </column_referenced_expr>
+                                  </first_expr>
+                                  <second_expr expr_type="simple_constant_t">
+                                    <constant_expr>
+                                      <literal>
+                                        <value>'Active'</value>
+                                      </literal>
+                                    </constant_expr>
+                                  </second_expr>
+                                </comparison_expr>
+                              </second_expr>
+                            </binary_expr>
+                          </condition>
+                        </where_clause>
+                      </query_specification>
+                    </query_expression>
+                  </subquery_expr>
+                </second_expr>
+              </in_expr>
+            </condition>
+          </where_clause>
+        </query_specification>
+      </query_expression>
+    </select_statement>
+  </statement>
+</sqlscript>

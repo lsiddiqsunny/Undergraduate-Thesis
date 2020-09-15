@@ -195,3 +195,12 @@ GitMiner/venv
 Code_base_for_PSR_ALGO/Test_Edit Trees/
 
 *.exe
+PHP/node_modules/
+
+PHP/Dataset/
+
+PHP/Clustering/output/
+
+PHP/Clustering/Dataset/
+
+PHP/All Codes/Dataset/
