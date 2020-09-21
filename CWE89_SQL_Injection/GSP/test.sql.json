@@ -1,0 +1,294 @@
+{
+  "sqlscript": {
+    "dbvendor": "dbvoracle",
+    "xmlns": "http://www.sqlparser.com/xml/sqlschema/1.0",
+    "xsi:schemaLocation": "http://www.sqlparser.com/xml/sqlschema/1.0 file:/C:/prg/gsp_java_maven/doc/xml/sqlschema.xsd",
+    "statement": {
+      "select_statement": {
+        "query_expression": {
+          "query_specification": {
+            "select_list": {
+              "result_column": [
+                {
+                  "expression": {
+                    "expr_type": "simple_object_name_t",
+                    "column_referenced_expr": {
+                      "objectName": {
+                        "full_name": "r.Room_Number",
+                        "object_type": "column",
+                        "object_name": "r",
+                        "part_name": "Room_Number"
+                      }
+                    }
+                  }
+                },
+                {
+                  "expression": {
+                    "expr_type": "simple_object_name_t",
+                    "column_referenced_expr": {
+                      "objectName": {
+                        "full_name": "r.capacity",
+                        "object_type": "column",
+                        "object_name": "r",
+                        "part_name": "capacity"
+                      }
+                    }
+                  }
+                },
+                {
+                  "expression": {
+                    "expr_type": "simple_object_name_t",
+                    "column_referenced_expr": {
+                      "objectName": {
+                        "full_name": "r.price",
+                        "object_type": "column",
+                        "object_name": "r",
+                        "part_name": "price"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "where_clause": {
+              "condition": {
+                "in_expr": {
+                  "not": true,
+                  "first_expr": {
+                    "expr_type": "simple_object_name_t",
+                    "column_referenced_expr": {
+                      "objectName": {
+                        "full_name": "r.Room_Number",
+                        "object_type": "column",
+                        "object_name": "r",
+                        "part_name": "Room_Number"
+                      }
+                    }
+                  },
+                  "second_expr": {
+                    "subquery_expr": {
+                      "query_expression": {
+                        "query_specification": {
+                          "select_list": {
+                            "result_column": {
+                              "expression": {
+                                "expr_type": "simple_object_name_t",
+                                "column_referenced_expr": {
+                                  "objectName": {
+                                    "full_name": "b.roomNumber",
+                                    "object_type": "column",
+                                    "object_name": "b",
+                                    "part_name": "roomNumber"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "where_clause": {
+                            "condition": {
+                              "binary_expr": {
+                                "first_expr": {
+                                  "binary_expr": {
+                                    "first_expr": {
+                                      "expr_type": "simple_comparison_t",
+                                      "comparison_expr": {
+                                        "first_expr": {
+                                          "expr_type": "simple_object_name_t",
+                                          "column_referenced_expr": {
+                                            "objectName": {
+                                              "full_name": "a.start",
+                                              "object_type": "column",
+                                              "object_name": "a",
+                                              "part_name": "start"
+                                            }
+                                          }
+                                        },
+                                        "second_expr": {
+                                          "expr_type": "simple_object_name_t",
+                                          "column_referenced_expr": {
+                                            "objectName": {
+                                              "full_name": "?",
+                                              "object_type": "column",
+                                              "part_name": "?"
+                                            }
+                                          }
+                                        },
+                                        "type": "\u003e\u003d"
+                                      }
+                                    },
+                                    "second_expr": {
+                                      "expr_type": "simple_comparison_t",
+                                      "comparison_expr": {
+                                        "first_expr": {
+                                          "expr_type": "simple_object_name_t",
+                                          "column_referenced_expr": {
+                                            "objectName": {
+                                              "full_name": "a.end",
+                                              "object_type": "column",
+                                              "object_name": "a",
+                                              "part_name": "end"
+                                            }
+                                          }
+                                        },
+                                        "second_expr": {
+                                          "expr_type": "simple_object_name_t",
+                                          "column_referenced_expr": {
+                                            "objectName": {
+                                              "full_name": "?",
+                                              "object_type": "column",
+                                              "part_name": "?"
+                                            }
+                                          }
+                                        },
+                                        "type": "\u003c\u003d"
+                                      }
+                                    },
+                                    "operator": "AND"
+                                  },
+                                  "expr_type": "logical_and_t"
+                                },
+                                "second_expr": {
+                                  "expr_type": "simple_comparison_t",
+                                  "comparison_expr": {
+                                    "first_expr": {
+                                      "expr_type": "simple_object_name_t",
+                                      "column_referenced_expr": {
+                                        "objectName": {
+                                          "full_name": "a.status",
+                                          "object_type": "column",
+                                          "object_name": "a",
+                                          "part_name": "status"
+                                        }
+                                      }
+                                    },
+                                    "second_expr": {
+                                      "constant_expr": {
+                                        "literal": {
+                                          "value": "\u0027Active\u0027"
+                                        }
+                                      },
+                                      "expr_type": "simple_constant_t"
+                                    },
+                                    "type": "\u003d"
+                                  }
+                                },
+                                "operator": "AND"
+                              },
+                              "expr_type": "logical_and_t"
+                            }
+                          },
+                          "from_clause": {
+                            "table_reference": {
+                              "joined_table": {
+                                "first_table_reference": {
+                                  "type": "objectname",
+                                  "named_table_reference": {
+                                    "alias_clause": {
+                                      "object_name": {
+                                        "full_name": "b",
+                                        "object_type": "table_alias",
+                                        "object_name": "b"
+                                      },
+                                      "with_as": true
+                                    },
+                                    "table_name": {
+                                      "full_name": "sse.Reserved_Rooms",
+                                      "object_type": "table",
+                                      "object_name": "Reserved_Rooms",
+                                      "schema_name": "sse"
+                                    }
+                                  }
+                                },
+                                "join_condition": {
+                                  "expr_type": "simple_comparison_t",
+                                  "comparison_expr": {
+                                    "first_expr": {
+                                      "expr_type": "simple_object_name_t",
+                                      "column_referenced_expr": {
+                                        "objectName": {
+                                          "full_name": "a.Reservation_Id",
+                                          "object_type": "column",
+                                          "object_name": "a",
+                                          "part_name": "Reservation_Id"
+                                        }
+                                      }
+                                    },
+                                    "second_expr": {
+                                      "expr_type": "simple_object_name_t",
+                                      "column_referenced_expr": {
+                                        "objectName": {
+                                          "full_name": "b.reservationID",
+                                          "object_type": "column",
+                                          "object_name": "b",
+                                          "part_name": "reservationID"
+                                        }
+                                      }
+                                    },
+                                    "type": "\u003d"
+                                  }
+                                },
+                                "type": "join",
+                                "second_table_reference": {
+                                  "type": "objectname",
+                                  "named_table_reference": {
+                                    "alias_clause": {
+                                      "object_name": {
+                                        "full_name": "a",
+                                        "object_type": "table_alias",
+                                        "object_name": "a"
+                                      },
+                                      "with_as": true
+                                    },
+                                    "table_name": {
+                                      "full_name": "sse.Reservations",
+                                      "object_type": "table",
+                                      "object_name": "Reservations",
+                                      "schema_name": "sse"
+                                    }
+                                  }
+                                }
+                              },
+                              "type": "join"
+                            }
+                          }
+                        },
+                        "is_parenthesis": true
+                      }
+                    },
+                    "expr_type": "subquery_t"
+                  }
+                },
+                "expr_type": "in_t"
+              }
+            },
+            "from_clause": {
+              "table_reference": {
+                "type": "objectname",
+                "named_table_reference": {
+                  "alias_clause": {
+                    "object_name": {
+                      "full_name": "r",
+                      "object_type": "table_alias",
+                      "object_name": "r"
+                    },
+                    "with_as": true
+                  },
+                  "table_name": {
+                    "full_name": "sse.Room",
+                    "object_type": "table",
+                    "object_name": "Room",
+                    "schema_name": "sse"
+                  }
+                }
+              }
+            }
+          },
+          "is_parenthesis": false
+        }
+      },
+      "type": "sstselect"
+    },
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "stmt_count": 1
+  }
+}

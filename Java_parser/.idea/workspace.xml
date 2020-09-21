@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36ff4fee-aaf6-4bdc-b97a-d14430bc4d56" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/before_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_12.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_14.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_17.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_18.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_19.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_20.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/before_9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java Parser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Parser/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java Parser/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Parser/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java Parser/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Parser/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java Parser/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Parser/Main$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Parser/Main$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java Parser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,18 +40,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
-  </component>
   <component name="ProjectId" id="1b31PUxtUgGlAZYtkVAJGnQSRBC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -49,6 +76,19 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,6 +124,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -97,16 +138,49 @@
       <workItem from="1566064077811" duration="3415000" />
       <workItem from="1566234608282" duration="25000" />
       <workItem from="1587845945391" duration="107000" />
+      <workItem from="1600445643375" duration="457000" />
+      <workItem from="1600494088265" duration="8893000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="0" key="SettingsEditor" timestamp="1587846030195">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1600507078144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587846030194" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600507078144" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1600507078143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600507078143" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1600507078143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600507078143" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1600507078144">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600507078144" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1600507078161">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600507078161" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1600507078161">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1600507078161" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1600507078160">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1600507078160" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1600507078161">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1600507078161" />
   </component>
 </project>

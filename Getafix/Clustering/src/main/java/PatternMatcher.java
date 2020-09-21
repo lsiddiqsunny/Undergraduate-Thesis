@@ -28,13 +28,16 @@ public class PatternMatcher {
         hole_impact = 0;
     }
 
-    public void Init(String dir, int count, List<Integer> inList ) {
+    public void Init(String dir, int count,List<Integer> test_list ) {
         Gson gson = new Gson();
         clusters = new ArrayList<>();
 
         System.out.println("Initializing concrete edits.");
 
-        for(int i=0; i<=count; i++) {
+        for(int i=1; i<=count; i++) {
+            if(test_list.contains(i)){
+                continue;
+            }
             String filename = dir + "/change_pair" + i + ".json";
 
             JsonObject root = null;
@@ -140,10 +143,10 @@ public class PatternMatcher {
         JsonObject afterTree2 = edit2.afterPattern;
 
         isAfter = false;
-        JsonObject beforePattern = antiUnify(beforeTree1, beforeTree2);
+        JsonObject beforePattern = antiUnify(beforeTree1, beforeTree2,false);
         isAfter = true;
         unmapped_hole_count = 0;
-        JsonObject afterPattern = antiUnify(afterTree1, afterTree2);
+        JsonObject afterPattern = antiUnify(afterTree1, afterTree2,false);
 
         EditPattern ep = new EditPattern(beforePattern, afterPattern);
         ep.level = Math.max(edit1.level, edit2.level) + 1;
@@ -175,7 +178,7 @@ public class PatternMatcher {
         return ep;
     }
 
-    public JsonObject antiUnify(JsonObject ob1, JsonObject ob2)
+    public JsonObject antiUnify(JsonObject ob1, JsonObject ob2,boolean isAdd)
     {
         JsonObject unified = new JsonObject();
         JsonArray children = new JsonArray();
@@ -205,15 +208,17 @@ public class PatternMatcher {
             for (int i = 0; i < children1.size(); i++) {
                 JsonObject ch1 = children1.get(i).getAsJsonObject();
                 JsonObject ch2 = children2.get(i).getAsJsonObject();
-                children.add(antiUnify(ch1, ch2));
+                children.add(antiUnify(ch1, ch2,isAdd));
             }
         }
 
         else {
             String hole = getHole(ob1, ob2);
             unified.addProperty("label", hole);
-
-           // System.out.println("hole: "+hole+"  target: "+ob1.get("label")+" source: "+ob2.get("label"));
+            ReplaceSuggestion replaceSuggestion = new ReplaceSuggestion(ob1.get("label"),ob2.get("label"));
+            if(isAdd)
+            Fixer.replaceSuggestions.add(replaceSuggestion);
+           //System.out.println("hole: "+hole+"  target: "+ob1.get("label")+" source: "+ob2.get("label"));
 
             if(type1.equals(type2)) unified.addProperty("type",type1);
             else {
@@ -278,6 +283,7 @@ public class PatternMatcher {
         int count = 1;
 
         JsonArray children = obj.getAsJsonArray("children");
+
         for(int i=0; i<children.size(); i++)
         {
             count = count + countTotalNodes(children.get(i).getAsJsonObject());

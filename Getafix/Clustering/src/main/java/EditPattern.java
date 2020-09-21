@@ -1,11 +1,15 @@
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import javax.swing.*;
+import javax.xml.bind.util.JAXBSource;
 import java.util.HashMap;
 
 public class EditPattern {
     JsonObject beforePattern;
     JsonObject afterPattern;
+    String beforeCode, afterCode;
     HashMap<String, String>  holeMapping;
     EditPattern parent;
     EditPattern child1;
@@ -23,6 +27,8 @@ public class EditPattern {
     {
         beforePattern = root.getAsJsonObject("before_tree");
         afterPattern = root.getAsJsonObject("after_tree");
+        beforeCode = root.get("before_code").toString();
+        afterCode = root.get("after_code").toString();
         holeMapping = null;
         level = 1;
         this.id = ""+id;
@@ -45,16 +51,12 @@ public class EditPattern {
         total_nodes = countTotalNodes(beforePattern);
         total_nodes += countTotalNodes(afterPattern);
     }
-    public JsonObject getBeforePattern(){
-        return beforePattern;
-    }
-    public JsonObject getAfterPattern(){
-        return afterPattern;
-    }
+
     public int countTotalNodes(JsonObject obj)
     {
+        //System.out.println(obj.toString());
         int count = 1;
-        //shoud have done a null check and return zero otherwise sum of (1+nodes in child(i) for all i )
+        //should have done a null check and return zero otherwise sum of (1+nodes in child(i) for all i )
         JsonArray children = obj.getAsJsonArray("children");
         for(int i=0; i<children.size(); i++)
         {
@@ -140,6 +142,9 @@ public class EditPattern {
         JsonObject obj = new JsonObject();
         obj.add("before_pattern",this.beforePattern);
         obj.add("after_pattern",this.afterPattern);
+        obj.addProperty("before_code",this.beforeCode);
+        //System.out.println(this.beforeCode);
+        obj.addProperty("after_code",this.afterCode);
         obj.addProperty("pattern_id",this.id);
         JsonArray children = new JsonArray();
 

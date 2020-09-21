@@ -4,8 +4,10 @@ import com.google.gson.JsonObject;
 import java.util.HashMap;
 
 public class FixerEditPattern {
+
     JsonObject beforePattern;
     JsonObject afterPattern;
+    String beforeCode, afterCode;
     HashMap<String, String>  holeMapping;
     FixerEditPattern parent;
     FixerEditPattern child1;
@@ -21,8 +23,11 @@ public class FixerEditPattern {
 
     FixerEditPattern(JsonObject root, int id)
     {
+
         beforePattern = root.getAsJsonObject("before_pattern");
         afterPattern = root.getAsJsonObject("after_pattern");
+        beforeCode = root.get("before_code")!=null?root.get("before_code").toString():null;
+        afterCode = root.get("after_code")!=null?root.get("after_code").toString():null;
         holeMapping = null;
         level = 1;
         this.id = ""+id;
@@ -88,6 +93,28 @@ public class FixerEditPattern {
         return sb.toString();
     }
 
+    public JsonObject convert2Json()
+    {
+        JsonObject obj = new JsonObject();
+        obj.add("before_pattern",this.beforePattern);
+        obj.add("after_pattern",this.afterPattern);
+        obj.addProperty("before_code",this.beforeCode);
+        //System.out.println(this.beforeCode);
+        obj.addProperty("after_code",this.afterCode);
+        obj.addProperty("pattern_id",this.id);
+        JsonArray children = new JsonArray();
 
+        if(this.child1 != null)
+        {
+            children.add(this.child1.convert2Json());
+        }
+        if(this.child2 != null)
+        {
+            children.add(this.child2.convert2Json());
+        }
+
+        obj.add("children",children);
+        return obj;
+    }
 
 }
