@@ -36,7 +36,7 @@ public class PatternMatcher {
 
         for(int i=1; i<=count; i++) {
             if(test_list.contains(i)){
-                //continue;
+                continue;
             }
             String filename = dir + "/" + i + "/editTree.json";
 

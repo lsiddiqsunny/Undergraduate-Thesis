@@ -30,12 +30,12 @@ public class Fixer {
             Gson gson = new Gson();
             JsonObject jsonObject;
             try {
-                jsonObject = gson.fromJson(new FileReader("Dataset/"+test_list.get(i)+ "/editTree.json"), JsonObject.class);
+                jsonObject = gson.fromJson(new FileReader("D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset/"+test_list.get(i)+ "/editTree.json"), JsonObject.class);
             } catch (FileNotFoundException e) {
                 System.out.println("File not found");
                 continue;
             }
-            //System.out.println("for "+test_list.get(i)+":");
+            System.out.println("for "+test_list.get(i)+":");
 
             FixerEditPattern target = new FixerEditPattern(jsonObject.getAsJsonObject("before_tree"), jsonObject.getAsJsonObject("after_tree"));
             try {
@@ -75,7 +75,7 @@ public class Fixer {
                 }
 
                 //System.out.println(toPrettyFormat(obj.toString()));
-                //System.out.println(patterns.size());
+                System.out.println(patterns.size());
                 if(patterns.size()!=0){
                     count++;
                 }

@@ -20,7 +20,7 @@ public class GSP{
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(jsonString).getAsJsonObject();
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String prettyJson = gson.toJson(json);
 
         return prettyJson;
@@ -38,6 +38,8 @@ public class GSP{
         String content = new String(Files.readAllBytes(path), charset);
         content = content.replace("[\'", "[\\\'");
         content = content.replace("\']", "\\\']");
+        content = content.replace("="," = ");
+        System.out.println(content);
         Files.write(path, content.getBytes(charset));
 
         EDbVendor dbVendor = EDbVendor.dbvmysql;
@@ -47,8 +49,8 @@ public class GSP{
         TGSqlParser sqlParser = new TGSqlParser(dbVendor);
 
         sqlParser.sqlfilename  = directory+fileName;
-        String xmlFile = directory+"beforeXML"+ n + ".xml";
-        String jsonFile = directory+"beforeParsed"+n+".json";
+        String xmlFile = directory+"afterXML"+ n + ".xml";
+        String jsonFile = directory+"afterParsed"+n+".json";
         int ret = sqlParser.parse();
         if (ret == 0){
             String xsdFile = "file:/C:/prg/gsp_java_maven/doc/xml/sqlschema.xsd";
@@ -93,7 +95,7 @@ public class GSP{
                 int j=0;
                 System.out.println(file.getName());
                 for(String fileName:fileContents){
-                    if(fileName.contains("beforeQuery")){
+                    if(fileName.contains("afterQuery")){
                         j++;
                         String parsed = parseQuery(directory+contents[i]+"//",fileName, j);
                         //System.out.println(parsed);
