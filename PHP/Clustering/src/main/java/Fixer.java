@@ -1,9 +1,6 @@
 import com.google.gson.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +19,10 @@ public class Fixer {
 
     static ArrayList<FixerEditPattern> patterns;
     static ArrayList<ReplaceSuggestion> replaceSuggestions;
-    public static void fixer(List<Integer> test_list)  {
+    public static double fixer(List<Integer> test_list,int now) throws IOException {
+        File solution = new File("output\\output"+now+".txt");
+        FileWriter fileWriter = new FileWriter(solution);
+
 
         int count=  0;
         for(int i=0;i<test_list.size();i++) {
@@ -76,14 +76,15 @@ public class Fixer {
 
                 //System.out.println(toPrettyFormat(obj.toString()));
                 System.out.println(patterns.size());
+                fileWriter.write(test_list.get(i)+" : "+patterns.size()+"\n");
                 if(patterns.size()!=0){
                     count++;
                 }
-                File solution = new File("output\\output"+test_list.get(i)+".json");
-                FileWriter fileWriter = new FileWriter(solution);
-                fileWriter.write(toPrettyFormat(obj.toString()));
-                fileWriter.flush();
-                fileWriter.close();
+//                File solution = new File("output\\output"+test_list.get(i)+".json");
+//                FileWriter fileWriter = new FileWriter(solution);
+//                fileWriter.write(toPrettyFormat(obj.toString()));
+//                fileWriter.flush();
+//                fileWriter.close();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -91,6 +92,10 @@ public class Fixer {
 
         }
         System.out.println("Solution found for: "+count+"\nSolution found rate: "+((count*100.0)/test_list.size()));
+        fileWriter.write("Solution found for: "+count+"\nSolution found rate: "+((count*100.0)/test_list.size())+"\n");
+        fileWriter.flush();
+        fileWriter.close();
+        return (count*100.0)/test_list.size();
     }
 
     public static FixerEditPattern getEditPatterns(JsonObject obj,FixerEditPattern target)

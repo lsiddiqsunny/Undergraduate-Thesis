@@ -15,28 +15,29 @@ import java.util.Random;
 
 public class Main {
     public static void main(String args[]) throws Exception {
-        BufferedReader reader;
-        List<Integer> test_list = new ArrayList<>();
+        double total=0.0;
+        for(int l=1;l<=50;l++) {
+            List<Integer> test_list = new ArrayList<>();
 //        for(int i=1;i<=80;i++){
 //            test_list.add(i);
 //        }
-        List<Integer>list= new ArrayList<>();
-        for(int i=1;i<=80;i++){
-            list.add(i);
-        }
-        Random rand = new Random();
-        for (int i = 0; i < 20; i++) {
+            List<Integer> list = new ArrayList<>();
+            for (int i = 1; i <= 320; i++) {
+                list.add(i);
+            }
+            Random rand = new Random();
+            for (int i = 0; i < 100; i++) {
 
-            // take a raundom index between 0 to size
-            // of given List
-            int randomIndex = rand.nextInt(list.size());
+                // take a raundom index between 0 to size
+                // of given List
+                int randomIndex = rand.nextInt(list.size());
 
-            // add element in temporary list
-            test_list.add(list.get(randomIndex));
+                // add element in temporary list
+                test_list.add(list.get(randomIndex));
 
-            // Remove selected element from orginal list
-            list.remove(randomIndex);
-        }
+                // Remove selected element from orginal list
+                list.remove(randomIndex);
+            }
 //        try {
 //            reader = new BufferedReader(new FileReader(
 //                    "test_list.txt"));
@@ -51,24 +52,26 @@ public class Main {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-        //System.out.println(test_list.size());
-/*
+            //System.out.println(test_list.size());
+            /*
 
 
-*/
-        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
-        String directory = "D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset";
-        int count = 80;
-        PatternMatcher pm = new PatternMatcher();
-        pm.Init(directory, count,test_list);
-        EditPattern editClusters = pm.cluster();
-        JsonObject dendogram = editClusters.convert2Json();
-        String data = gson.toJson(dendogram);
+             */
+            Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+            String directory = "D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset";
+            int count = 320;
+            PatternMatcher pm = new PatternMatcher();
+            pm.Init(directory, count, test_list);
+            EditPattern editClusters = pm.cluster();
+            JsonObject dendogram = editClusters.convert2Json();
+            String data = gson.toJson(dendogram);
 
-        FileWriter writer = new FileWriter("target/dendogram.json");
-        writer.write(data);
-        writer.flush();
-        writer.close();
-        Fixer.fixer(test_list);
+            FileWriter writer = new FileWriter("target/dendogram.json");
+            writer.write(data);
+            writer.flush();
+            writer.close();
+            total+=Fixer.fixer(test_list,l);
+        }
+        System.out.println(total/50.0);
     }
 }

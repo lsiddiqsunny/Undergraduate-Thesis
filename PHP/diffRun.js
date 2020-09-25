@@ -2,7 +2,7 @@ var fs = require('fs');
 var JsDiff = require('diff');
 var engine = require('php-parser');
 
-for (var i = 1; i <= 80; i++)
+for (var i = 1; i <= 320; i++)
     differencer('Dataset\\' + i + '\\before.php', 'Dataset\\' + i + '\\after.php', 'Dataset\\' + i + '\\editTree.json');
 
 function differencer(file1, file2, file3) {
