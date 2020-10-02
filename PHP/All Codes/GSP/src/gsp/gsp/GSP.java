@@ -36,9 +36,14 @@ public class GSP{
         Charset charset = StandardCharsets.UTF_8;
 
         String content = new String(Files.readAllBytes(path), charset);
-        content = content.replace("[\'", "[\\\'");
-        content = content.replace("\']", "\\\']");
+//        content = content.replace("[\'", "[\\\'");
+//        content = content.replace("\']", "\\\']");
         content = content.replace("="," = ");
+        content = content.replace("`","");
+        //content = content.replace("\'","");
+        content = content.replace("->",".");
+        content = content.replace("[\'","[\\\'");
+        content = content.replace("\']","\\\']");
         System.out.println(content);
         Files.write(path, content.getBytes(charset));
 
@@ -49,8 +54,8 @@ public class GSP{
         TGSqlParser sqlParser = new TGSqlParser(dbVendor);
 
         sqlParser.sqlfilename  = directory+fileName;
-        String xmlFile = directory+"afterXML"+ n + ".xml";
-        String jsonFile = directory+"afterParsed"+n+".json";
+        String xmlFile = directory+"beforeXML"+ n + ".xml";
+        String jsonFile = directory+"beforeParsed"+n+".json";
         int ret = sqlParser.parse();
         if (ret == 0){
             String xsdFile = "file:/C:/prg/gsp_java_maven/doc/xml/sqlschema.xsd";
@@ -95,7 +100,7 @@ public class GSP{
                 int j=0;
                 System.out.println(file.getName());
                 for(String fileName:fileContents){
-                    if(fileName.contains("afterQuery")){
+                    if(fileName.contains("beforeQuery")){
                         j++;
                         String parsed = parseQuery(directory+contents[i]+"//",fileName, j);
                         //System.out.println(parsed);

@@ -20,21 +20,32 @@ var parser = new engine({
     }
 });
 
-// Retrieve the AST from the specified source
-var eval = parser.parseEval('$conn->close();');
+for (var i = 1; i <= 320; i++) {
+    try {
+        for (var j = 1; j <= 3; j++) {
+            var phpFile = fs.readFileSync('D:/Thesis/Undergraduate-Thesis/PHP/Dataset/Temp/' + i + '/beforeString' + j + '.txt');
+            var ast = parser.parseCode('<?php\n' + phpFile);
 
-// Retrieve an array of tokens (same as php function token_get_all)
-var tokens = parser.tokenGetAll('<?php echo "Hello World";');
+            global.str = "";
+            traverseNode(ast);
+            console.log(i + " " + global.str.slice(1, -1));
+            fs.writeFile('D:/Thesis/Undergraduate-Thesis/PHP/All Codes/Dataset/Temp2/' + i + '/beforeQuery' + j + '.sql', global.str.slice(1, -1), function(err, file) {
+                if (err) throw err;
+                console.log(i + ' Saved!');
+            });
+        }
 
-// Load a static file (Note: this file should exist on your computer)
-var phpFile = fs.readFileSync('./example.php');
-var ast = parser.parseCode(phpFile);
-// Log out results
-//console.log('Eval parse:', JSON.stringify(eval, null, 2));
-//console.log('Tokens parse:', tokens);
-//console.log('File parse:', ast.loc);
-var Node = traverseNode(ast);
-console.log(JSON.stringify(Node, null, 2));
+    } catch (e) {
+        // console.log("entering catch block");
+        // console.log(e);
+        // console.log("leaving catch block");
+        continue;
+    }
+
+
+
+}
+
 
 //console.log('File parse in json:', JSON.stringify(ast, null, 2));
 
@@ -45,6 +56,9 @@ function traverseNode(ast) {
     Node['label'] = ast.loc.source;
     Node['type'] = ast.kind;
     Node['children'] = [];
+    if (Node['type'] === 'string' || Node['type'] === 'encapsed') {
+        global.str = ast.loc.source;
+    }
     var childNode = [];
     if (typeof ast !== 'undefined' && ast !== null) {
 

@@ -1,7 +1,12 @@
 import com.google.gson.*;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -11,91 +16,116 @@ public class Fixer {
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(jsonString).getAsJsonObject();
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String prettyJson = gson.toJson(json);
 
         return prettyJson;
     }
 
+
     static ArrayList<FixerEditPattern> patterns;
     static ArrayList<ReplaceSuggestion> replaceSuggestions;
-    public static double fixer(List<Integer> test_list,int now) throws IOException {
-        File solution = new File("output\\output"+now+".txt");
-        FileWriter fileWriter = new FileWriter(solution);
+    public static void fixer(List<Integer> test_list)  {
 
-
+        int total = 0;
         int count=  0;
-        for(int i=0;i<test_list.size();i++) {
+        Collections.sort(test_list);
+        for(int i: test_list) {
+
             String filename = "target\\dendogram.json";
             Gson gson = new Gson();
-            JsonObject jsonObject;
+            JsonObject jsonObject = null;
+
             try {
-                jsonObject = gson.fromJson(new FileReader("D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset/"+test_list.get(i)+ "/editTree.json"), JsonObject.class);
+                total++;
+                jsonObject = gson.fromJson(new FileReader("Dataset\\"+i+"\\editTree.json"), JsonObject.class);
             } catch (FileNotFoundException e) {
                 System.out.println("File not found");
                 continue;
             }
-            System.out.println("for "+test_list.get(i)+":");
+            System.out.println("for "+i+":");
 
-            FixerEditPattern target = new FixerEditPattern(jsonObject.getAsJsonObject("before_tree"), jsonObject.getAsJsonObject("after_tree"));
+            FixerEditPattern target = new FixerEditPattern(jsonObject.getAsJsonObject("before_tree"), jsonObject.getAsJsonObject("after_tree"),jsonObject.get("before_code").getAsString());
             try {
 
-                JsonObject root = gson.fromJson(new FileReader(filename), JsonObject.class);
-                patterns = new ArrayList<>();
-                getEditPatterns(root, target);
+                    JsonObject root = gson.fromJson(new FileReader(filename), JsonObject.class);
+                    patterns = new ArrayList<>();
+                    getEditPatterns(root, target);
 
-                JsonObject obj = new JsonObject();
-                obj.add("target", target.beforePattern);
-
-                for (int j = 0; j < patterns.size(); j++) {
-                   // System.out.println("From suggestion "+j+":");
-
-                    PatternMatcher pm = new PatternMatcher();
-                    replaceSuggestions = new ArrayList<>();
-                    pm.antiUnify(target.beforePattern,patterns.get(j).beforePattern,true);
-
-                    String afterString = patterns.get(j).afterPattern.toString();
-                    String afterCode = patterns.get(j).afterCode;
-                    //System.out.println(replaceSuggestions.size());
-                    //System.out.println(afterCode);
-                    for(ReplaceSuggestion replaceSuggestion: replaceSuggestions){
-                        //System.out.println("After: "+replaceSuggestion.after.toString()+" Before: "+replaceSuggestion.before.toString());
-
-                        afterString=afterString.replace(replaceSuggestion.before.toString().replace("\"",""),replaceSuggestion.after.toString().replace("\"",""));
-                        afterCode=afterCode.replace(replaceSuggestion.before.toString().replace("\"",""),replaceSuggestion.after.toString().replace("\"",""));
-
+                    JsonObject obj = new JsonObject();
+                    obj.addProperty("target", target.beforeCode);
+                    int now=0;
+                    if(patterns.size()==0){
+                        System.out.println("no solution");
                     }
-                   // System.out.println(afterCode);
+                    for (int j = 0; j < patterns.size(); j++) {
+                        //System.out.println("From suggestion "+j+":("+patterns.get(j).root.get("pattern_id").getAsString()+")");
 
-                    JsonParser jsonParser = new JsonParser();
-                    patterns.get(j).afterPattern = (JsonObject)jsonParser.parse(afterString);
-                    patterns.get(j).afterCode=afterCode;
-                   //obj.add("unified" + j, unified);
-                    obj.add("suggestion" + j, patterns.get(j).convert2Json());
-                }
+                        PatternMatcher pm = new PatternMatcher();
+                        replaceSuggestions = new ArrayList<>();
+                        pm.antiUnify2(target.beforePattern,patterns.get(j).beforePattern,true);
 
-                //System.out.println(toPrettyFormat(obj.toString()));
-                System.out.println(patterns.size());
-                fileWriter.write(test_list.get(i)+" : "+patterns.size()+"\n");
-                if(patterns.size()!=0){
-                    count++;
-                }
-//                File solution = new File("output\\output"+test_list.get(i)+".json");
-//                FileWriter fileWriter = new FileWriter(solution);
-//                fileWriter.write(toPrettyFormat(obj.toString()));
-//                fileWriter.flush();
-//                fileWriter.close();
+                        String afterCode = patterns.get(j).afterCode;
+                        System.out.println("After code:\n"+afterCode);
+                        for(ReplaceSuggestion replaceSuggestion: replaceSuggestions){
+                            String before = replaceSuggestion.before.getAsString();
+                            String after = replaceSuggestion.after.getAsString();
+
+                            System.out.println("After: "+after+" Before: "+before);
+                            before = before.replaceAll("[*]", "[*]");
+                            //before = before.replaceAll("\\[", "");
+                            //before = before.replaceAll("\\]", "");
+                            before = before.replaceAll("[{]", "");
+                            before = before.replaceAll("[}]", "");
+                            before = before.replace("\\", "");
+                            after = after.replaceAll("[{]", "");
+                            after = after.replaceAll("[}]", "");
+                            after = after.replace("\\", "");
+                            //after = after.replace("\\", "");
+                            //before = before.replaceAll("[']", "");
+                            //after = after.replaceAll("[']", "");
+                            if(before.charAt(0)=='\''){
+                                before = before.substring(1,before.length()-1);
+                            }
+                            if(after.charAt(0)=='\''){
+                                after = after.substring(1,after.length()-1);
+                            }
+
+                            System.out.println("After: "+after+" Before: "+before);
+
+                            try{
+                            afterCode=afterCode.replace(before,after);}
+                            catch(Exception e){
+                                System.out.println("Problem in replacing");
+
+                                continue;
+                            }
+
+                        }
+                        System.out.println("After code:\n"+afterCode);
+                        now++;
+                        patterns.get(j).afterCode=afterCode;
+                        obj.addProperty("suggestion" + j, patterns.get(j).afterCode);
+                    }
+
+                    //System.out.println(toPrettyFormat(obj.toString()));
+                    //System.out.println(patterns.size());
+                    if(patterns.size()!=0 && now!=0){
+                        count++;
+                    }
+                    if(patterns.size() > 0 && now!=0) {
+                        File solution = new File("output\\" + i+".json");
+                        FileWriter fileWriter = new FileWriter(solution);
+                        fileWriter.write(toPrettyFormat(obj.toString()));
+                        fileWriter.flush();
+                        fileWriter.close();
+                    }
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
-        System.out.println("Solution found for: "+count+"\nSolution found rate: "+((count*100.0)/test_list.size()));
-        fileWriter.write("Solution found for: "+count+"\nSolution found rate: "+((count*100.0)/test_list.size())+"\n");
-        fileWriter.flush();
-        fileWriter.close();
-        return (count*100.0)/test_list.size();
+        System.out.println("Solution found for: "+count+"\nSolution found rate: "+((count*100.0)/total));
     }
 
     public static FixerEditPattern getEditPatterns(JsonObject obj,FixerEditPattern target)
@@ -110,9 +140,9 @@ public class Fixer {
 
                     getEditPatterns(children.get(i).getAsJsonObject(), target);
                 }
-//                else {
-//                    //System.out.println("noMatch"+children.get(i).getAsJsonObject().get("before_pattern").toString());
-//                }
+                else {
+                    //System.out.println("noMatch"+children.get(i).getAsJsonObject().get("before_pattern").toString());
+                }
             }
         }
         if(children.size()==0){
@@ -128,7 +158,7 @@ public class Fixer {
     }
 
     public static boolean Match(JsonObject suggestionBT, JsonObject targetBT){
-        //System.out.println(suggestionBT);
+        //suggestionBT -> Suggestion Before Tree
         String labelS = suggestionBT.get("label").getAsString();
         String labelT = targetBT.get("label").getAsString();
         String typeS = suggestionBT.get("type").getAsString();

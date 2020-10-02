@@ -1,6 +1,6 @@
 import os
 import csv
-file_arr = os.listdir('.\Test_Edit Trees')
+file_arr = os.listdir('.\\Test_Files\\')
 with open('linenumber.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     for file in file_arr:
@@ -50,7 +50,7 @@ with open('linenumber.csv', 'w', newline='') as file:
         #             linenum+=str(num)+' '
         #             lineset.add(num)
         #             print ('found at line:', num)
-        with open('D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_'+file[7:-5]+'.java','r') as myFile:
+        with open('.\\Test_Files\\'+file,'r') as myFile:
 
             lookup = 'execute'
             for num, line in enumerate(myFile, 1):
@@ -61,7 +61,7 @@ with open('linenumber.csv', 'w', newline='') as file:
         linenum = ""
         for x in lineset:
             linenum+=str(x)+' '
-        os.system('java Fixer '+'"D:\\Thesis\\Getafix\\gumtree-spoon-ast-diff+clustering\\Before\\before_"'+file[7:-5]+'.java '+linenum) 
+        os.system('java Fixer '+'D:\\Thesis\\Undergraduate-Thesis\\Code_base_for_PSR_ALGO\\Test_Files\\'+file+' '+linenum) 
         writer.writerow([file[7:-5] , linenum])
 
 

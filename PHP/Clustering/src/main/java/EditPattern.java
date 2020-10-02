@@ -1,5 +1,6 @@
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import javax.swing.*;
@@ -9,7 +10,7 @@ import java.util.HashMap;
 public class EditPattern {
     JsonObject beforePattern;
     JsonObject afterPattern;
-    String beforeCode, afterCode;
+    JsonElement beforeCode, afterCode;
     HashMap<String, String>  holeMapping;
     EditPattern parent;
     EditPattern child1;
@@ -27,8 +28,8 @@ public class EditPattern {
     {
         beforePattern = root.getAsJsonObject("before_tree");
         afterPattern = root.getAsJsonObject("after_tree");
-        beforeCode = root.get("before_code").toString();
-        afterCode = root.get("after_code").toString();
+        beforeCode = root.get("before_code");
+        afterCode = root.get("after_code");
         holeMapping = null;
         level = 1;
         this.id = ""+id;
@@ -54,9 +55,8 @@ public class EditPattern {
 
     public int countTotalNodes(JsonObject obj)
     {
-        //System.out.println(obj.toString());
         int count = 1;
-        //should have done a null check and return zero otherwise sum of (1+nodes in child(i) for all i )
+        //shoud have done a null check and return zero otherwise sum of (1+nodes in child(i) for all i )
         JsonArray children = obj.getAsJsonArray("children");
         for(int i=0; i<children.size(); i++)
         {
@@ -85,27 +85,8 @@ public class EditPattern {
         if(this.holes-this.un_mapped_holes < other.holes-other.un_mapped_holes) return false;
 
         if(this.holes > other.holes) return true;
-        if(this.holes < other.holes) return false;
-
-        /// These are codes from Towfiq vai
-
-        double p1_un_mapped = this.un_mapped_holes*1.0 / this.total_nodes;
-        double p2_un_mapped = other.un_mapped_holes*1.0 / other.total_nodes;
-
-        if(p1_un_mapped < p2_un_mapped) return true;
-        if(p1_un_mapped > p2_un_mapped) return false;
-
-        if(this.un_resolved_holes < other.holes) return true;
-        if(this.un_resolved_holes > other.holes) return false;
-
-        //if(this.hole_impact < other.hole_impact) return true;
-        //if(this.hole_impact > other.hole_impact) return false;
-
-        if(this.level < other.level) return true;
-        if(this.level > other.level) return false;
-
-        if(this.total_nodes > other.total_nodes) return true;
         return false;
+
     }
 
 
@@ -142,9 +123,9 @@ public class EditPattern {
         JsonObject obj = new JsonObject();
         obj.add("before_pattern",this.beforePattern);
         obj.add("after_pattern",this.afterPattern);
-        obj.addProperty("before_code",this.beforeCode);
+        obj.add("before_code",this.beforeCode);
         //System.out.println(this.beforeCode);
-        obj.addProperty("after_code",this.afterCode);
+        obj.add("after_code",this.afterCode);
         obj.addProperty("pattern_id",this.id);
         JsonArray children = new JsonArray();
 

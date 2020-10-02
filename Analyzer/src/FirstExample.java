@@ -9,6 +9,20 @@ public class FirstExample {
     //  Database credentials
     static final String USER = "root";
     static final String PASS = "";
+    String id1;
+    void sendRequest(Connection conn) throws SQLException {
+        /*
+        String sql = "SELECT * FROM Employees where id="+id1;
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+*/
+        String sql = "SELECT * FROM Employees where id=?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setObject(1,id1);
+        ResultSet rs = stmt.executeQuery();
+
+
+    }
 
     public static void main(String[] args) {
         Connection conn = null;
@@ -28,6 +42,7 @@ public class FirstExample {
             String sql;
             sql = "SELECT * FROM Employees where id="+id1;
             stmt = conn.createStatement();
+
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
