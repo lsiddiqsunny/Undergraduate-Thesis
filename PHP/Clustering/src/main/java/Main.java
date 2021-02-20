@@ -17,22 +17,25 @@ public class Main {
         List<Integer> test_list = new ArrayList<>();
                 try {
 
-           BufferedReader reader = new BufferedReader(new FileReader(
-                    "test_list.txt"));
+           BufferedReader reader = new BufferedReader(new FileReader("test_list.txt"));
             String line = reader.readLine();
             while (line != null) {
+                if(line.charAt(line.length()-1)==' ')
                 test_list.add(Integer.parseInt(line.substring(0,line.length()-1)));
-
+                else
+                    test_list.add(Integer.parseInt(line));
+                //System.out.println(line);
                 line = reader.readLine();
             }
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(test_list.size());
 
-       /* Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String directory = "D:\\Thesis\\Undergraduate-Thesis\\PHP\\All Codes\\Dataset";
-        int count = 320;
+        int count = 500;
         PatternMatcher pm = new PatternMatcher();
         pm.Init(directory, count, test_list);
         EditPattern editClusters = pm.cluster();
@@ -42,7 +45,7 @@ public class Main {
         FileWriter writer = new FileWriter("target/dendogram.json");
         writer.write(data);
         writer.flush();
-        writer.close();*/
+        writer.close();
         Fixer.fixer(test_list);
     }
     }

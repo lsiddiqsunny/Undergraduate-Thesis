@@ -9,17 +9,18 @@ public class FirstExample {
     //  Database credentials
     static final String USER = "root";
     static final String PASS = "";
-    String id1;
-    void sendRequest(Connection conn) throws SQLException {
-        /*
-        String sql = "SELECT * FROM Employees where id="+id1;
+
+    static void sendRequest(Connection conn,String id) throws SQLException {
+
+        String sql = "SELECT * FROM Employees where id="+id;
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
-*/
+
+        /*
         String sql = "SELECT * FROM Employees where id=?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setObject(1,id1);
-        ResultSet rs = stmt.executeQuery();
+        stmt.executeQuery();*/
 
 
     }
@@ -34,7 +35,8 @@ public class FirstExample {
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
+            sendRequest(conn,"ID001");
+            /*
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
             Scanner sc= new Scanner(System.in);
@@ -61,7 +63,7 @@ public class FirstExample {
             }
             //STEP 6: Clean-up environment
             rs.close();
-            stmt.close();
+            stmt.close();*/
             conn.close();
         }catch(SQLException se){
             //Handle errors for JDBC
@@ -84,5 +86,6 @@ public class FirstExample {
             }//end finally try
         }//end try
         System.out.println("Goodbye!");
+
     }//end main
 }//end FirstExample

@@ -20,16 +20,26 @@ var parser = new engine({
     }
 });
 
-for (var i = 1; i <= 320; i++) {
+for (var i = 1; i <= 500; i++) {
     try {
         for (var j = 1; j <= 3; j++) {
-            var phpFile = fs.readFileSync('D:/Thesis/Undergraduate-Thesis/PHP/Dataset/Temp/' + i + '/beforeString' + j + '.txt');
+            var dir = 'D:/Thesis/Undergraduate-Thesis/PHP/Dataset/Temp/' + i;
+
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+            }
+            var phpFile = fs.readFileSync('D:/Thesis/Undergraduate-Thesis/PHP/Dataset/Temp/' + i + '/afterString' + j + '.txt');
             var ast = parser.parseCode('<?php\n' + phpFile);
 
             global.str = "";
             traverseNode(ast);
             console.log(i + " " + global.str.slice(1, -1));
-            fs.writeFile('D:/Thesis/Undergraduate-Thesis/PHP/All Codes/Dataset/Temp2/' + i + '/beforeQuery' + j + '.sql', global.str.slice(1, -1), function(err, file) {
+            dir = 'D:/Thesis/Undergraduate-Thesis/PHP/All Codes/Dataset/Temp2/' + i;
+
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+            }
+            fs.writeFile('D:/Thesis/Undergraduate-Thesis/PHP/All Codes/Dataset/Temp2/' + i + '/afterQuery' + j + '.sql', global.str.slice(1, -1), function(err, file) {
                 if (err) throw err;
                 console.log(i + ' Saved!');
             });

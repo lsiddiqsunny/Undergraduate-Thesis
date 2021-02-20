@@ -230,3 +230,7 @@ CWE89_SQL_Injection/Clustering/Edit Trees/
 CWE89_SQL_Injection/bin/
 
 Code_base_for_PSR_ALGO/Test_Files/
+
+Code_base_for_PSR_ALGO/TEST_SET/
+
+Code_base_for_PSR_ALGO/Test_300/

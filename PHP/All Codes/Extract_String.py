@@ -48,7 +48,7 @@ for x in directories[0][1]:
     print(x)
     if x=='Temp':
     	continue
-    with open(base_path+x+'/before.php') as search:
+    with open(base_path+x+'/after.php') as search:
         print(search)
         i = 1
         ends = True
@@ -63,7 +63,7 @@ for x in directories[0][1]:
             if (re.search(r'DELETE.*FROM.*WHERE.*|SELECT.*FROM.*WHERE.*|INSERT.*INTO.*|UPDATE.*SET.*', line.lower(), re.IGNORECASE) != None):
                 if not os.path.exists(base_path+'Temp/'+x):
                     os.makedirs(base_path+'Temp/'+x)
-                f = open(base_path+'Temp/'+x+'/beforeString'+str(i)+'.txt', "w")
+                f = open(base_path+'Temp/'+x+'/afterString'+str(i)+'.txt', "w")
                 f.write(line)
                 i += 1
                 if(line.find(";") == -1):

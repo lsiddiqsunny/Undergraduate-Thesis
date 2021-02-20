@@ -29,3 +29,6 @@ Our work for this project till now :
 5. Work on java parser : [Java parser](Java_parser/README.md)
 6. Collected paper and notes on TreeLSTM : [Paper](Tree_LSTM/README.md)
 7. Data validation for input : [Data validation](Data_Validation/script.sh)
+8. Model created and solution finder: [Getafix for SQLIFIX](Getafix)
+
+Find our paper here: <https://lsiddiqsunny.github.io/public/SANER_2021.pdf> and thesis paper [here](1505065_1505069_Thesis.pdf)

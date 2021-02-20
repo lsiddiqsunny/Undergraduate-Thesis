@@ -34,8 +34,8 @@ public class Fixer {
 
             String filename = "target\\dendogram.json";
             Gson gson = new Gson();
-            JsonObject jsonObject = null;
-
+            JsonObject jsonObject ;
+            System.out.println(i);
             try {
                 total++;
                 jsonObject = gson.fromJson(new FileReader("Dataset\\"+i+"\\editTree.json"), JsonObject.class);
@@ -43,7 +43,7 @@ public class Fixer {
                 System.out.println("File not found");
                 continue;
             }
-            System.out.println("for "+i+":");
+
 
             FixerEditPattern target = new FixerEditPattern(jsonObject.getAsJsonObject("before_tree"), jsonObject.getAsJsonObject("after_tree"),jsonObject.get("before_code").getAsString());
             try {
@@ -56,7 +56,7 @@ public class Fixer {
                     obj.addProperty("target", target.beforeCode);
                     int now=0;
                     if(patterns.size()==0){
-                        System.out.println("no solution");
+                        //System.out.println("no solution");
                     }
                     for (int j = 0; j < patterns.size(); j++) {
                         //System.out.println("From suggestion "+j+":("+patterns.get(j).root.get("pattern_id").getAsString()+")");
@@ -66,12 +66,12 @@ public class Fixer {
                         pm.antiUnify2(target.beforePattern,patterns.get(j).beforePattern,true);
 
                         String afterCode = patterns.get(j).afterCode;
-                        System.out.println("After code:\n"+afterCode);
+                        //System.out.println("After code:\n"+afterCode);
                         for(ReplaceSuggestion replaceSuggestion: replaceSuggestions){
                             String before = replaceSuggestion.before.getAsString();
                             String after = replaceSuggestion.after.getAsString();
 
-                            System.out.println("After: "+after+" Before: "+before);
+                           // System.out.println("After: "+after+" Before: "+before);
                             before = before.replaceAll("[*]", "[*]");
                             //before = before.replaceAll("\\[", "");
                             //before = before.replaceAll("\\]", "");
@@ -91,7 +91,7 @@ public class Fixer {
                                 after = after.substring(1,after.length()-1);
                             }
 
-                            System.out.println("After: "+after+" Before: "+before);
+                            //System.out.println("After: "+after+" Before: "+before);
 
                             try{
                             afterCode=afterCode.replace(before,after);}
@@ -102,7 +102,7 @@ public class Fixer {
                             }
 
                         }
-                        System.out.println("After code:\n"+afterCode);
+                        //System.out.println("After code:\n"+afterCode);
                         now++;
                         patterns.get(j).afterCode=afterCode;
                         obj.addProperty("suggestion" + j, patterns.get(j).afterCode);

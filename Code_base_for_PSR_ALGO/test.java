@@ -1,16 +1,11 @@
 public class Dummy {
-
-  public boolean toCheckEmailUser(String quota,String TBL_NAME ,String FIELD_QUOTA) {
-
-    Connection conn = this.connect()
-      for(int x : user){
-        Statement st = conn.createStatement();
-        String query = "insert into user where id = ""x";
-        st.executeQuery(query);
-      }
-
-    
-   
+  public void toCheckEmailUser(String id) {
+    /* 
+      Get Connection from DB.getConnection()
+    */
+    Connection conn = DB.getConnection();
+    Statement st = conn.createStatement();
+    String query = "select * user where id = " + id;
+    st.executeQuery(query);
   }
-
 }
